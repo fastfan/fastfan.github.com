@@ -1,0 +1,108 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+    background: #226039 url(../img/bg.jpg)  no-repeat;
+    color: #5d5d5d;
+}
+.header{
+	width: 100%;
+	margin: auto;
+	border-bottom: #3c7a48 1px solid;
+	position: relative;
+}
+.quotes{
+	width: 1200px;
+	margin: 0px auto 120px auto;
+	overflow: hidden;
+}
+.quotes p{
+	text-shadow: #246640 1px 1px 1px;
+	color: #fff;
+	width: 330px;
+	line-height: 26px;
+	color: chocolate;
+	font-size: 18px;
+}
+.text{
+	float: left;
+	font-family: "微软雅黑";
+	font-size: 30px;
+	color: #FFF;
+	line-height: 131px;
+}
+.flower{
+	float: right;
+	background: url(../images/flower.png) no-repeat;
+}
+.flower img{
+	width: 136px;
+	height: 115px;
+}
+ul li{
+	list-style: none;
+	float: left;
+	margin-right: 40px;
+}
+.nav{
+	clear: both;
+}
+ ul{
+	font-size: 18px;
+	font-weight: bolder;
+	color: tomato;
+	width: 1200px;
+	position: absolute;
+    bottom: -20px;
+    left: 732px;
+}
+.container{
+	width: 1200px;
+	clear: both;
+	margin: auto;
+	margin-top: 30px;
+}
+.main{
+	width:800px ;
+	height: 700px;
+	background-color: #FF6347;
+	margin: auto;
+	float: left;
+}
+.artical,.artical1,.artical2{
+	margin: 25px auto;
+	width: 600px;
+	height: 200px;
+}
+.artical{
+	background-color: blue;
+}
+.artical1{
+	background-color: pink;
+}
+.artical2{
+	background-color: gold;
+}
+.sidebar{
+	width: 340px;
+	height: 700px;
+	background-color: #D2691E;
+	float: right;
+}
+.information,.information1,.information2{
+	width: 240px;
+	height: 200px;
+	margin: 25px auto;
+}
+.information{
+	background-color: darkblue;
+}
+.information1{
+	background-color: green;
+}
+.information2{
+	background-color: fuchsia;
+}
+p.hidde{
+	overflow: hidden;
+}
