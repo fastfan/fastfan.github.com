@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>总结</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+       
+             h2{
+             	font-size: 20px;
+             	text-decoration: underline;
+             }
+             body{
+             	margin-left: 100px;
+             }
+             p{
+             	text-indent: 2em;
+             }
+
+          
+	</style>
+</head>
+<body>
+     <h1>css选择器</h1><hr/>
+     <h2>ID选择器与类选择器的区别</h2>
+     <ol>
+        <li>只能在文档中使用一次</li>
+        <li>不能使用ID词列表</li>
+        <li>功能包含更多含义</li>
+     </ol>
+     <h2>"*"通配</h2>
+     <p>*[title]{color:red;} 表示文档中所有带‘title’属性的字体为红色。</p>
+     <h2>相邻兄弟选择器</h2>
+     <p>可选择紧接在另一个元素后的元素，且二者有同一父元素<br/>例：E+F  (1)"+"表示相邻兄弟（当前元素下面相邻的第一个元素）
+     （2）“~”表示后面所有的兄弟</p>
+     <h2>伪元素</h2>
+     <p>(::first-line)首行<br/>(::first-letter)首字母</p>
+     <p>解决父元素塌陷问题：<br/>.fix::after{
+     content="";<br/>height:0;<br/>visibility:hidden;<br/>display:block;<br/>clear:both;<br/>}
+     </p>
+     <h2>属性选择器</h2>
+     <ol>
+        <li>[abc^="def"]选择abc属性值以“def”开头的所有元素</li>
+        <li>[abc$="def"]选择abc属性值以“def”结尾的所有元素</li>
+        <li>[abc*="def"]选择abc属性值包含子串“def”的所有元素</li>
+        <li>[attribute~=value]用于选取属性值中包含指定词汇的元素</li>
+     </ol>
+     <h2>缩写</h2>
+     <ol>
+        <li>rgba(0,0,0,0.6)代表(red,green,blue,alpha[色彩空间]透明值)</li>
+        <li>背景缩写：background:#f60 url(images/bg.jpg) no-repeat top center;</li>
+        <li>列表缩写：list-style: square inside url(‘i/arrow.jpg’);</li>
+     </ol>
+     <h1>photoshop切片</h1><hr/>
+     <h2>保留源文件</h2>
+     <h2>切片要点</h2>
+        <ol>
+           <li>根据颜色范围来切</li>
+           <li>把网页切片切的越小越好</li>
+           <li>切片区域完整性</li>
+           <li>导出类型：颜色单一过度少的应该导出gif格式<br/>颜色过度较多，颜色丰富导出jpg格式</li>
+        </ol>
+
+</body>
+</html>

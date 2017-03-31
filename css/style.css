@@ -38,8 +38,9 @@ body{
 .flower img{
 	width: 136px;
 	height: 115px;
+	border-radius: 50px;
 }
-ul li{
+.nav ul li{
 	list-style: none;
 	float: left;
 	margin-right: 40px;
@@ -47,7 +48,7 @@ ul li{
 .nav{
 	clear: both;
 }
- ul{
+ .nav ul{
 	font-size: 18px;
 	font-weight: bolder;
 	color: tomato;
@@ -56,53 +57,30 @@ ul li{
     bottom: -20px;
     left: 732px;
 }
-.container{
-	width: 1200px;
-	clear: both;
-	margin: auto;
-	margin-top: 30px;
-}
 .main{
-	width:800px ;
-	height: 700px;
-	background-color: #FF6347;
-	margin: auto;
+	width: 1200px;
+	margin:50px auto;
+}
+.main_left{
+	width: 775px;
+	border: 1px solid #FF6347;
 	float: left;
+	font-size: 18px;
+	margin-right: 46px;
+	color: #FF0000;
+	text-align: center;
 }
-.artical,.artical1,.artical2{
-	margin: 25px auto;
-	width: 600px;
-	height: 200px;
+.main_right{
+	width: 375px;
+	border: 1px solid #0000FF;
+	float: left;
+	font-size: 18px;
+	color: #0000FF;
+	
 }
-.artical{
-	background-color: blue;
+.main_right h2{
+	margin-left: 15px;
 }
-.artical1{
-	background-color: pink;
-}
-.artical2{
-	background-color: gold;
-}
-.sidebar{
-	width: 340px;
-	height: 700px;
-	background-color: #D2691E;
-	float: right;
-}
-.information,.information1,.information2{
-	width: 240px;
-	height: 200px;
-	margin: 25px auto;
-}
-.information{
-	background-color: darkblue;
-}
-.information1{
-	background-color: green;
-}
-.information2{
-	background-color: fuchsia;
-}
-p.hidde{
-	overflow: hidden;
+.main_right ul{
+	margin-left: 30px;
 }

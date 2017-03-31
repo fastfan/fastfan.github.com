@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>总结</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+     .one>li>ol{
+     	list-style: square;
+     }
+   body{
+    width: 800px;
+    margin: 0px auto;
+    background-image: url(images/12.jpg);
+   }
+   h1{
+    color: tomato;
+   }
+   h2,h3{
+    color: blue;
+   }
+   p{
+    color: green;
+   }
+    #time{
+      text-align: center;
+      font-size: 30px;
+      color: #ff0000;
+      font-family: '微软雅黑';
+      font-weight: bolder;
+     }
+	</style>
+</head>
+<body>
+     <h1>Date对象</h1>
+     <p>启用基本存储器并取得日期和时间</p>
+
+          <ol class="one">
+               <pre><li>Date类型
+			              <p>使用UTC国际协调时间.1970年1月1日（午夜）零时经过的毫秒来保存日期
+			               在使用这种数据存储式的条件下，Date类型保存的日期可精确到1970年1月1日
+			               前后各285,616年。
+			              </p>
+                    </li>
+              
+                  <li>创建一个日期对象
+                         <p>var date= new Date();
+         <p style="color:gray">获取当前系统时间(只限于没有参数的时候)
+           </p>   
+                 <li>参数的三种格式
+                    <ol>
+                        <li>月/日/年</li>
+                        <li>May25,2004</li>
+                        <li>Tue May 25 2004 00:00:00GMT-070</li>
+                    </ol>
+               </li> 
+               <li>value of()返回毫秒数</li>
+               <li>to string()自动调用时间</li>
+
+              <li>Date对象方法
+                  <ol>
+                      <li>getTime()   返回毫秒数</li>
+                      <li>getDate()   获取日期 </li>
+                      <li>getFullYear()  获取四位年份</li>
+                      <li>getHourse()   获取小时数</li>
+                      <li>getMinuts()   获取分钟数</li>
+                      <li>getSeconds()  获取秒数</li>
+                      <li>toDatestring()  以特定格式显示星期几，月，日，年</li>
+                      <li>toTimestring()  以特定的格式显示时，分，秒和时区</li>
+                      <li>toLocaleDateString() 以特定地区形势显示星期几，月，日，年</li>
+                      <li>toLocaleTimeString()  以特定的地区形势显示时，分，秒和时区</li>
+                      <li>getMonth()  获取月份(0-11)</li>
+                      <li>getDay()  获取星期(0-6)0d代表星期六</li>
+                      <li>getTimeZoneOffset()  返回本地时间和UTC相差的分钟数</li>
+                  </ol>
+             </li>
+      <h2>document.getElementById()获取节点</h2>
+      <h2>obj.innertext//获取文本</h2>
+      <h2>setInerval(,2000)每隔2秒，计算一个表达式//获取文本</h2> 
+      <div id="time">例子</div>
+      <script type="text/javascript">
+      var  obj=document.getElementById('time');
+			box();
+			setInterval(box,1000);
+			function box(){
+			var endTime= new Date(2017,5,6);//截止时间
+			var currentTime= new Date();//当前时间
+			var N=endTime.getTime()/(1000*24*60*60);//截止时间：天
+			var L=currentTime.getTime()/(1000*24*60*60);//当前时间：天
+			var time=N-L;//距离多少天
+			var date=checkNumber(Math.floor(time));//星期
+			var H=checkNumber(Math.floor((time*24)%24));//小时
+			var M=checkNumber(Math.floor((time*24*60)%60));//分钟
+			var S=checkNumber(Math.floor((time*24*60*60)%60));//秒
+			 obj.innerText="距离高考还有:"+date+"天"+H+'小时'+M+'分'+S+'秒';
+
+			}
+			function checkNumber(num){
+			   return num<10?"0"+num:num;
+			}
+	 
+</script>
+
+   </pre>
+</body>
+</html>

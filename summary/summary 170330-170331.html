@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>总结</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+    width: 1000px;
+    margin: 0px auto;
+    background-image: url(images/12.jpg);
+   }
+   h1{
+    color: tomato;
+   }
+   h2,h3{
+    color: blue;
+   }
+   p{
+    color: green;
+   }
+ol{
+        counter-reset: li; /* 创建一个计数器 */
+        list-style: none; /* 清除列表默认的编码*/
+        *list-style: decimal; /* 让IE6/7具有默认的编码 */
+        font: 15px 'trebuchet MS', 'lucida sans','微软雅黑',sans-serif;
+        padding: 10px 0px 10px 10px;
+        margin-bottom: 4em;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+			}
+
+ol ol{
+		margin: 0 0 0 2em; /* 给二级列表增加一定的左边距*/
+        counter-reset: list;
+}
+ol ol ol{
+		margin: 0 0 0 2em; /* 给三级列表增加一定的左边距*/
+        counter-reset: listt;
+}
+.rectangle-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;   
+
+}
+.rectangle-list a:hover{
+    background: #eee;
+}   
+.rectangle-list a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+.rectangle-list a:after{
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;               
+}
+.rectangle-list a:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;             
+}   
+.rounded-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+.rounded-list a:hover{
+    background: #eee;
+}
+.rounded-list a:hover:before{
+    transform: rotate(360deg);  
+}
+.rounded-list a:before{
+    content: counter(li)"."counter(list);
+    counter-increment: list;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+.rounded-list1 a:hover:after{
+    left: -1.5em;
+    border-left-color: #fff;             
+}   
+.rounded-list a:hover:after{
+    left: -1.5em;
+    border-left-color: #fff;             
+} 
+.rounded-list1 a:before{
+    content: counter(li)"."counter(list)"."counter(listt);
+    counter-increment: listt;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2.5em;
+    width: 2.5em;
+    line-height: 2.5em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+    font-size: 12px;
+}
+  </style>
+</head>
+<body>
+<div id="demon">
+<h2>Git、Github上传文件</h2>
+<ol class="rectangle-list">
+    <li><a href="">在码云上用GIT上传自己的代码 </a>
+        <ol class="rounded-list">
+            <li><a href="">上传</a>
+                  <ol class="rounded-list1">
+                  	<li><a href="">先注册码云账号，完成后登陆找到新建项目，创建一个项目，完成后返回桌面</a></li>
+                      <li><a href="">在本地合适的位置创建一个新的文件夹，叫test(名字随意)</a></li>
+                      <li><a href="">进入文件夹，右键选择Git bash here</a></li>
+                      <li><a href=""> git version  ------   获取当前版本信息</a></li>
+                      <li><a href=""> git help  ------   帮助：得到主要的git命令</a></li>
+                      <li><a href=""> git init  ------   初始化git仓库</a></li>
+					  <li><a href=""><pre>编写帮助文件
+
+    touch README.md(创建帮助文件)
+
+    git add README.md (添加帮助文件)
+
+    git commit -m "注释内容"（添加注释）</pre> </a></li> 
+					  <li><a href=""><pre>如果第一次安装git这时会提示下面：
+  
+  git  config --global user.name "用户名"  （这里的用户名是你要设置的git的全局姓名或昵称）
+  
+  git  config --global user.email "邮箱地址" （设置的全局邮箱地址）
+					  </pre></a></li>  
+                  </ol>
+                   <li><a href=""> 然后再执行git commit -m "注释内容"（添加注释）就可以了</a></li>
+            </li>
+            <li><a href="">如何修改码云上的文件</a>
+            	<ol class="rounded-list1">
+                      <li><a href=""> 在选择的文件夹中首先 git bash,输入git init 初始本地化环境</a></li>
+                      <li><a href=""> 克隆GIT库代码到本地 git clone 网址</a></li>
+                      <li><a href=""> cd 项目文件</a></li>
+					  <li><a href="">git add . <b style="color: red;">（将所有文件和文件夹提交到待提交队列中）</b></a></li>  
+					  <li><a href="">git commit -m "注释"</a></li>
+					  <li><a href="">git push origin master</a></li>  
+                  </ol>
+
+            	
+            </li>
+               
+        </ol>
+    </li>
+    <li><a href="">在Github上用GIT上传自己的代码 </a>
+        <ol class="rounded-list">
+            <li><a href="">首先注册Github的账号<b style="color: red;">（为了减少不必要的麻烦邮箱号要用英文邮箱，QQ的英文邮箱就可以）</b></a>             
+            </li>
+            <li><a href="">注册好之后登陆，你会发现Github和码云很相似，只不过Github全英文罢了<br/>
+            	接下来来的步骤同Git上传步骤一样（包括修改文件等）
+            </a></li>  
+        </ol>
+    </li> 
+    <li><a href="">建立网站</a>
+                  <ol class="rounded-list1">
+                      <li><a href="">申请域名</a>
+		                  <ol class="rounded-list1">
+		                      <li><a href="">用浏览器搜索“万网”，进入官网注册账号</a></li>
+		                      <li><a href="">搜索你想要的域名（这里是收费的）</a></li>
+		                      <li><a href="">选中你想要的域名（未被注册过的）付费操作</a></li>
+							  <li><a href="">成功付费后打开你的控制台，找到你刚注册的域名进行解析</a></li>  
+							  <li><a href="">解析有俩种，第一种新手模式，另一种高级设置模式，新手模式系统会帮你搞定<br/>
+							  	高级设置模式需自己配置
+							  </a></li>
+							  <li><a href="">高级设置模式配置步骤：
+							     记录类型：选NAME  主机记录：@  完成再次创建一个解析
+							      记录类型：选NAME  主机记录：www 
+							  </a></li> 
+							  <li><a href="">在github打开项目新建一个文件，把你的域名复制进去</a></li>
+							  <li><a href="">然后你就可以通过www.域名访问你的项目了</a></li>
+		                  </ol>
+                      	
+                      </li>
+                      <li><a href="">List item</a></li>
+                      <li><a href="">List item</a></li>
+					  <li><a href="">List item</a></li>  
+					  <li><a href="">List item</a></li>
+					  <li><a href="">List item</a></li>  
+                  </ol>
+
+            </li>
+</ol>
+
+</div>
+
+
+
+
+
+</body>
+</html>

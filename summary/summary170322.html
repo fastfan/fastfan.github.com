@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>总结</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+    width: 1000px;
+    margin: 0px auto;
+    background-image: url(images/12.jpg);
+   }
+   h1{
+    color: tomato;
+   }
+   h2,h3{
+    color: blue;
+   }
+   p{
+    color: green;
+    text-indent: 2em;
+   }
+ol{
+        counter-reset: li; /* 创建一个计数器 */
+        list-style: none; /* 清除列表默认的编码*/
+        *list-style: decimal; /* 让IE6/7具有默认的编码 */
+        font: 15px 'trebuchet MS', 'lucida sans','微软雅黑',sans-serif;
+        padding: 10px 0px 10px 10px;
+        margin-bottom: 4em;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+			}
+
+ol ol{
+		margin: 0 0 0 2em; /* 给二级列表增加一定的左边距*/
+        counter-reset: list;
+}
+ol ol ol{
+		margin: 0 0 0 2em; /* 给三级列表增加一定的左边距*/
+        counter-reset: listt;
+}
+.rectangle-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;   
+
+}
+.rectangle-list a:hover{
+    background: #eee;
+}   
+.rectangle-list a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+.rectangle-list a:after{
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;               
+}
+.rectangle-list a:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;             
+}   
+.rounded-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+.rounded-list a:hover{
+    background: #eee;
+}
+.rounded-list a:hover:before{
+    transform: rotate(360deg);  
+}
+.rounded-list a:before{
+    content: counter(li)"."counter(list);
+    counter-increment: list;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+.rounded-list1 a:hover:after{
+    left: -1.5em;
+    border-left-color: #fff;             
+}   
+.rounded-list a:hover:after{
+    left: -1.5em;
+    border-left-color: #fff;             
+} 
+.rounded-list1 a:before{
+    content: counter(li)"."counter(list)"."counter(listt);
+    counter-increment: listt;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2.5em;
+    width: 2.5em;
+    line-height: 2.5em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+    font-size: 12px;
+}
+  </style>
+</head>
+<body>
+<div id="demon">
+<h2>变量、作用域及内存</h2>
+<ol class="rectangle-list">
+    <li><a href="">变量及作用域</a>
+	    <ol class="rounded-list">
+	         <li><a href="">基本类型和引用类型的值<p>ECMAScript 变量可能包含两种不同的数据类型的值：基本类型值和引用类型值。基本类型值指的是那些保存在栈内存中的简单数据段，即这种值完全保存在内存中的一个位置。而引用类型值则是指那些保存在堆内存中的对象，意思是变量中保存的实际上只是一个指针，这个指针指向内存中的另一个位置，该位置保存对象。将一个值赋给变量时，解析器必须确定这个值是基本类型值，还是引用类型值。基本类型值有以下几种：Undefined、Null、Boolean、Number 和 String</p></a></li>
+            <li><a href="">动态属性<p>定义基本类型值和引用类型值的方式是相似的：创建一个变量并为该变量赋值。但是，<br/>
+            当这个值保存到变量中以后，对不同类型值可以执行的操作则大相径庭。<br/>
+			var box = new Object();	//创建引用类型<br/>
+			box.name = 'Lee';	//新增一个属性<br/>
+			alert(box.name);	//输出<br/>
+			如果是基本类型的值添加属性的话，就会出现问题了。<br/>
+			var box = 'Lee';	//创建一个基本类型<br/>
+			box.age = 27;	//给基本类型添加属性<br/>
+			alert(box.age);	//undefined<br/>
+            </p></a></li>
+		   <li><a href="">复制变量值<p>在变量复制方面，基本类型和引用类型也有所不同。基本类型复制的是值本身，而引用类型复制的是地址。<br/>
+			var box = 'Lee';	//在栈内存生成一个 box 'Lee'<br/>
+			var box2 = box;	//在栈内存再生成一个 box2 'Lee'<br/>
+			<b>两个变量分别操作时互不影响。</b></p>
+			<p>var box = new Object();	//创建一个引用类型<br/>
+			box.name = 'Lee';	//新增一个属性<br/>
+			var box2 = box;	//把引用地址赋值给 box2<br/>
+			在引用类型中，box2 其实就是 box，因为他们指向的是同一个对象。<br/>
+			如果这个对象中的 name 属性被修改了，box2.name 和 box.name 输出的值都会被相应修改掉了。
+            </p></a></li>  
+		  <li><a href="">传递参数<p>ECMAScript 中所有函数的参数都是按值传递的，言下之意就是说，参数不会按引用传递，虽然变量有基本类型和引用类型之</p>
+          <pre>function box(num) {	               //按值传递，传递的参数是基本类型
+			num += 10;	//这里的 num 是局部变量，全局无效
+			return num;
+			}
+			var num = 50;
+			var result = box(num);
+			alert(result);	//60
+			alert(num);	//50
+          <p><b>以上的代码中，传递的参数是一个基本类型的值。而函数里的 num 是一个局部变量，和外面的 num 没有任何联系。</b></p></a></pre>
+		  </li>
+			<pre><li><a href="">检测类型<p>要检测一个变量的类型，我们可以通过 typeof 运算符来判别。诸如：
+			var box = 'Lee';
+			alert(typeof box);	//string
+			虽然 typeof 运算符在检查基本数据类型的时候非常好用，但检测引用类型的时候，它就不是那么好用了。
+			通常，我们并不想知道它是不是对象，而是想知道它到底是什么类型的对
+			象。因为数组也是 object，null 也是 Object 等等。
+			这时我们应该采用 instanceof 运算符来查看。
+			var box = [1,2,3];
+			alert(box instanceof Array);	//是否是数组
+			var box2 = {};
+			alert(box2 instanceof Object);	//是否是对象
+			var box3 = /g/;
+			alert(box3 instanceof RegExp);	//是否是正则表达式
+			var box4 = new String('Lee');
+			alert(box4 instanceof String);	//是否是字符串对象
+<b>当使用 instanceof 检查基本类型的值时，它会返回 false。</b></p></a></li></pre>
+         <pre> <li><a href="">执行环境及作用域<p>执行环境是 JavaScript 中最为重要的一个概念。<br/>执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。
+全局执行环境是最外围的执行环境。在 Web 浏览器中，全局执行环境被认为是 window 对象。<br/>因此所有的全局变量和函数都是作为 window 对象的属性和方法创建的。
+var box = 'blue';	//声明一个全局变量
+function setBox() {
+alert(box);	//全局变量可以在函数里访问
+}
+setBox();	//执行函数
+全局的变量和函数，都是 window 对象的属性和方法。
+var box = 'blue';
+function setBox() {
+alert(window.box);	//全局变量即 window 的属性
+}
+window.setBox();	//全局函数即 window 的方法
+     <b>当执行环境中的所有代码执行完毕后，该环境被销毁，保存在其中的所有变量和函数定义也随之销毁。
+     如果是全局环境下，需要程序执行完毕，或者网页被关闭才会销毁。每个执行环境都有一个与之关联的变量
+     对象，就好比全局的 window 可以调用变量和属性一样。局部的环境也有一个类似 window 的变量对象
+     ，环境中定义的所有变量和函数都保存在这个对象中。(我们无法访问这个变量对象，但解析器会处理数据时后台使用它)
+      函数里的局部作用域里的变量替换全局变量，但作用域仅限在函数体内这个局部环境。</b>
+var box = 'blue';
+function setBox() { var box = 'red'; //这里是局部变量，出来就不认识了
+alert(box);
+}
+setBox();
+alert(box);
+通过传参，可以替换函数体内的局部变量，但作用域仅限在函数体内这个局部环境。
+var box = 'blue';
+function setBox(box) {	//通过传参，替换了全局变量
+alert(box);
+}
+setBox('red');
+alert(box);
+函数体内还包含着函数，只有这个函数才可以访问内一层的函数。
+var box = 'blue';
+function setBox() {
+function setColor() {
+var b = 'orange';
+alert(box);
+alert(b);
+}
+setColor();	//setColor()的执行环境在 setBox()内
+}
+setBox();
+   <b>每个函数被调用时都会创建自己的执行环境。当执行到这个函数时，函数的环境就会被推到环境栈中去执行 ,
+   而执行后又在环境栈中弹出(退出)，把控制权交给上一级的执行环境。当代码在一个环境中执行时,
+   就会形成一种叫做作用域链的东西。行环境中它的用途是保证<br/>对执有访问权限的变量和函数进行有序访问。作用域链的前端，就是执行环境的变量对象。
+      </b></p></a></li></pre>
+    <pre><li><a href="">没有块级作用域<p>块级作用域表示诸如 if 语句等有花括号封闭的代码块，所以，支持条件判断来定义变
+	量。if (true) {	//if 语句代码块没有局部作用域
+	var box = 'Lee';
+	}
+	alert(box);
+	for 循环语句也是如此
+	for (var i = 0; i < 10; i ++) {	//没有局部作用域
+	var box = 'Lee';
+	}
+	alert(i);
+	alert(box);
+	var 关键字在函数里的区别
+	function box(num1, num2) {
+	var sum = num1 + num2;	//如果去掉 var 就是全局变量了
+	return sum;
+	}
+	alert(box(10,10));
+	alert(sum);	//报错
+
+		</p></a></li>
+		</pre>	          
+		</ol>
+  </ol>
+
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>总结</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+     .one>li>ol{
+     	list-style: square;
+     }
+
+	</style>
+</head>
+<body>
+     <h1>对象和数组</h1>
+
+
+     <p><b>对象：</b>就是一种类型，即“引用类型”，而对象的值就是引用类型的实例<br>在ECMAScript中引用类型是一种数据结构，用于将<b>数据</b>和<b>功能</b><br/>组织在一起，它常被称作“类”。<br>虽然ECMAScript是一门面向对象的语言，却不具备传统面向对象语言所支持的类和接口等基本结构。</p>
+
+      <ol class="one">
+         <li>Object类型
+            <ol>
+                 <li>new运算符</li>
+                 <li>字面量表示法</li>
+            </ol>
+         </li>
+         
+    <h3>使用new运算符</h3>
+    <p>例：var goods=new Object();
+          <ol>
+              <li>为对象添加属性：通过<b>对象名称</b>+<b>“.”</b>+<b>属性名</b>来进行声明<br>
+               例：goods.name="西瓜"；
+              </li>
+              <li>输出有俩种形式的写法
+                     <ol>
+                         <li>document.write(goods['price'])</li>
+                         <li>document.write(goods.price)</li>
+                     </ol>
+              </li>
+              <li>为对象添加行为（函数或方法）<br>
+                 例：goods.input();<b>调用对象行为（函数）</b>。
+              </li>
+              <li>字面量创建属性和行为<br>
+               例：var user={
+                       name:'xiaohei',<br>
+                       sex:'男',<br>
+                       age:18,<br>
+                       music:function(){<br>
+                       alert('我会唱歌');<br>
+                       }<br>
+               }
+                document.write(user.name+user['sex']);<br>
+                user.music();<br/>
+                <style="color:red;">注意：属性名后用冒号而不是等于，属性之间用逗号而不是分号来相隔。</style>
+              </li>
+              <li>在实际开发中，更偏向于“字面量形式”表示。</li>
+              <li>遍历对象for in<br>
+              例：var user={
+              name='xiaohei',<br>
+              age=18,<br>
+              sex='男',}<br>
+              for (attr in user){<br>
+              document.write(user[attr]);<br>
+              }<br>
+            }zhuyi：attr接受的是string类型的属性名称。
+                               
+
+
+              </li>
+
+          </ol>
+
+
+
+    </p>
+    <h3>匿名函数赋值给变量的形式，不能再赋值前调用该函数。</h3>
+</body>
+</html>

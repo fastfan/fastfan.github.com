@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>总结</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+     .one>li>ol{
+     	list-style: square;
+     }
+
+	</style>
+</head>
+<body>
+     <h1>javascript流程控制语句</h1>
+
+      <ol class="one">
+         <li>声明语句
+            <ol>
+                 <li>变量声明语句</li>
+                 <li>标签声明语句</li>
+            </ol>
+         </li>
+         <li>表达式语句
+	         <ol>
+	             <li>变量赋值语句</li>
+	             <li>函数调用语句</li>
+	             <li>属性赋值语句</li>
+	             <li>方法调用语句</li>
+	         </ol>
+         </li>
+         <li>分支语句
+            <ol>
+                <li>条件分支语句 <b>if....else,if</b></li>
+                <li>多重分支语句 <b>switch</b></li>
+               
+            </ol>
+         </li>
+         <li>循环语句
+             <ol>
+                <li>for</li>
+                <li>for.....in</li>
+                <li>do.....while</li>
+                <li>while</li>
+             </ol>
+         </li>
+         <li>控制语句
+              <ol>
+                  <li>继续执行字句 <b>“continue”</b></li>
+                  <li>终端执行语句  <b>"break"</b></li>
+                  <li>函数返回数据 <b>"return"</b></li>
+              </ol>
+         </li> 
+   </ol>
+   <h2>语句详解</h2>
+   <h3>do....while语句</h3>
+      <p>是一种“先运行”，“后判断”的语句
+          <ol>
+             <li>第一步：执行do里面的语句（循环体）</li>
+             <li>第二步：判断条件</li>
+             <li>返回do里面的语句并执行输出</li>
+          </ol>
+      </p>
+      <p><strong>先执行一次循环体，之后再判断条件，如果条件满足继续执行循环，否则停止循环。</strong></p>
+    <h3>while语句</h3>
+      <p>先判断后执行</p>
+    <h3>for语句</h3>
+      <p>先判断后执行的循环语句
+           <ol>
+               <li>先声明变量</li>
+               <li>判断条件</li>
+               <li>执行循环体</li>
+               <li>变量自身条件调整（如：i++，i--等）</li>
+               <li>在判断条件</li>
+           </ol>     
+        </p>
+   <h2>函数</h2>
+   <p>函数是定义一次但却可以调用或执行任意多次的js代码，函数有时<br/>
+   会有参数即函数被调用时制定了值得局部变量，函数常常便用这些参数<br/>来计算一个“返回值”，这个值也成为函数调用表达式的值。</p>
+   <h3>函数声明</h3>
+       <ol>
+           <li>使用<b>function</b>来声明，后跟一组<b>参数</b>以及<b>函数体</b>
+           </li>
+           <li>特点
+               <ol>
+                   <li>函数声明会自动提前（不在意前后顺序）</li>
+                   <li>一次声明多次调用</li>
+               </ol>
+           </li>
+           <li>优点
+               <ol>
+                   <li>减少代码冗余</li>
+                   <li>隐藏实现细节，封装</li>
+               </ol>
+           </li>
+       </ol>    
+    <h3>有参函数</h3>
+       <ol>
+           <li>特点
+               <ol>
+                   <li>多个参数用<strong>“逗号”隔开</strong></li>
+                   <li>有参函数比无参函数扩展性大</li>
+               </ol>
+           </li>
+        </ol>   
+     <h3>有返回值的函数</h3>
+        <p>通过<b>“return”进行返回，return之和代码不会被执行。</b></p>
+        <ol>
+           <li>特点
+               <ol>
+                   <li>通过“return”讲计算结果返回调用者</li>
+                   <li>当参数传递有问题时给出提示并终止函数</li>
+               </ol>
+           </li>
+         </ol>
+    <h3>函数内部声明的变量只能在函数内部使用</h3>
+    <h3>函数内部声明的变量在函数外部是不能直接访问的</h3>
+</body>
+</html>
