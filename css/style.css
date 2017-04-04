@@ -32,6 +32,11 @@ body{
 	color: #FFF;
 	line-height: 131px;
 }
+.index{
+	text-indent: 37px;
+    line-height: 40px;
+    margin: 10px 15px;
+}
 .flower{
 	float: right;
 	background: url(../images/flower.png) no-repeat;
