@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>总结</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+    width: 1000px;
+    margin: 0px auto;
+    background-image: url(images/12.jpg);
+   }
+   h1{
+    color: tomato;
+   }
+   h2,h3{
+    color: blue;
+   }
+   p{
+    color: green;
+   }
+ol{
+        counter-reset: li; /* 创建一个计数器 */
+        list-style: none; /* 清除列表默认的编码*/
+        *list-style: decimal; /* 让IE6/7具有默认的编码 */
+        font: 15px 'trebuchet MS', 'lucida sans','微软雅黑',sans-serif;
+        padding: 10px 0px 10px 10px;
+        margin-bottom: 4em;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+			}
+
+ol ol{
+		margin: 0 0 0 2em; /* 给二级列表增加一定的左边距*/
+        counter-reset: list;
+}
+ol ol ol{
+		margin: 0 0 0 2em; /* 给三级列表增加一定的左边距*/
+        counter-reset: listt;
+}
+.rectangle-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;   
+
+}
+.rectangle-list a:hover{
+    background: #eee;
+}   
+.rectangle-list a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+.rectangle-list a:after{
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;               
+}
+.rectangle-list a:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;             
+}   
+.rounded-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+.rounded-list a:hover{
+    background: #eee;
+}
+.rounded-list a:hover:before{
+    transform: rotate(360deg);  
+}
+.rounded-list a:before{
+    content: counter(li)"."counter(list);
+    counter-increment: list;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+.rounded-list1 a:hover:after{
+    left: -1.5em;
+    border-left-color: #fff;             
+}   
+.rounded-list a:hover:after{
+    left: -1.5em;
+    border-left-color: #fff;             
+} 
+.rounded-list1 a:before{
+    content: counter(li)"."counter(list)"."counter(listt);
+    counter-increment: listt;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2.5em;
+    width: 2.5em;
+    line-height: 2.5em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+    font-size: 12px;
+}
+  </style>
+</head>
+<body>
+<div id="demon">
+<h2>DOM （文档对象模型(Document Object Model)）</h2>
+<ol class="rectangle-list">
+    <li><a href="">DOM 简介</a>
+        <ol class="rounded-list">
+            <li><a href="">
+            	文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，
+            	用来表示文档中对象的标准模型就称为DOM。
+            </a></li>
+            <li><a href="">  通过 JavaScript，您可以重构整个HTML文档。您可以添加、移除、改变或重排页面上的项目。要改变页面的某个东西，
+				            	JavaScript就需要对HTML文档中所有元素进行访问的入口。这个入口，
+				            	连同对HTML 元素进行添加、移动、改变或移除的方法和属性，都是通过文档对象模型来获得的（DOM）。在 1998 年，W3C 发布了第一级的 DOM 规范。
+				            	这个规范允许访问和操作 HTML 页面中的每一个单独的元素。所有的浏览器都执行了这个标准，因此，DOM 的兼容性问题也几乎难觅踪影了。
+				            	DOM 可被 JavaScript 用来读取、改变 HTML、XHTML 以及 XML 文档。
+            </a></li>
+   
+        </ol>
+    </li>
+    <li><a href="">节点</a>
+    	<ol class="rounded-list">
+            <li><a href=""> <pre>根据 DOM，HTML 文档中的每个成分都是一个节点。
+        DOM 是这样规定的：
+
+	整个文档是一个文档节点 
+	每个 HTML 标签是一个元素节点 
+	包含在 HTML 元素中的文本是文本节点 
+	每一个 HTML 属性是一个属性节点 
+	注释属于注释节点 </pre>
+            </a></li>       
+       </ol>
+    </li>
+    <li><a href="">Node 层次</a>
+    <ol class="rounded-list">
+            <li><a href=""> <pre> 节点彼此都有等级关系。HTML 文档中的所有节点组成了一个文档树（或节点树）。
+	HTML 文档中的每个元素、属性、文本等都代表着树中的一个节点。树起始于文档节点，并由此继续伸出枝条，
+	直到处于这棵树最低级别的所有文本节点为止。 </pre><br/>
+	下面这个图片表示一个文档树（节点树）：<br/>
+	<img src="images/DOM.png" /><br/>
+	上面所有的节点彼此间都存在关系。除文档节点之外的每个节点都有父节点。
+            </a></li>       
+       </ol>
+    </li>
+                               
+</ol>
+
+</div>
+
+
+
+
+
+</body>
+</html>
