@@ -17,6 +17,7 @@
    }
    p{
     color: green;
+    text-indent: 30px;
    }
 ol{
         counter-reset: li; /* 创建一个计数器 */
@@ -143,45 +144,67 @@ ol ol ol{
 </head>
 <body>
 <div id="demon">
-<h2></h2>
+<h2>DOM节点的增、删、查、改</h2>
 <ol class="rectangle-list">
-    <li><a href="">赖晓女</a></li>
-    <li><a href="">List item</a></li>
-    <li><a href="">List item</a>
-        <ol class="rounded-list">
-            <li><a href="">List sub item</a>
+    <li><a href="">节点综述
+    <p>根据 W3C 的 HTML DOM 标准，HTML 文档中的所有内容都是节点： 
+		整个文档是一个文档节点 
+		每个 HTML 元素是元素节点 
+		HTML 元素内的文本是文本节点 
+		每个 HTML 属性是属性节点 
+		注释是注释节点 
+    </p></a>
+    <ol class="rounded-list">
+            <li><a href="">获取元素节点方法</a>
                   <ol class="rounded-list1">
-                      <li><a href="">List item</a></li>
-                      <li><a href="">List item</a></li>
-                      <li><a href="">List item</a></li>
-					  <li><a href="">List item</a></li>  
-					  <li><a href="">List item</a></li>
-					  <li><a href="">List item</a></li>  
+                      <li><a href="">var node = document.getElementById("nodeId"); //获取id</a></li>
+                      <li><a href="">var nodelist = document.getElementsByClassName("nodeclassname");//获取标签名</a></li>
+                      <li><a href="">var nodelist = document.getElementsByTagName("nodetagname");//获取类名</a></li> 
                   </ol>
-
             </li>
-            <li><a href="">List sub item</a></li>
-            <li><a href="">List sub item</a></li>
-            <li><a href="">List item</a></li>
-            <li><a href="">List item</a></li>
-            <li><a href="">List item</a></li>
-            <li><a href="">List item</a></li>    
+            <li><a href="">获取到元素节点以后我们可以对他进行的操作：①对自身的操作。②对子节点的操作。③对兄弟节点的操作。④对父节点的操作 </a>
+            	 <ol class="rounded-list1">
+                      <li><a href=""> 删除自身：node.parentNode.removeChild(node); </a></li>
+                      <li><a href="">判断是否有子节点：var boolean = node.hasChildNodes(); </a></li>
+                      <li><a href="">获取子节点列表：var childList = node.childNodes; </a></li> 
+                      <li><a href="">删除子节点。node.removeChild(childNode); </a></li>
+                      <li><a href="">在子节点尾部插入一个子节点:node.appendChild(childNode); </a></li>
+                      <li><a href="">在子节点收不插入一个子节点:node.insertBefore(childNode); </a></li>
+                      <li><a href="">用A节点替换B节点：node.replaceChild(A,B); </a></li>
+                      <li><a href="">获取父节点:node.parentNode </a></li>
+                      
+                            </ol>
+            </li>
+                      <li><a href="">创建节点createElement()； var node = document.createElement(“div”);</a></li> 
+                      <li><a href=""><pre>创建文本节点:
+createTextNode()
+var value = document.createTextNode(“text”);
+创建一个文本节点，常用来往元素节点里添加内容，也不会自动添加到文档里。
+这个添加的是静态文本，
+如果插入的内容不带HTML格式，用createTextNode比innerHTML安全，
+<b style="color: red";>innerText有浏览器不兼容的问题，因此用createTextNode很好使。</b>
+</pre>                </a></li>
+                      <li><a href=""><pre>插入节点到目标节点的前面:
+insertBefore()
+var node = document.createElement(“div”);
+var _p = document.createElement(“p”);
+var _span = document.createElement(“span”);
+node.appendChild(_p);
+node.insertBefore(_span, _p);
+"span"节点在"p"节点前面插入，其中第二个参数是可选，如果第二个参数不写，将默认添加到文档的最后，相当于appendChild。
+同样，appendChild和insertBefore，如果是已存在节点，他们都会自动先删除原节点，然后移动到你指定的地方。</pre>
+                      </a></li>
+                      <li><a href=""><pre>设置节点属性:
+setAttribute()
+node.setAttribute("title","abc");
+class属性不能这么设置。</pre>
+                      </a></li>   
+                      <li><a href=""><pre>获取节点属性:
+getAttribute()
+node.getAttribute("title");</pre></a></li>
         </ol>
     </li>
-    <li><a href="">List item</a></li>
-    <li><a href="">List item</a></li>
-    <li><a href="">List item</a></li>
-    <li><a href="">List item</a></li>  
-    <li><a href="">List item</a></li>
-    <li><a href="">List item</a></li>  
-    <li><a href="">List item</a></li>
-    <li><a href="">List item</a></li>  
-    <li><a href="">List item</a></li>
-    <li><a href="">List item</a></li>
-    <li><a href="">List item</a></li>
-    <li><a href="">List item</a></li>  
-    <li><a href="">List item</a></li>
-    <li><a href="">List item</a></li>                           
+                     
 </ol>
 
 </div>

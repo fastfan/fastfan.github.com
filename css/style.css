@@ -4,6 +4,51 @@ body{
 	font-size: 12px;
     background: #226039 url(../img/bg.jpg)  no-repeat;
     color: #5d5d5d;
+    font-family:Arial,Helvetica,sans-serif;font-size:100%;
+}
+ul li a:link{
+	color:chocolate;
+	text-decoration: none;
+}
+ul li a:visited{
+	color:darkorchid;
+	text-decoration: none;
+}
+ul li a:hover{
+	color:#0000FF;
+	text-decoration: underline;
+}
+.text a:hover,.fashion li a:hover {
+  color: #0a0a0a;
+  text-shadow: 
+    /* Color 1 */
+    1px 1px #61b4de,
+    /* Color 2 */
+    2px 2px #91c467,
+    /* Color 3 */
+    3px 3px #f3a14b,
+    /* Color 4 */
+    4px 4px #e84c50,
+    /* Color 5 */
+    5px 5px #4e5965;
+}
+.text a,.fashion li a{
+  color: #ededed;
+  font-family: Oswald;
+  transition: 0.5s all ease;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 
+    /* Color 1 */
+    1px 1px #61b4de, 2px 2px #61b4de, 3px 3px #61b4de, 4px 4px #61b4de, 5px 5px #61b4de,
+    /* Color 2 */
+    6px 6px #91c467, 7px 7px #91c467, 8px 8px #91c467, 9px 9px #91c467, 10px 10px #91c467,
+    /* Color 3 */
+    11px 11px #f3a14b, 12px 12px #f3a14b, 13px 13px #f3a14b, 14px 14px #f3a14b, 15px 15px #f3a14b,
+    /* Color 4 */
+    16px 16px #e84c50, 17px 17px #e84c50, 18px 18px #e84c50, 19px 19px #e84c50, 20px 20px #e84c50,
+    /* Color 5 */
+    21px 21px #4e5965, 22px 22px #4e5965, 23px 23px #4e5965, 24px 24px #4e5965, 25px 25px #4e5965;
 }
 .header{
 	width: 100%;
@@ -68,8 +113,8 @@ body{
 	margin:50px auto;
 }
 .main_left{
-	width: 775px;
-	border: 1px solid #FF6347;
+	width: 745px;
+	border: 15px solid #FF6347;
 	float: left;
 	font-size: 18px;
 	margin-right: 46px;
@@ -77,16 +122,23 @@ body{
 	text-align: center;
 }
 .main_right{
-	width: 375px;
-	border: 1px solid #0000FF;
+	width: 345px;
+	border: 15px solid chocolate;
 	float: left;
 	font-size: 18px;
-	color: #0000FF;
+	color: chocolate;
 	
 }
 .main_right h2{
-	margin-left: 15px;
+	margin-left: 35px;
 }
 .main_right ul{
-	margin-left: 30px;
+	margin-left: 50px;
 }
+.asymmetric-radius{
+	border-radius: 90px 60px 30px 5px;
+}
+.asymmetric-corners {
+  border-radius: 90px 60px 30px 5px;
+}
+
