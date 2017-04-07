@@ -144,9 +144,63 @@ ol ol ol{
 </head>
 <body>
 <div id="demon">
-<h2></h2>
+<h2>DOM表格的增、删、查、改</h2>
 <ol class="rectangle-list">
-    <li><a href="">赖晓女</a></li>
+    <li><a href="">操作表格</a>
+    	<ol class="rounded-list">
+            <li><a href="">用DOM创建表格</a>
+                  <ol class="rounded-list1">
+                      <li><a href=""> 
+                      	         var table = document.createElement('table');//创建表格table<br/>
+								 table.border = 1;//设置table的属性<br/>
+								 table.width = 300;//设置table的属性</a></li>
+                      <li><a href="">
+                      	        var caption = document.createElement('caption');//创建表格的元素caption<br/>
+							    table.appendChild(caption);//给table添加子节点（capation）<br/>
+								caption.appendChild(document.createTextNode('人员表'));//给caption添加子节点，子节点的文本节点为“人员表”</a></li>
+                      <li><a href=""> var thead = document.createElement('thead');//创建thead<br/>
+                                      table.appendChild(thead);//给table添加子节点thead</a></li>
+					  <li><a href="">var tr = document.createElement('tr');//创建tr(行)<br/>
+                                     thead.appendChild(tr);//给thead添加子节点tr</a></li>  
+					  <li><a href="">var th1 = document.createElement('th');//创建表头th<br/>
+                                     var th2 = document.createElement('th');</a></li>
+					  <li><a href="">tr.appendChild(th1);//给tr添加子节点th1<br/>
+							 th1.appendChild(document.createTextNode('姓名'));//给th1添加文本节点，内容为“姓名”<br/>
+							 tr.appendChild(th2);<br/>
+							 th2.appendChild(document.createTextNode('年龄'));<br/>
+							 document.body.appendChild(table);//往body下添加table表格</a></li>  
+                  </ol>
+
+            </li>
+            <li><a href="">属性或方法 说明
+            <p>caption //保存着caption元素的引用;<br/>
+				tBodies //保存着tbody元素的HTMLCollection集合;<br/>
+				tFoot //保存着对tfoot元素的引用;<br/>
+				tHead //保存着对thead元素的引用;<br/>
+				rows //保存着对tr元素的HTMLCollection集合;<br/>
+				createTHead() //创建thead元素,并返回引用;<br/>
+				createTFoot() //创建tfoot元素,并返回引用;<br/>
+				createCpation() //创建caption元素,并返回引用;<br/>
+				deleteTHead() //删除thead元素;<br/>
+				deleteTFoot() //删除tfoot元素;<br/>
+				deleteCaption() //删除caption元素;<br/>
+				deleteRow(pos) //删除指定的行;<br/>
+				insertRow(pos) //向rows集合中的指定位置插入一行;<br/><br/>
+				tbody元素添加的属性和方法<br/>
+				rows //保存着tbody元素中行的HTMLCollection;<br/>
+				deleteRow(pos) //删除指定位置的行;<br/>
+				insertRow(pos) //向rows集合中的指定位置插入一行;<br/>
+				tr元素添加的属性和方法<br/><br/>
+				cells //保存着tr元素中单元格的HTMLCollectioin集合;<br/>
+				deleteCell(pos) //删除指定位置的单元格;<br/>
+				insertCell(pos) //向cells集合的指定位置插入一个单元格,并返回引用;</p></a></li>
+            <li><a href="">List sub item</a></li>
+            <li><a href="">List item</a></li>
+            <li><a href="">List item</a></li>
+            <li><a href="">List item</a></li>
+            <li><a href="">List item</a></li>    
+        </ol>
+    </li>
     <li><a href="">List item</a></li>
     <li><a href="">List item</a>
         <ol class="rounded-list">
