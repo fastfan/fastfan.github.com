@@ -157,50 +157,58 @@ strong,b{
 <div id="demon">
 <h2>js事件(Event)知识整理及案例(一)</h2>
 <ol class="rectangle-list">
-    <li><a href="">鼠标事件</a></li>
+    <li><a href="">鼠标事件(常用详解)</a></li>
         <ol class="rounded-list">
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
+        	<li><a href="">onmouseover 事件会在鼠标指针移动到指定的对象上时发生。
+            </a></li>
+        	<li><a href="">onmousemove 事件会在鼠标指针移动时发生。
+            </a></li>
+        	<li><a href="">onmouseout 事件会在鼠标指针移出指定的对象时发生。
+            </a></li>
+        	<li><a href="">onmousedown 事件会在鼠标按键被按下时发生。</a></li>
+        	<li><a href="">onmouseup 事件会在鼠标按键被松开时发生。</a></li>
+        	<li><a href="javascript:;">onclick 事件会在对象被点击时发生。</a></li>
+        	<li><a href="javascript:;">onchange 事件会在域的内容改变时发生。</a></li>
+        	<li><a href="javascript:;">onmouseenter 事件会在鼠标进入后触发。</a></li>
+        	<li><a href="javascript:;">onmouseleave 事件会在鼠标离开后触发。</a></li>
+        	<p>onmouseover与onmouseenter<br/>
+        	   onmouseout与onmouseleave<br/>
+        	   的区别在于onmouseenter与onmouseleave事件是不冒泡的。
+        	</p>
         </ol>
-        
-    
-    <li><a href="javascript:;">List item</a></li>
-    <li><a href="javascript:;">List item</a></li>
-    <li><a href="javascript:;">List item</a></li>
+         <p>
+         	鼠标移动到目标元素上的那一刻，首先触发mouseover<br/>
+			之后如果光标继续在元素上移动，则不断触发mousemove<br/>
+			用鼠标点击时出发onclick，双击时出发ondblclick<br/>
+			如果按下鼠标上的设备(左键,右键,滚轮……)，则触发mousedown<br/>
+			当设备弹起的时候触发mouseup<br/>
+			鼠标移出元素的那一刻，触发mouseout。
+         </p>
+    <li><a href="">键盘事件</a></li>
+    <ol class="rounded-list">
+        	<li><a href="">onkeydown 	某个键盘的键被按下
+            </a></li>
+        	<li><a href="">onkeypress 	某个键盘的键被按下或按住<b>(很少用到，因为降低浏览器性能)</b>
+            </a></li>
+        	<li><a href="">onkeyup 	某个键盘的键被松开
+           </a></li>
+        </ol>
+    <li><a href="">浏览器事件</a></li>
         <ol class="rounded-list">
-            <li><a href="">List sub item</a>
-                  <ol class="rounded-list1">
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                  </ol>
-
-            </li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            
+            <li><a href="">onload 	某个页面或图像被完成加载</a></li>
+            <li><a href="">onresize 	窗口或框架被调整尺寸</a></li>
+            <li><a href=""> onscroll 事件在元素滚动条在滚动时触发</a></li>  
         </ol>
     </li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   
+    <li><a href="">触摸事件</a></li>
+      <ol class="rounded-list">
+            <li><a href="">touchstart:当手指触摸屏幕时触发；即使已经有一个手指放在了屏幕上也会触发。</a></li>
+            <li><a href="">touchmove:当手指在屏幕上滑动时连续的触发。在这个事件发生期间，调用preventDefault()可阻止滚动。</a></li>
+            <li><a href="">touchend:当手指从屏幕上移开时触发。</a></li>  
+            <li><a href=""> touchcancel:当系统停止跟踪触摸时触发。关于此事件的确切触发事件，文档中没有明确说明。
+            <b>(做游戏时用到，其他时候很少用到)</b>
+            </a></li>  
+       </ol>                      
 </ol>
 
 </div>
