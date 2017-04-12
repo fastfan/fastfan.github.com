@@ -16,9 +16,25 @@
     color: blue;
    }
    p{
-    color: green;
-   text-indent: 30px;
-   }
+	font-size: 14px;
+	color: tomato;
+	margin-left: 60px;
+	text-indent: 30px;
+}
+strong,b{
+	color: chocolate;
+	font-style: italic;
+	font-weight: bold;
+}
+.Big a{
+	font-size: 20px;
+	color: #9932CC;
+}
+img{
+	width: 350px;
+	height: 100px;
+	margin: 10px 0px 10px 20px;
+}
 ol{
         counter-reset: li; /* 创建一个计数器 */
         list-style: none; /* 清除列表默认的编码*/
@@ -140,24 +156,14 @@ ol ol ol{
     transition: all .3s ease-out;
     font-size: 12px;
 }
-p{
-	font-size: 14px;
-	text-indent: 2px;
-	color: tomato;
-	margin-left: 60px;
-}
-strong,b{
-	color: chocolate;
-	font-style: italic;
-	font-weight: bold;
-}
+
   </style>
 </head>
 <body>
 <div id="demon">
 <h2>js事件(Event)知识整理及案例(一)</h2>
 <ol class="rectangle-list">
-    <li><a href="">鼠标事件</a></li>
+     <li class="Big"><a href="">Event事件兼容性探究</a></li>
         <ol class="rounded-list">
         	<li><a href="javascript:;">List item</a></li>
         	<li><a href="javascript:;">List item</a></li>

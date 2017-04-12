@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>总结</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body {
+				width: 1000px;
+				margin: 0px auto;
+				background-image: url(images/12.jpg);
+			}
+			
+			h1 {
+				color: tomato;
+			}
+			
+			h2,h3 {
+				color: blue;
+			}
+			
+			
+			p {
+				color: green;
+				text-indent: 30px;
+			}
+			
+			ol {
+				counter-reset: li;
+				/* 创建一个计数器 */
+				list-style: none;
+				/* 清除列表默认的编码*/
+				*list-style: decimal;
+				/* 让IE6/7具有默认的编码 */
+				font: 15px 'trebuchet MS', 'lucida sans', '微软雅黑', sans-serif;
+				padding: 10px 0px 10px 10px;
+				margin-bottom: 4em;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+			}
+			
+			ol ol {
+				margin: 0 0 0 2em;
+				/* 给二级列表增加一定的左边距*/
+				counter-reset: list;
+			}
+			
+			ol ol ol {
+				margin: 0 0 0 2em;
+				/* 给三级列表增加一定的左边距*/
+				counter-reset: listt;
+			}
+			
+			.rectangle-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em .8em;
+				*padding: .4em;
+				margin: .5em 0 .5em 2.5em;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover {
+				background: #eee;
+			}
+			
+			.rectangle-list a:before {
+				content: counter(li);
+				counter-increment: li;
+				position: absolute;
+				left: -2.5em;
+				top: 50%;
+				margin-top: -1em;
+				background: #fa8072;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				text-align: center;
+				font-weight: bold;
+			}
+			
+			.rectangle-list a:after {
+				position: absolute;
+				content: '';
+				border: .5em solid transparent;
+				left: -1em;
+				top: 50%;
+				margin-top: -.5em;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover:after {
+				left: -.5em;
+				border-left-color: #fa8072;
+			}
+			
+			.rounded-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em 2em;
+				*padding: .4em;
+				margin: .5em 0;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				border-radius: .3em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list a:hover {
+				background: #eee;
+			}
+			
+			.rounded-list a:hover:before {
+				transform: rotate(360deg);
+			}
+			
+			.rounded-list a:before {
+				content: counter(li)"."counter(list);
+				counter-increment: list;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list1 a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list1 a:before {
+				content: counter(li)"."counter(list)"."counter(listt);
+				counter-increment: listt;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2.5em;
+				width: 2.5em;
+				line-height: 2.5em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+				font-size: 12px;
+			}
+			
+			p {
+				font-size: 14px;
+				color: tomato;
+				margin-left: 60px;
+			}
+			
+			strong,
+			b {
+				color: chocolate;
+				font-style: italic;
+				font-weight: bold;
+			}
+			
+			.Big a {
+				font-size: 20px;
+				color: #9932CC;
+			}
+			
+			img {
+				width: 350px;
+				height: 150px;
+				margin: 10px 0px 10px 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="demon">
+			<h2>js事件(Event)知识整理及案例(二)</h2>
+			<ol class="rectangle-list">
+				<li class="Big"><a href="">Event事件兼容性探究</a></li>
+				<ol class="rounded-list">
+					<li><a href="javascript:;">W3C标准规定，事件是作为函数的参数传入的，例如：<br/>
+					<img src="images/17041201.png"/><br/>
+					当在元素上点击时，弹出警告框，内容为鼠标在屏幕上的横坐标。这里函数传入的参数e，
+					就是事件，浏览器会实时跟踪用户的行为
+					<p>这种做法在FireFox、Chrome、Safari等遵循W3C规范的浏览器下是没有问题的，
+					唯独在IE(暂时仅限于8.0以下版本)下是行不通的，IE采用了一种非标准的方式，并不是将事件作为函数参数传入，
+					而是将事件作为window对象的event属性：window.event、window.event.screenX...所以就有了兼容性的问题</p>
+        	</a></li>
+					<li><a href="javascript:;">解决方法:<br/>
+        	<img src="images/17041202.png" /><br/>
+        	<b>注意，不要将var e=e||event; 写成 var e=event||e;<br/>
+        	这在FireFox下会提示错误，FireFox无法处理未声明未赋值的变量event。</b>
+        	</a></li>
+				</ol>
+				<li class="Big"><a href="javascript:;">事件绑定</a></li>
+				<ol class="rounded-list">
+					<li><a href="javascript:;">事件绑定的第一种方式(直接把函数添加到事件上)<br />
+        	 	<p>事件被触发时，会默认传入一个参数e，表示事件对象，通过e，<br />
+    	我们可以获取很多有用的信息，比如点击的坐标、具体触发该事件的dom元素等等。<br />
+                 基于DOM的事件，对于同一个dom节点而言，只能注册一个，后边注册的同种事件会覆盖之前注册的。
+         <img src="images/170403.png" /><br />
+         <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结果会输出ok1。</b></p></a></li>
+					<li><a href="javascript:;">事件绑定的第二种方式(存在兼容性)</a></li>
+					<ol class="rounded-list1">
+						<li><a href="javascript:;">首先在 IE下的方法：obj.attachEvent(事件名称,事件函数)<br />
+                      <img src="images/17041204.png" /><br />
+                      <b>这样就给同一个事件绑定了多个函数，且不会相互覆盖。</b>
+                      </a></li>
+						<li><a href="javascript:;">标准浏览器下：obj.addEventListener(事件名称,事件函数,是否捕获)；（第三个参数默认是false ：代表冒泡　true:代表捕获）,
+                      	<b>（需要注意的是标准IE也有这个方法，也就是说标准IE下，这个方法和上面那个方法，它都具有）</b>
+                      <img src="images/17041205.png" />
+                      </a></li>
+						<li><a href="javascript:;">通过上面的对比我们可以得出以下结论：<br/>
+                      	<b>1 在非标准IE下是没有事件捕获的，也就是说这个方法绑定函数，不存在事件捕获 <br/>
+						2 事件名称是带on的  <br/>
+						3 事件执行的顺序  标准IE下正序，在非标准IE下反序<br/>
+						4 函数里this指向 window</b><br/>
+						<br/>
+						<b>标准下：1有事件捕获  <br/>
+						2  事件名称无on     <br/>
+						3 事件指向顺序是正序。 <br/>
+						4  this指向触发事件的对象 </b>
+                      </a></li>
+						<li><a href="javascript:;">既然有两种我们就需要做兼容处理了，我们来封装一个函数:<br/>
+                      <img src="images/17041206.png" /><br/>
+                      <b>以后我们编写代码时可直接调用封装好的函数来解决兼容的问题</b>
+                      </a></li>
+
+					</ol>
+
+		</div>
+
+	</body>
+
+</html>
