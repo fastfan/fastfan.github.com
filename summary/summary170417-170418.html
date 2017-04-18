@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>总结</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+    width: 1000px;
+    margin: 0px auto;
+    background-image: url(images/12.jpg);
+   }
+   h1{
+    color: tomato;
+   }
+   h2,h3{
+    color: blue;
+   }
+   p{
+	font-size: 14px;
+	color: tomato;
+	margin-left: 60px;
+	text-indent: 30px;
+}
+strong,b{
+	color: chocolate;
+	font-style: italic;
+	font-weight: bold;
+}
+.Big a{
+	font-size: 20px;
+	color: #9932CC;
+}
+img{
+	width: 750px;
+	height: 350px;
+	margin: 10px 0px 10px 20px;
+}
+ol{
+        counter-reset: li; /* 创建一个计数器 */
+        list-style: none; /* 清除列表默认的编码*/
+        *list-style: decimal; /* 让IE6/7具有默认的编码 */
+        font: 15px 'trebuchet MS', 'lucida sans','微软雅黑',sans-serif;
+        padding: 10px 0px 10px 10px;
+        margin-bottom: 4em;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+			}
+
+ol ol{
+		margin: 0 0 0 2em; /* 给二级列表增加一定的左边距*/
+        counter-reset: list;
+}
+ol ol ol{
+		margin: 0 0 0 2em; /* 给三级列表增加一定的左边距*/
+        counter-reset: listt;
+}
+.rectangle-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;   
+
+}
+.rectangle-list a:hover{
+    background: #eee;
+}   
+.rectangle-list a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+.rectangle-list a:after{
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;               
+}
+.rectangle-list a:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;             
+}   
+.rounded-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+.rounded-list a:hover{
+    background: #eee;
+}
+.rounded-list a:hover:before{
+    transform: rotate(360deg);  
+}
+.rounded-list a:before{
+    content: counter(li)"."counter(list);
+    counter-increment: list;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+.rounded-list1 a:hover:after{
+    left: -1.5em;
+    border-left-color: #fff;             
+}   
+.rounded-list a:hover:after{
+    left: -1.5em;
+    border-left-color: #fff;             
+} 
+.rounded-list1 a:before{
+    content: counter(li)"."counter(list)"."counter(listt);
+    counter-increment: listt;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2.5em;
+    width: 2.5em;
+    line-height: 2.5em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+    font-size: 12px;
+}
+
+function myFunction()
+{
+    loadXMLDoc("/try/ajax/ajax_info.txt",function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+        }
+    });
+}
+
+
+
+  </style>
+</head>
+<body>
+<div id="demon">
+<h2>AJAX知识整理</h2>
+<ol class="rectangle-list">
+     <li class="Big"><a href="">AJAX简介</a></li>
+     <p>AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</p>
+        <ol class="rounded-list">
+        	<li><a href="javascript:;">AJAX = 异步 JavaScript 和 XML。</a></li>
+        	<li><a href="javascript:;">AJAX 是一种用于创建快速动态网页的技术。</a></li>
+        	<li><a href="javascript:;">通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。
+        		这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</a></li>
+        	<li><a href="javascript:;">传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。</a></li>
+        </ol>
+    <li class="Big"><a href="">AJAX 工作原理</a></li>
+         <ol class="rounded-list">
+        	<li><a href="javascript:;"> 
+        		<b>见下图：<br />
+		         <img src="images/170417.png" />
+		        </b></a></li>
+        </ol>
+    <li class="Big"><a href="">AJAX - 创建 XMLHttpRequest 对象</a></li>
+          <ol class="rounded-list">
+        	<li><a href="javascript:;">XMLHttpRequest 是 AJAX 的基础。<br/>
+        		<b>所有现代浏览器均支持 XMLHttpRequest 对象（IE5 和 IE6 使用 ActiveXObject）。
+                 XMLHttpRequest 用于在后台与服务器交换数据。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</b>
+        	</a></li>
+            <li><a href="javascript:;">创建 XMLHttpRequest 对象
+               
+            </a></li>
+            <p>见下图：<br/>
+               	<img src="images/17041701.png"
+               </p>
+        </ol>
+    <li class="Big"><a href="">AJAX - 向服务器发送请求请求</a></li>
+        <ol class="rounded-list">
+            <li><a href="">XMLHttpRequest 对象用于和服务器交换数据<br />
+            <b>如需将请求发送到服务器，我们使用 XMLHttpRequest 对象的 open() 和 send() 方法：</b>
+              <img src="images/17041702.png" /><img src="images/17041704.png" />
+            </a></li>
+            
+            <li><a href="javascript:;">GET 还是 POST？<br />
+            	<p>
+            	<b>与 POST 相比，GET 更简单也更快，并且在大部分情况下都能用。<br />
+				然而，在以下情况中，请使用 POST 请求：<br />
+				    1.无法使用缓存文件（更新服务器上的文件或数据库）<br />
+				    2.向服务器发送大量数据（POST 没有数据量限制）<br />
+				    3.发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠<br />
+				</b>
+            	</p>
+            </a></li>                                
+        </ol>
+    </li>
+   <li class="Big"><a href="">AJAX - 服务器 响应</a></li>
+     <ol class="rounded-list">
+     	<li><a href="javascript:;">
+     		<p>
+      	<b>如需获得来自服务器的响应，请使用 XMLHttpRequest 对象的 responseText 或 responseXML 属性。<br />
+      	1.responseText:获得字符串形式的响应数据。<br />
+      	(document.getElementById("myDiv").innerHTML=xmlhttp.responseText;)<br />
+      	2.responseXML:获得 XML 形式的响应数据。<br />
+      	<img src="images/17041703.png" />
+      	</b>
+      </p>
+      </a></li>
+     </ol>
+  <li class="Big"><a href="">AJAX - onreadystatechange 事件</a></li>
+      <ol class="rounded-list">
+        	<li><a href="javascript:;">onreadystatechange 事件<br />
+        	<b>当请求被发送到服务器时，我们需要执行一些基于响应的任务。<br />
+			每当 readyState 改变时，就会触发 onreadystatechange 事件。<br />		
+			readyState 属性存有 XMLHttpRequest 的状态信息。<br />	
+			下面是 XMLHttpRequest 对象的三个重要的属性：<br />
+        	<img src="images/17041705.png" />
+        	</b>
+        	</a></li>
+        	<li><a href="javascript:;">在 onreadystatechange 事件中，我们规定当服务器响应已做好被处理的准备时所执行的任务。<br />
+                               当 readyState 等于 4 且状态为 200 时，表示响应已就绪：<br />
+        	<img src="images/17041706.png"/>
+        	</a></li>
+        	<li><a href="javascript:;">使用回调函数<br />
+        		<b>回调函数是一种以参数形式传递给另一个函数的函数。<br />
+                                 如果网站上存在多个 AJAX 任务，那么应该为创建 XMLHttpRequest 对象编写一个标准的函数，并为每个 AJAX 任务调用该函数。<br />
+                                 该函数调用应该包含 URL 以及发生 onreadystatechange 事件时执行的任务（每次调用可能不尽相同）：<br />
+        		<img src="images/17041707.png" />
+        		</b>
+        		
+        	</a></li>
+        	
+        </ol>
+   
+</ol>
+
+</div>
+
+
+
+
+
+</body>
+</html>
