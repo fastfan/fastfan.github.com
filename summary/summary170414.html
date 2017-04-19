@@ -162,51 +162,425 @@ ol ol ol{
 <body>
 <div id="demon">
 <h2>js事件(Event)案例集(二)</h2>
+<div id="demon">
 <ol class="rectangle-list">
-     <li class="Big"><a href="">Event事件兼容性探究</a></li>
-        <ol class="rounded-list">
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
-        </ol>
+      <li class="Big"><a href="">点击盒子做摩擦运动</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text">
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 200px;
+				height: 200px;
+				background: chocolate;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button class="btn" id="btn">click</button>
+		<div class="box" id="box"></div>
+		<script type="text/javascript">
+			window.onload = function() {
+				var btn = document.getElementById('btn');
+				var box = document.getElementById('box');
+				btn.onclick = function() {
+					moving();    
+				}
+				var timer;
+				function moving() {    
+					clearInterval(timer);
+					timer = setInterval(function() {
+						var speed = (300 - box.offsetLeft) /15;
+						if (300 - box.offsetLeft > 0) {
+							speed = Math.ceil(speed);
+						} else {
+							speed = Math.floor(speed);
+						}
+						box.style.left = box.offsetLeft + speed + "px";
+						
+						document.title=box.offsetLeft+","+speed;
+					}, 33);
+				}
+
+			}
+		</script>
+	</body>
+
+</html>
+    	</textarea><br/>
+		<button  id="btn">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn');
+			btn.onclick=function(){
+				var txt=document.getElementById('text').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol>    
         
     
-    <li><a href="javascript:;">List item</a></li>
-    <li><a href="javascript:;">List item</a></li>
-    <li><a href="javascript:;">List item</a></li>
-        <ol class="rounded-list">
-            <li><a href="">List sub item</a>
-                  <ol class="rounded-list1">
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                  </ol>
+       <li class="Big"><a href="">下拉菜单</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text2">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>下拉菜单</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul li{
+				list-style: none;
+				background-color: #D2691E;
+				float: left;
+				text-align: center;
+				cursor: pointer;
+				width: 200px;
+				top: 0;
+				left: 20px;
+			}
+			ul li div{
+				width: 200px;
+				background-color: #FF6347;
+				position: absolute;
+				height: 0px;
+				overflow: hidden;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>HOME
+				<div>
+				  1<br/>
+				  1<br/>
+				  1<br/>
+				</div>
+			</li>
+			<li>HOME
+				<div>
+				  11<br/>
+				  11<br/>
+				  11<br/>
+				  11<br/>
+				</div>
+			</li>
+			<li>HOME
+				<div>
+				  111<br/>
+				  111<br/>
+				  111<br/>
+				</div>
+			</li>
+		</ul>
+		<script type="text/javascript">
+			var lis=document.getElementsByTagName('li'); 
+			 var t=lis.timer;
+			  t=null;
+			for(var i = 0;i<lis.length;i++){
+				lis[i].onmouseover=function(){
+					var div=this.getElementsByTagName('div')[0];
+					div.style.height="auto";
+					var h=div.offsetHeight;
+					div.style.height=0;
+					moving(div,h);
+				}
+				lis[i].onmouseout=function(){
+					var div=this.getElementsByTagName('div')[0];
+					moving(div,0);
+				}
+			}
+			var timer;
+			function moving(obj,tpoint){
+				clearInterval(obj.timer);
+				var speed;
+				obj.timer=setInterval(function(){
+					if(obj.offsetHeight<tpoint){
+						speed=7;
+					}else{
+						speed=-7;
+					}
+					if(Math.abs(obj.offsetHeight-tpoint<=7)){
+						obj.style.height=tpoint+"px";
+					}else{
+						obj.style.height=obj.offsetHeight+speed+"px";
+					}
+			
+				},33);
+			}
+		</script>
+	</body>
+</html>
 
-            </li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            
-        </ol>
-    </li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
+    	</textarea><br/>
+		<button  id="btn2">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn2');
+			btn.onclick=function(){
+				var txt=document.getElementById('text2').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol> 
    
+   <li class="Big"><a href="">盒子弹性运动</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text3">
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 100px;
+				height: 100px;
+				background: chocolate;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button class="btn" id="btn">click</button>
+		<div class="box" id="box"></div>
+		<script type="text/javascript">
+			window.onload = function() {
+				var btn = document.getElementById('btn');
+				var box = document.getElementById('box');
+				btn.onclick = function() {
+					moving(300);     //调用函数
+				}
+				var timer;
+				function moving() {    //封装方法
+					clearInterval(timer);
+					var speed=0;
+					timer = setInterval(function() {
+						speed+= (300 - box.offsetLeft) /30;
+						box.style.left = box.offsetLeft + speed + "px";
+						document.title=box.offsetLeft+","+speed;
+					}, 33);
+				}
+
+			}
+		</script>
+	</body>
+
+</html>
+
+    	</textarea><br/>
+		<button  id="btn3">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn3');
+			btn.onclick=function(){
+				var txt=document.getElementById('text3').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol> 
+   
+    <li class="Big"><a href="">弹性菜单</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text4">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹性菜单</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul li{
+				list-style: none;
+				float: left;
+				text-align: center;
+				cursor: pointer;
+				width: 198px;
+				height: 30px;
+				border: 1px solid #CCCCCC;
+			}
+			ul {
+				width: 800px;
+				position: relative;
+				height: 30px;
+			}
+			.bg{
+				position: absolute;
+				width: 198px;
+				height: 5px;
+				top: 25px;
+				background-color: #0000FF;
+				z-index: -1;
+			}
+		</style>
+	</head>
+	<body>
+		<!--弹性效果不是所有地方都能用的，尤其是页面有大量特效时，会降低浏览器性能-->
+		<ul>
+			<li>HOME</li>
+			<li>HOME</li>
+			<li>HOME</li>
+			<li>JOBS</li>
+			<li class="bg"></li>
+		</ul>
+		<script type="text/javascript">
+			var lis=document.getElementsByTagName('li'); 
+			var bg=lis[lis.length-1];
+			for(var i = 0;i<lis.length;i++){
+				lis[i].onmouseover=function(){
+					moving(bg,this.offsetLeft);
+				}
+			}
+			var timer=null;
+				function moving(div,tpoint) {    //封装方法
+					clearInterval(timer);
+					var speed=0;
+					var left=0;
+					timer = setInterval(function() {
+                         speed+= (tpoint - div.offsetLeft) /5;  
+						 speed*=.7;
+						if(Math.abs(tpoint)<1&&Math.abs(tpoint - div.offsetLeft)<1){
+							clearInterval(timer);
+							div.style.left=tpoint+"px";
+						}else{
+							div.style.left=div.offsetLeft+speed+"px";
+						}
+						document.title=div.offsetLeft+","+speed;
+					}, 33);
+				}
+		</script>
+	</body>
+</html>
+
+
+    	</textarea><br/>
+		<button  id="btn4">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn4');
+			btn.onclick=function(){
+				var txt=document.getElementById('text4').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol> 
+        <li class="Big"><a href="">跑马灯</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text5">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#div{
+				width:268px;
+				height: 30px;
+				overflow: hidden;
+				background-image:url(img/圆点.png) ;
+				background-repeat: no-repeat;
+				position: relative;
+				border: 1px dashed #FF6347;
+				
+			}
+			ul{
+				width: 2000%;
+				position: absolute;
+				left: 0;
+				padding-left: 30px;
+			}
+			ul li{
+				width: 300px;
+				list-style: none;
+				float: left;
+				padding-top: 8px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div">
+			<ul id="ul">
+				<li>《人民的名义》终极大boss是谁</li>
+				<li>非RMB游戏，所有装备自由交易！</li>
+				<li>一刀9999级，+13神兵免费领！</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+            var ul=document.getElementById('ul');
+            var timer=null;
+            var timer1=null;
+            timer=setInterval(function(){   
+            clearInterval(timer1)
+              //ul.style.left=ul.offsetLeft-300+"px";
+              moving();
+            },2000);
+		    var left=1;
+            function moving() {  
+                   clearInterval(timer1);
+					timer1 = setInterval(function() {
+						 
+						ul.style.left=ul.offsetLeft-300+"px";
+						left++;
+						if((ul.offsetLeft*left)%200==0){
+							clearInterval(timer1);
+						}else{
+							ul.style.left=ul.offsetLeft-10+"px";
+						}
+						console.log(ul.offsetLeft);
+					}, 33);
+				}
+		</script>
+	</body>
+</html>
+
+    	</textarea><br/>
+		<button  id="btn5">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn5');
+			btn.onclick=function(){
+				var txt=document.getElementById('text5').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol> 
 </ol>
 
 </div>

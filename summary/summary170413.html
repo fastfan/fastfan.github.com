@@ -159,61 +159,466 @@ ol ol ol{
 
   </style>
 </head>
-<body>
+<body style="height: 2000px;">
 <div id="demon">
 <h2>js事件(Event)案例集(一)</h2>
 <ol class="rectangle-list">
-     <li class="Big"><a href="">Event事件兼容性探究</a></li>
-        <ol class="rounded-list">
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
-        	<li><a href="javascript:;">List item</a></li>
+     <li class="Big"><a href="">鼠标上下拖动改变盒子大小</a></li>
+        <div id="demon">
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+
+							<textarea name="" rows="10" cols="100" id="text">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bg{
+				width: 30px;
+				height: 500px;
+				background-color: #FF6347;
+				position: relative;
+				overflow: hidden;
+				float: left;
+				
+			}
+			#scrollbar{
+				width: 30px;
+				height: 30px;
+				background-color: #6A5ACD;
+				position: absolute;
+				top: 0;
+				left: 0;
+				float: left;
+			}
+			#moveDiv{
+				background-color: aqua;
+				position: relative;
+				width: 100px;
+				height: 100px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bg" id="bg">
+			<div class="scroolbar" id="scrollbar"></div>
+		</div>
+		<div class="moveDiv" id="moveDiv"></div>
+		<script type="text/javascript">
+			var scrollbar=document.getElementById('scrollbar');
+			var bg=document.getElementById('bg');
+			var moveDiv=document.getElementById('moveDiv');
+			bg.addEventListener('mousedown',mdHandler);
+			bg.addEventListener('mouseover',mvHandler);
+			bg.addEventListener('mouseup',muHandler);
+			function mdHandler(e){
+				isDown = true;
+			}
+			function mvHandler(e){
+				if(isDown){
+					var scale=e.clientY/500;
+					moveDiv.style.width=500+"px";
+					moveDiv.style.height=500+"px";
+					moveDiv.style.width=parseInt(moveDiv.style.width)*scale+"px";
+					moveDiv.style.height=parseInt(moveDiv.style.height)*scale+"px";
+					scrollbar.style.top=e.clientY-30+"px";
+					if(e.clientY<30){
+						scrollbar.style.top=0+"px";
+					}else if(e.clientY>470){
+						scrollbar.style.top=470+"px";
+					}
+				}
+			}
+			function muHandler(e){
+				isDown=false;
+			}
+		</script>
+	</body>
+</html>	
+		</textarea><br/>
+							<button id="btn">run</button>
+							<script type="text/javascript">
+								var btn = document.getElementById('btn');
+
+								btn.onclick = function() {
+									var txt = document.getElementById('text').value;
+									var newTab = window.open('about:blank');
+									newTab.document.title = 'Hellow World';
+									newTab.document.write(txt);
+								}
+							</script>
+						</a>
+				</li>
         </ol>
         
     
-    <li><a href="javascript:;">List item</a></li>
-    <li><a href="javascript:;">List item</a></li>
-    <li><a href="javascript:;">List item</a></li>
-        <ol class="rounded-list">
-            <li><a href="">List sub item</a>
-                  <ol class="rounded-list1">
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                      <li><a href="javascript:;">List item</a></li>
-                  </ol>
-
-            </li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            <li><a href="javascript:;">List item</a></li>
-            
-        </ol>
-    </li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
-   <li><a href="javascript:;">List item</a></li>
+    <li class="Big"><a href="">鼠标点击，盒子运动</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text1">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background: chocolate;
+				position: absolute;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<button class="btn" id="btn">click</button>
+		<div class="box" id="box"></div>
+		<script type="text/javascript">
+			var btn=document.getElementById('btn');
+			var box=document.getElementById('box');
+			var Timer;
+			btn.onclick=function(){
+				var moving=20;
+				clearInterval(Timer);
+				Timer=setInterval(function(){
+					 if(box.offsetLeft >= 200){
+					 	clearInterval(Timer);
+					 }else{
+					 	box.style.left=box.offsetLeft+moving+"px";
+					 }
+				},33);	
+			}	
+		</script>
+	</body>
+</html>	
+    	</textarea><br/>
+		<button  id="btn1">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn1');
+			btn.onclick=function(){
+				var txt=document.getElementById('text1').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol>  
    
+     <li class="Big"><a href="">分享按钮制作</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text2">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		     *{
+		     	padding: 0;
+		     	margin: 0;
+		     }
+			#Box{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				background-color: #FF6347;
+				top: 200px;
+				left:-200px;
+			}
+			#Box2{
+				width: 20px;
+				line-height: 40px;
+				text-align:center;
+				background: chocolate;
+				margin-left: 200px;
+                margin-top: 70px;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="Box">
+				<div id="Box2">分享</div>
+			</div>
+			<script type="text/javascript">
+				var Box;
+				window.onload=function(){
+					Box=document.getElementById('Box');
+					var Box2=document.getElementById('Box2');
+					Box.onmouseover=function(){
+						moving1(0);
+					}
+					Box.onmouseout=function(){
+						moving1(-200);
+					}
+				}
+				var timer1;
+				function moving1(tpoint){
+					clearInterval(timer1);
+					if(Box.offsetLeft>tpoint){
+						speed=-10;
+					}else{
+						speed=10;
+					}
+					timer1=setInterval(function(){
+						if(Box.offsetLeft==tpoint){
+							clearInterval(timer1);
+						}else{
+							Box.style.left=Box.offsetLeft+speed+"px";
+						}
+					},33);
+				}
+				
+			</script>
+	</body>
+</html>
+    	</textarea><br/>
+		<button  id="btn2">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn2');
+			btn.onclick=function(){
+				var txt=document.getElementById('text2').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol>    
+   
+    <li class="Big"><a href="">鼠标移入，颜色渐变</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text3">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box4{
+				width: 300px;
+				height: 300px;
+				background-color: tomato;
+				filter:Alpha(opacity:30);
+				opacity: .4;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box4"></div>
+		<script type="text/javascript">
+			var box4;
+				window.onload=function(){
+					box4=document.getElementById('box4');
+					box4.onmouseover=function(){
+						moving(100,30);
+					}
+					box4.onmouseout=function(){
+						moving(30,100);
+					}
+				}
+				var timer;
+				function moving(alpha,tpoint){
+					clearInterval(timer);
+					if(alpha<tpoint){
+						speed=2;
+					}else{
+						speed=-2;
+					}
+					timer=setInterval(function(){
+						alpha+=speed;
+						if(alpha==tpoint){
+							clearInterval(timer);
+						}else{
+							box4.style.filter="Alpha(opacity:"+alpha+")";
+							box4.style.opacity=alpha/100;
+						}
+					},33);
+				}
+				
+		</script>
+	</body>
+</html>
+    	</textarea><br/>
+		<button  id="btn3">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn3');
+			btn.onclick=function(){
+				var txt=document.getElementById('text5').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol>    
+   
+       <li class="Big"><a href="">弹力球效果</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text5">
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 100px;
+				height: 100px;
+				background: chocolate;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button class="btn" id="btn">click</button>
+		<div class="box" id="box"></div>
+		<script type="text/javascript">
+			window.onload = function() {
+				var btn = document.getElementById('btn');
+				var box = document.getElementById('box');
+				btn.onclick = function() {
+					moving(300);     
+				}
+				var timer;
+				function moving() {   
+					clearInterval(timer);
+					var speed=0;
+					var left=0;
+					timer = setInterval(function() {
+
+                        speed=speed+= (300 - box.offsetTop) /3; 
+						
+						left+=speed;
+						 speed*=.9;
+						if(300==left){
+
+							box.style.top=300+"px";
+						}else{
+
+							box.style.top=left+"px";
+						}
+						document.title=box.offsetLeft+","+speed;
+					}, 33);
+				}
+			}
+		</script>
+	</body>
+
+</html>
+
+    	</textarea><br/>
+		<button  id="btn5">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn5');
+			btn.onclick=function(){
+				var txt=document.getElementById('text5').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol> 
+    <li class="Big"><a href="">贪食蛇</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text6">
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background-color: slateblue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<script>
+			function getPosition(e) {
+				var evt = e || event;
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+				var x = evt.clientX + scrollLeft;
+				var y = evt.clientY + scrollTop;
+				return { x: x, y: y }
+			}
+			var divs = document.getElementsByTagName('div');
+			document.onmousemove = function(e) {
+				var evt = e || event;
+				var pos = getPosition(e);
+
+				for(var i = divs.length - 1; i > 0; i--) {
+					divs[i].style.left = divs[i - 1].offsetLeft + 'px';
+					divs[i].style.top = divs[i - 1].offsetTop + 'px';
+				}
+				divs[0].style.left = pos.x + 'px';
+				divs[0].style.top = pos.y + 'px';
+			}
+		</script>
+	</body>
+
+</html>
+    	</textarea><br/>
+		<button  id="btn6">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn6');
+			btn.onclick=function(){
+				var txt=document.getElementById('text6').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol>  
 </ol>
 
 </div>
-
-
-
-
 
 </body>
 </html>
