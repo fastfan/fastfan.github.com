@@ -193,6 +193,23 @@
 				<li class="Big">
 					<a href="javascript:;">Event事件兼容性探究</a>
 				</li>
+				<li>
+					<a href="javascript:;">创建 Canvas 元素
+						<textarea name="" rows="10" cols="100" id="text">
+
+    	</textarea><br/>
+						<button id="btn">run</button>
+						<script type="text/javascript">
+							var btn = document.getElementById('btn');
+							btn.onclick = function() {
+								var txt = document.getElementById('text').value;
+								var newTab = window.open('about:blank');
+								newTab.document.title = 'Hellow World';
+								newTab.document.write(txt);
+							}
+						</script>
+					</a>
+				</li>
 				<ol class="rounded-list">
 					<li>
 						<a href="javascript:;">List item</a>
