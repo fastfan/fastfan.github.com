@@ -56,11 +56,11 @@ left: 650px;
 		<div id="video">
 			<div id="title">
 				<span id="">indexx live video</span>
-				<span id="getPic"><a href="javascript:;">截图</a></span>
+				<span id="getPic"><a href="javascript:getPicture();">截图</a></span>
 			</div>
 			<video width="610px" height="380px" autoplay></video>
 			<div id="open">
-				<a href="javascript:;">打开摄像头</a>
+				<a href="javascript:openCamera();">打开摄像头</a>
 			</div>
 		</div>
 		<canvas id="myCanvas" width="610px" height="450px"></canvas>
@@ -72,7 +72,7 @@ left: 650px;
 			window.navigator.mozGetUserMedia||
 			window.navigator.webkitGetUserMedia||
 			window.navigator.msGetUserMedia;
-			openCamera();
+//			openCamera();
 			function openCamera(){
 				if(window.navigator.GetUserMedia){
 					window.navigator.GetUserMedia({
@@ -110,3 +110,4 @@ left: 650px;
 		
 	</body>
 </html>
+
