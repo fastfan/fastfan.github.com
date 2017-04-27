@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>h5标签</title>
+		<style type="text/css">
+			body{
+				background-color: #BBBBBB;
+			}
+			#video{
+				width: 610px;
+				height: 450px;
+				background-color: #FFFFFF;
+				border-radius: 20px;
+				margin: 0 auto;
+				position: relative;
+			}
+			#video video{
+				top: 30px;
+				background-color: #999;
+				position: absolute;
+			}
+			#title{
+				text-align: center;
+				position: absolute;
+				height: 20px;
+				line-height: 20px;
+			}
+			#getPic{
+				display: inline-block;
+				width: 40px;
+				height: 20px;
+				margin-left: 35px;
+				line-height: 20px;
+				font-size: 13px;
+				border: 1px solid #333333;
+			}
+			#open{
+				position: absolute;
+				top: 420px;
+				left: 20px;
+		
+			}
+			#myCanvas{
+				border: 1px solid #FFFFFF;
+				background-color: #FFFFFF;
+				position: absolute;
+				top: 460px;
+left: 650px;
+				border-radius: 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="video">
+			<div id="title">
+				<span id="">indexx live video</span>
+				<span id="getPic"><a href="javascript:;">截图</a></span>
+			</div>
+			<video width="610px" height="380px" autoplay></video>
+			<div id="open">
+				<a href="javascript:;">打开摄像头</a>
+			</div>
+		</div>
+		<canvas id="myCanvas" width="610px" height="450px"></canvas>
+		<script type="text/javascript">
+			var myCanvas=document.getElementById("myCanvas");
+			var myVideo=document.getElementById("video");
+			window.navigator.GetUserMedia=window.navigator.GetUserMedia||
+			window.navigator.mozGetUserMedia||
+			window.navigator.webkitGetUserMedia||
+			window.navigator.msGetUserMedia;
+			openCamera();
+			function openCamera(){
+				if(window.navigator.GetUserMedia){
+					window.navigator.GetUserMedia({
+						"video":true,
+						"audio":true
+					},successFun,errorFun);
+				}else{
+					alert("你的浏览器不支持打开摄像头");
+				}
+			}
+			
+			window.URL=window.URL||
+			window.mozURL||
+			window.webkitURL||
+			window.msURL
+			function successFun(steam){
+				if (myVideo.mozSrcObject!=undefined){
+					myVideo.mozSrcObject=steam;
+				}else{
+					myVideo.src=window.URL?window.URL.createObjectURL(steam):steam;
+				}
+			}
+			function errorFun(){
+				
+			}
+			function closeCamera(){
+				
+			}
+		</script>
+			
+		
+	</body>
+</html>
