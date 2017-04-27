@@ -15,8 +15,6 @@
 				background-size: cover;
 				opacity: 0.7;
 				filter:alpha(opacity=50) -moz-opacity:0.5; 
-	                   
-	
 			}
 			#video{
 				width: 610px;
@@ -78,15 +76,13 @@
 				width: 200px;
 				height: 41px;
 				position: fixed;
-			    top: 332px;
-			    left: 210px;
+			    top: 232px;
 			}
 			#div{
 			 margin-top: 35px;
              margin-left: 100px;
              position: fixed;
-			 top: 383px;
-			 left: 210px;
+			 top: 283px;
 			}
 			#btn{
 				width: 100px;
@@ -95,8 +91,8 @@
 				color: #FFFFFF;
 				background-color: #8A2BE2;
 				position: fixed;
-			    left: 368px;
-				top: 652px;
+			    left: 148px;
+				top: 552px;
 			}
 		</style>
 		<script type="text/javascript" src="js/erweima.js">
@@ -160,6 +156,7 @@
 				alert(err);
 			}
 			function getPicture(){
+				ctx.drawImage(myVideo,0,0);
 				canvasToImage(myCanvas);
 				getQr();
 			}
