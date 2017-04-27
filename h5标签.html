@@ -67,6 +67,7 @@ left: 650px;
 		<script type="text/javascript">
 			var myCanvas=document.getElementById("myCanvas");
 			var myVideo=document.getElementById("video");
+			var ctx=myCanvas.getContext("2d");
 			window.navigator.GetUserMedia=window.navigator.GetUserMedia||
 			window.navigator.mozGetUserMedia||
 			window.navigator.webkitGetUserMedia||
@@ -95,11 +96,15 @@ left: 650px;
 				}
 			}
 			function errorFun(){
-				
+				alert(err);
 			}
-			function closeCamera(){
-				
+//			function closeCamera(){
+//				
+//			}
+			function getPicture(){
+				ctx.drawImage(myVideo,0,0);
 			}
+
 		</script>
 			
 		
