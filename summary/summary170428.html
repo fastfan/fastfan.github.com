@@ -22,9 +22,10 @@
 			
 			p {
 				font-size: 14px;
-				color: tomato;
+				color: #9932CC;
 				margin-left: 60px;
 				text-indent: 30px;
+				font-weight: 1000;		
 			}
 			
 			strong,
@@ -188,119 +189,127 @@
 
 	<body>
 		<div id="demon">
-			<h2>H5标签及属性整理</h2>
+			<h2>Web 存储 —— 关于Cookie, LocalStorage 与 SessionStorage</h2>
+			<p>在HTML5更新之前，我们保存数据往往存到服务器端的数据库或者浏览器端的cookie，随着HTML5的出现，web开发又有了新选择：Web Storage。当然
+			存储方式很多，在这里我们只谈Cookie, LocalStorage 与 SessionStorage</p>
 			<ol class="rectangle-list">
 				<li class="Big">
-					<a href="javascript:;">什么是HTML5？</a>
+					<a href="javascript:;">Cookie</a>
 				</li>				
-				<ol class="rounded-list">
-					<li>
-						<a href="javascript:;">HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。</a>
-					</li>
-					<li>
-						<a href="javascript:;">HTML5的设计目的是为了在移动设备上支持多媒体。</a>
-					</li>
-					<li>
-						<a href="javascript:;">HTML5 是下一代 HTML 标准。(向后兼容性)</a>
-					</li>
-					<li>
-						<a href="javascript:;">HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。</a>
-					</li>
-				</ol>
+				<p>Cookie 是小甜饼的意思。cookie 确实非常小，它的大小限制为4KB左右。它的主要用途有保存登录信息，比如你登录某个网站市场可以看到“记住密码”，这通常就是通过在 Cookie 中存入一段辨别用户身份的数据来实现的。 </p>
                 <li class="Big">
-					<a href="javascript:;">HTML5 中的一些有趣的新特性</a>
+					<a href="javascript:;">Web Storage </a>
 				</li>
+				<p> html5中的Web Storage包括了两种存储方式： sessionStorage 和 localStorage 。<br/>
+                    SessionStorage 用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。
+                                                            因此SessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。 LocalStorage 用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。 </p>
 				<ol class="rounded-list">
 				<li>
-					<a href="javascript:;">用于绘画的 canvas 元素</a>
+					<a href="javascript:;">sessionStorage的操作方法</a>
 				</li>
+				<ol class="rounded-list1">
+							<li>
+								<a href="javascript:;"> setItem<br/>
+				                                                                                    用途：将value存储到key字段<br/>
+											用法：.setItem( key, value)<br/>
+											代码示例：<span style="color: #0A0A0A;font-weight: bolder;">sessionStorage</span><span style="color: #FF0000;font-weight: 600;">.setItem("key", "value")</span>;<br/>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;"> getItem <br/>
+				                                                                                   用途：获取指定key本地存储的值<br/>
+											用法：.getItem( key)<br/>
+											代码示例：<span style="color: #0A0A0A;font-weight: bolder;">sessionStorage</span><span style="color: #FF0000;font-weight: 600;">.getItem("key")</span>;<br/>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;"> removeItem <br/>
+				                                                                                    用途：删除指定key本地存储的值<br/>
+											用法：.removeItem( key)<br/>
+											代码示例：<span style="color: #0A0A0A;font-weight: bolder;">sessionStorage</span><span style="color: #FF0000;font-weight: 600;">.removeItem("key")</span>;<br/>
+								</a>
+							</li>					
+							<li>
+								<a href="javascript:;"> clear <br/>
+				                                                                                    用途：清除所有的key/value<br/>
+											用法：.clear()<br/>
+											代码示例：<span style="color: #0A0A0A;font-weight: bolder;">sessionStorage</span><span style="color: #FF0000;font-weight: 600;">.clear()</span>;<br/>
+								</a>
+							</li>
+				</ol>
 				<li>
-					<a href="javascript:;">用于媒介回放的 video 和 audio 元素</a>
+					<a href="javascript:;">localStorage的操作方法</a>
 				</li>
-				<li>
-					<a href="javascript:;">新的特殊内容元素，比如 article、footer、header、nav、section</a>
-				</li>
-				<li>
-					<a href="javascript:;">新的表单控件，比如 calendar、date、time、email、url、search</a>
-				</li>
-			  </ol>
+				<ol class="rounded-list1">
+							<li>
+								<a href="javascript:;"> setItem<br/>
+				                                                                                    用途：将value存储到key字段<br/>
+											用法：.setItem( key, value)<br/>
+											代码示例：<span style="color: #0A0A0A;font-weight: bolder;">localStorage</span><span style="color: #FF0000;font-weight: 600;">.setItem("key", "value")</span>;<br/>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;"> getItem <br/>
+				                                                                                   用途：获取指定key本地存储的值<br/>
+											用法：.getItem( key)<br/>
+											代码示例：<span style="color: #0A0A0A;font-weight: bolder;">localStorage</span><span style="color: #FF0000;font-weight: 600;">.getItem("key")</span>;<br/>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;"> removeItem <br/>
+				                                                                                    用途：删除指定key本地存储的值<br/>
+											用法：.removeItem( key)<br/>
+											代码示例：<span style="color: #0A0A0A;font-weight: bolder;">localStorage</span><span style="color: #FF0000;font-weight: 600;">.removeItem("key")</span>;<br/>
+								</a>
+							</li>					
+							<li>
+								<a href="javascript:;"> clear <br/>
+				                                                                                    用途：清除所有的key/value<br/>
+											用法：.clear()<br/>
+											代码示例：<span style="color: #0A0A0A;font-weight: bolder;">localStorage</span><span style="color: #FF0000;font-weight: 600;">.clear()</span>;<br/>
+								</a>
+							</li>
+					</ol>
+               </ol>
+				
 			   <li class="Big">
-					<a href="javascript:;">HTML5新增标签及属性简绍(拣选)</a>
+					<a href="javascript:;">三者的对比 </a>
 				</li>
-				<ol class="rounded-list">
-					<li>
-						<a href="javascript:;">H5新标签(一)</a>
-					</li>
-					
-						<ol class="rounded-list1">
-							<li>
-								<a href="javascript:;">header 标签定义文档的页眉</a>
-							</li>
-							<li>
-								<a href="javascript:;">section 标签定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。</a>
-							</li>
-							<li>
-								<a href="javascript:;">article标签规定独立的自包含内容。</a>
-							</li>
-							<li>
-								<a href="javascript:;">aside 标签定义其所处内容之外的内容。</a>
-							</li>
-							<li>
-								<a href="javascript:;">audio 标签定义声音，比如音乐或其他音频流。</a>
-							</li>
-							<li>
-								<a href="javascript:;">bdi标签允许您设置一段文本，使其脱离其父元素的文本方向设置。在发布用户评论或其他您无法完全控制的内容时，该标签很有用。</a>
-							</li>
-							<li>
-								<a href="javascript:;">canvas 标签定义图形，比如图表和其他图像。canvas标签只是图形容器，您必须使用脚本来绘制图形。</a>
-							</li>
-							<li>
-								<a href="javascript:;">command 元素表示用户能够调用的命令。command 标签可以定义命令按钮，比如单选按钮、复选框或按钮。只有当 command 元素位于 menu 元素内时，该元素才是可见的。否则不会显示这个元素，但是可以用它规定键盘快捷键。</a>
-							</li>
-							<li>
-								<a href="javascript:;">datalist 标签定义选项列表。请与 input 元素配合使用该元素，来定义 input 可能的值。datalist 及其选项不会被显示出来，它仅仅是合法的输入值列表。请使用 input 元素的 list 属性来绑定 datalist。</a>
-							</li>
-						</ol>
-                   </ol>
-                   <li class="Big">
-					<a href="javascript:;">HTML5新增标签及属性简绍(拣选)</a>
-				   </li>
-				   <ol class="rounded-list">
-					<li>
-						<a href="javascript:;">H5新标签(二)</a>
-					</li>
-                   	<ol class="rounded-list1">
-						
-							<li>
-								<a href="javascript:;">figure 标签规定独立的流内容（图像、图表、照片、代码等等）。figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</a>
-							</li>
-							<li>
-								<a href="javascript:;">footer 标签定义文档或节的页脚。footer 元素应当含有其包含元素的信息。页脚通常包含文档的作者、版权信息、使用条款链接、联系信息等等。您可以在一个文档中使用多个 footer 元素。</a>
-							</li>
-							<li>
-								<a href="javascript:;">mark 标签定义带有记号的文本。请在需要突出显示文本时使用 m 标签。</a>
-							</li>
-							<li>
-								<a href="javascript:;">nav标签定义导航链接的部分。如果文档中有“前后”按钮，则应该把它放到 nav 元素中。</a>
-							</li>
-							<li>
-								<a href="javascript:;">time标签定义公历的时间（24 小时制）或日期，时间和时区偏移是可选的。该元素能够以机器可读的方式对日期和时间进行编码，这样，举例说，用户代理能够把生日提醒或排定的事件添加到用户日程表中，搜索引擎也能够生成更智能的搜索结果。</a>
-							</li>
-							<li>
-								<a href="javascript:;">track标签为诸如 video 元素之类的媒介规定外部文本轨道。用于规定字幕文件或其他包含文本的文件，当媒介播放时，这些文件是可见的。</a>
-							</li>
-							<li>
-								<a href="javascript:;">video标签定义视频，比如电影片段或其他视频流。</a>
-							</li>
-							<li>
-								<a href="javascript:;">summary 标签包含 details 元素的标题，"details" 元素用于描述有关文档或文档片段的详细信息。</a>
-							</li>
-							<li>
-								<a href="javascript:;">section 标签定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。</a>
-							</li>
-						</ol>
-                   </ol>
-			
+				<table border="1" cellspacing="0">
+					<tbody>
+						<tr>
+							<th>特性</th>
+							<th>Cookie</th>
+							<th>LocalStorage</th>
+							<th>SessionStorage</th>
+						</tr>
+						<tr>
+							<td>数据的有效期 	</td>
+							<td>可设置失效时间，默认是关闭浏览器后失效</td>
+							<td>除非被清除，否则永久保存</td>
+							<td>仅在当前会话下有效，关闭页面或浏览器后被清除</td>
+						</tr>
+						<tr>
+							<td>可存储数据大小 	</td>
+							<td>4K左右</td>
+							<td>5M左右</td>
+							<td>5M左右</td>
+						</tr>
+						<tr>
+							<td>是否需要与服务端通信</td>
+							<td>每次都会携带在HTTP头中，如果使用cookie保存过多数据会带来性能问题</td>
+							<td>仅在客户端（即浏览器）中保存，不参与和服务器的通信</td>
+							<td>仅在客户端（即浏览器）中保存，不参与和服务器的通信</td>
+						</tr>
+					</tbody>
+				</table>
+			  <p>
+			  	除了上面以外， LocalStorage 与 SessionStorage 拥有 setItem , getItem , removeItem , clear 等方法，操作起来比较方便，而 Cookie 需要前端开发者自己封装 setCookie ， getCookie 。 
+			  </p>
+			   <li class="Big">
+					<a href="javascript:;">应用场景  </a>
+				</li>
+				<p> Cookie 比较常见的应用是判断用户是否登录。针对登录过的用户，服务器端会在他登录时往 Cookie 中插入一段加密过的唯一辨识单一用户的辨识码，下次只要读取这个值就可以判断当前用户是否登录啦。LocalStorage 可以用来保存用户在电商网站的购物车信息，也可以保存一些HTML5游戏的本地数据。 </p>
 			</ol>
 
 		</div>
