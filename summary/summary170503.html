@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>总结</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body {
+				width: 1000px;
+				margin: 0px auto;
+				background-image: url(images/12.jpg);
+			}
+			
+			h1 {
+				color: tomato;
+			}
+			
+			h2,
+			h3 {
+				color: blue;
+			}
+			
+			p {
+				font-size: 14px;
+				color: #9932CC;
+				margin-left: 60px;
+				text-indent: 30px;
+				font-weight: 1000;		
+			}
+			
+			strong,
+			b {
+				color: chocolate;
+				font-style: italic;
+				font-weight: bold;
+			}
+			
+			.Big a {
+				font-size: 20px;
+				color: #9932CC;
+			}
+			
+			img {
+				width: 350px;
+				height: 100px;
+				margin: 10px 0px 10px 20px;
+			}
+			
+			ol {
+				counter-reset: li;
+				/* 创建一个计数器 */
+				list-style: none;
+				/* 清除列表默认的编码*/
+				*list-style: decimal;
+				/* 让IE6/7具有默认的编码 */
+				font: 15px 'trebuchet MS', 'lucida sans', '微软雅黑', sans-serif;
+				padding: 10px 0px 10px 10px;
+				margin-bottom: 4em;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+			}
+			
+			ol ol {
+				margin: 0 0 0 2em;
+				/* 给二级列表增加一定的左边距*/
+				counter-reset: list;
+			}
+			
+			ol ol ol {
+				margin: 0 0 0 2em;
+				/* 给三级列表增加一定的左边距*/
+				counter-reset: listt;
+			}
+			
+			.rectangle-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em .8em;
+				*padding: .4em;
+				margin: .5em 0 .5em 2.5em;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover {
+				background: #eee;
+			}
+			
+			.rectangle-list a:before {
+				content: counter(li);
+				counter-increment: li;
+				position: absolute;
+				left: -2.5em;
+				top: 50%;
+				margin-top: -1em;
+				background: #fa8072;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				text-align: center;
+				font-weight: bold;
+			}
+			
+			.rectangle-list a:after {
+				position: absolute;
+				content: '';
+				border: .5em solid transparent;
+				left: -1em;
+				top: 50%;
+				margin-top: -.5em;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover:after {
+				left: -.5em;
+				border-left-color: #fa8072;
+			}
+			
+			.rounded-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em 2em;
+				*padding: .4em;
+				margin: .5em 0;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				border-radius: .3em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list a:hover {
+				background: #eee;
+			}
+			
+			.rounded-list a:hover:before {
+				transform: rotate(360deg);
+			}
+			
+			.rounded-list a:before {
+				content: counter(li)"."counter(list);
+				counter-increment: list;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list1 a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list1 a:before {
+				content: counter(li)"."counter(list)"."counter(listt);
+				counter-increment: listt;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2.5em;
+				width: 2.5em;
+				line-height: 2.5em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="demon">
+			<h2>CSS3知识点整理(选择器、框模型、背景和边框、 文本效果、CSS过渡)</h2>
+			<p>CSS 用于控制网页的样式和布局。CSS3 是最新的 CSS 标准
+            </p>
+			<ol class="rectangle-list">
+				<li class="Big">
+					<a href="javascript:;">CSS选择器(<b>楼楼</b>此处挑重点写)</a>
+				</li>
+				
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">类选择器、ID选择器、通配选择器、元素选择器</a>
+						<ol class="rounded-list1">
+							<li>
+								<a href="javascript:;">类选择器：在css样式中以“.”(点开头)后跟类名。(例：.demo{color:red;}表示html中所有class类叫做demo的字体颜色为红色)</a>
+							</li>
+							<li>
+								<a href="javascript:;">ID选择器：在css样式中以“#”(点开头)后跟ID名。(例：#demo{color:red;}表示html中ID叫做demo的字体颜色为红色)(<strong>注意：id唯一</strong>)</a>
+							</li>
+							<li>
+								<a href="javascript:;">通配选择器：在css样式中以“*”(点开头)后跟花括号。(例：*{padding：0px;}表示html中所有元素的内边距为0)</a>
+							</li>
+							<li>
+								<a href="javascript:;">元素选择器：在css样式中以标签名开头后跟花括号(例：p{color:red;}表示html中所有p标签的字体颜色为红色)</a>
+							</li>
+							<li>
+								<a href="javascript:;">组合选择器：在css样式中多个标签拥有共同样式时可用，来减少代码量,每个标签间用标签隔开(例：h1,p{color:red;}表示html中所有p和h1标签的字体颜色为红色)</a>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<a href="javascript:;">子选择器、伪元素(较多，不详细说明，请看例子)</a>
+						<ol class="rounded-list1">
+							<li>
+								<a href="javascript:;">例：div>p{ background-color:yellow;}   解释：选取父元素是 div 元素的每个 p元素,并设置其背景色为黄色。</a>
+							</li>
+							<li>
+								<a href="javascript:;">例：div+p{ background-color:yellow;}   解释：选择 div元素之后紧跟的每个 p 元素并设置其背景色为黄色。</a>
+							</li>
+							<li>
+								<a href="javascript:;">例：div p{ background-color:yellow;} (<strong>注意:这里div与p之间是空格</strong>)  解释：选择并设置位于 div 元素内部的每个 p 元素的样式</a>
+							</li>
+							<li>
+								<a href="javascript:;">例：div>p{ background-color:yellow;}   解释：选取父元素是 div 元素的每个 p元素,并设置其背景色为黄色。</a>
+							</li>
+							<li>
+								<a href="javascript:;">例：a[target=_blank]{ background-color:yellow;} 解释：为 target="_blank" 的 a 元素设置样式</a>
+							</li>
+							<li>
+								<a href="javascript:;">例：[lang|=en]{ background-color:yellow;}解释：选择 lang 属性值以 "en" 开头的元素，并设置其样式</a>
+							</li>
+							<li>
+								<a href="javascript:;">例：div[class^="test"]{background:#ffff00;}解释：设置 class 属性值以 "test" 开头的所有 div 元素的背景色</a>
+							</li>
+							<li>
+								<a href="javascript:;">例：p:before{ content:"台词：";}(<strong>注意这里的:before为伪元素</strong>)解释：在每个 p 元素的内容之前插入新内容</a>
+							</li>
+							<li>
+								<a href="javascript:;">:nth-child(n) 选择器匹配属于其父元素的第 N 个子元素，不论元素的类型。n 可以是数字、关键词或公式。<br/>
+									例：Odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1）。<br/>
+									在这里，我们为奇数和偶数 p 元素指定两种不同的背景色：<br/>
+									p:nth-child(odd){background:#ff0000;}<br/>
+									p:nth-child(even){background:#0000ff;}
+								</a>
+							</li>
+						</ol>
+					</li>
+				</ol>
+
+				<li class="Big">
+					<a href="javascript:;">CSS3 边框</a>
+					
+				</li>
+				<ol class="rounded-list">
+						<li>
+					       <a href="javascript:;">CSS3 圆角</a>
+					       <textarea name="" rows="10" cols="100" id="text">					       	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title></title> 
+<style> 
+div
+{
+	border:2px solid #a1a1a1;
+	padding:10px 40px; 
+	background:#dddddd;
+	width:300px;
+	border-radius:25px;
+}
+</style>
+</head>
+<body>
+
+<div>border-radius 属性允许您为元素添加圆角边框！ </div>
+
+</body>
+</html>				       	
+					       </textarea><br/>
+							<button  id="btn">运行</button>
+							<script type="text/javascript">
+								var btn =document.getElementById('btn');
+								btn.onclick=function(){
+									var txt=document.getElementById('text').value;
+									var newTab=window.open('about:blank');
+									newTab.document.title='Hellow World';
+									newTab.document.write(txt);
+								}
+							</script>
+				        </li>
+				        <li>
+					       <a href="javascript:;">CSS3 盒阴影</a>
+					       <textarea name="" rows="10" cols="100" id="text1">					       	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title></title> 
+<style> 
+div
+{
+	width:300px;
+	height:100px;
+	background-color:yellow;
+	box-shadow: 10px 10px 5px #888888;
+}
+</style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>       	
+					       </textarea><br/>
+							<button  id="btn1">运行</button>
+							<script type="text/javascript">
+								var btn1=document.getElementById('btn1');
+								btn1.onclick=function(){
+									var txt1=document.getElementById('text1').value;
+									var newTab=window.open('about:blank');
+									newTab.document.title='Hellow World';
+									newTab.document.write(txt1);
+								}
+							</script>
+				        </li>
+				        <li>
+					       <a href="javascript:;">CSS3 线性渐变</a>
+					       <textarea name="" rows="10" cols="100" id="text2">					       	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title></title> 
+<style>
+#grad1 {
+    height: 200px;
+    background: -webkit-linear-gradient(red, blue); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(red, blue); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(red, blue); /* Firefox 3.6 - 15 */
+    background: linear-gradient(red, blue); /* 标准的语法（必须放在最后） */
+}
+</style>
+</head>
+<body>
+
+<h3>线性渐变 - 从上到下</h3>
+<p>从顶部开始的线性渐变。起点是红色，慢慢过渡到蓝色：</p>
+
+<div id="grad1"></div>
+
+<p><strong>注意：</strong> Internet Explorer 9 及之前的版本不支持渐变。</p>
+
+</body>
+</html>
+					       </textarea><br/>
+							<button  id="btn2">运行</button>
+							<script type="text/javascript">
+								var btn1=document.getElementById('btn2');
+								btn1.onclick=function(){
+									var txt1=document.getElementById('text2').value;
+									var newTab=window.open('about:blank');
+									newTab.document.title='Hellow World';
+									newTab.document.write(txt1);
+								}
+							</script>
+				       </li>
+				</ol>
+				<li class="Big">
+					<a href="javascript:;">CSS3 文本效果</a>
+					
+				</li>
+				<ol class="rounded-list">
+						<li>
+					       <a href="javascript:;">CSS3 的文本阴影</a>
+					       <textarea name="" rows="10" cols="100" id="text3">					       	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title></title> 
+<style>
+h1
+{
+	text-shadow: 5px 5px 5px #FF0000;
+}
+</style>
+</head>
+<body>
+
+<h1>Text-shadow effect!</h1>
+
+<p><b>注意:</b> Internet Explorer 9 以及更早版本的浏览器不支持 text-shadow属性.</p>
+
+</body>
+</html>
+					       </textarea><br/>
+							<button  id="btn3">运行</button>
+							<script type="text/javascript">
+								var btn =document.getElementById('btn3');
+								btn.onclick=function(){
+									var txt=document.getElementById('text3').value;
+									var newTab=window.open('about:blank');
+									newTab.document.title='Hellow World';
+									newTab.document.write(txt);
+								}
+							</script>
+				        </li>
+				        <li>
+					       <a href="javascript:;">CSS3 Text Overflow属性</a>
+					       <textarea name="" rows="10" cols="100" id="text5">					       	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title></title> 
+<style> 
+div.test
+{
+	white-space:nowrap; 
+	width:12em; 
+	overflow:hidden; 
+	border:1px solid #000000;
+}
+</style>
+</head>
+<body>
+
+<p>以下 div 容器内的文本无法完全显示，可以看到它被裁剪了。</p>
+<p>div 使用 &quot;text-overflow:ellipsis&quot;:</p>
+
+<div class="test" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</div>
+<p>div 使用 &quot;text-overflow:clip&quot;:</p>
+<div class="test" style="text-overflow:clip;">This is some long text that will not fit in the box</div>
+<p>div 使用自定义字符串 &quot;text-overflow: &gt;&gt;&quot;(只在 Firefox 浏览器下有效):</p>
+<div class="test" style="text-overflow:'>>';">This is some long text that will not fit in the box</div>
+</body>
+</html> 	
+					       </textarea><br/>
+							<button  id="btn5">运行</button>
+							<script type="text/javascript">
+								var btn1=document.getElementById('btn5');
+								btn1.onclick=function(){
+									var txt1=document.getElementById('text5').value;
+									var newTab=window.open('about:blank');
+									newTab.document.title='Hellow World';
+									newTab.document.write(txt1);
+								}
+							</script>
+				       </li>				
+				</ol>
+				<li class="Big">
+					<a href="javascript:;">CSS3 过渡</a>
+					<p>CSS3中，我们为了添加某种效果可以从一种样式转变到另一个的时候，无需使用Flash动画或JavaScript。用鼠标移过下面的元素：<br/>
+						CSS3 过渡是元素从一种样式逐渐改变为另一种的效果。要实现这一点，必须规定两项内容：  指定要添加效果的CSS属性指定效果的持续时间。
+					</p>
+				</li>
+				<ol class="rounded-list">
+						<li>
+					       <a href="javascript:;">例：规定当鼠标指针悬浮(:hover)于 div元素上时</a>
+					       <textarea name="" rows="10" cols="100" id="text6">					       	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title></title>
+<style> 
+div
+{
+	width:100px;
+	height:100px;
+	background:red;
+	transition:width 2s;
+	-webkit-transition:width 2s; /* Safari */
+}
+
+div:hover
+{
+	width:300px;
+}
+</style>
+</head>
+<body>
+
+<p><b>注意：</b>该实例无法在 Internet Explorer 9 及更早 IE 版本上工作。</p>
+
+<div></div>
+
+<p>鼠标移动到 div 元素上，查看过渡效果。</p>
+
+</body>
+</html>
+					       </textarea><br/>
+							<button  id="btn6">运行</button>
+							<script type="text/javascript">
+								var btn =document.getElementById('btn6');
+								btn.onclick=function(){
+									var txt=document.getElementById('text6').value;
+									var newTab=window.open('about:blank');
+									newTab.document.title='Hellow World';
+									newTab.document.write(txt);
+								}
+							</script>
+				        </li>
+				        <li>
+						   <a href="javascript:;">过渡属性：</a>
+					   </li>
+					   <table border="1" cellspacing="0">
+					<tbody>
+						<tr>
+							<th>属性</th>
+							<th>描述</th>
+						</tr>
+						<tr>
+							<td>transition	</td>
+							<td>简写属性，用于在一个属性中设置四个过渡属性。</td>					
+						</tr>
+						<tr>
+							<td>transition-property 	</td>
+							<td>规定应用过渡的 CSS 属性的名称。</td>
+						</tr>
+						<tr>
+							<td>transition-duration</td>
+							<td>定义过渡效果花费的时间。默认是 0。</td>							
+						</tr>
+						<tr>
+							<td>transition-timing-function</td>
+							<td>规定过渡效果的时间曲线。默认是 "ease"。</td>							
+						</tr>
+						<tr>
+							<td>transition-delay</td>
+							<td>规定过渡效果何时开始。默认是 0。</td>							
+						</tr>
+					</tbody>
+				</table>
+				</ol>
+
+			</ol>
+
+		</div>
+
+	</body>
+
+</html>
