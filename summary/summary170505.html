@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>总结</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+    width: 1000px;
+    margin: 0px auto;
+    background-image: url(images/12.jpg);
+   }
+   h1{
+    color: tomato;
+   }
+   h2,h3{
+    color: blue;
+   }
+   p{
+	font-size: 14px;
+	color: tomato;
+	margin-left: 60px;
+	text-indent: 30px;
+}
+strong,b{
+	color: chocolate;
+	font-style: italic;
+	font-weight: bold;
+}
+.Big a{
+	font-size: 20px;
+	color: #9932CC;
+}
+img{
+	width: 350px;
+	height: 100px;
+	margin: 10px 0px 10px 20px;
+}
+ol{
+        counter-reset: li; /* 创建一个计数器 */
+        list-style: none; /* 清除列表默认的编码*/
+        *list-style: decimal; /* 让IE6/7具有默认的编码 */
+        font: 15px 'trebuchet MS', 'lucida sans','微软雅黑',sans-serif;
+        padding: 10px 0px 10px 10px;
+        margin-bottom: 4em;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+			}
+
+ol ol{
+		margin: 0 0 0 2em; /* 给二级列表增加一定的左边距*/
+        counter-reset: list;
+}
+ol ol ol{
+		margin: 0 0 0 2em; /* 给三级列表增加一定的左边距*/
+        counter-reset: listt;
+}
+.rectangle-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;   
+
+}
+.rectangle-list a:hover{
+    background: #eee;
+}   
+.rectangle-list a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+.rectangle-list a:after{
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;               
+}
+.rectangle-list a:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;             
+}   
+.rounded-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+.rounded-list a:hover{
+    background: #eee;
+}
+.rounded-list a:hover:before{
+    transform: rotate(360deg);  
+}
+.rounded-list a:before{
+    content: counter(li)"."counter(list);
+    counter-increment: list;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+.rounded-list1 a:hover:after{
+    left: -1.5em;
+    border-left-color: #fff;             
+}   
+.rounded-list a:hover:after{
+    left: -1.5em;
+    border-left-color: #fff;             
+} 
+.rounded-list1 a:before{
+    content: counter(li)"."counter(list)"."counter(listt);
+    counter-increment: listt;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2.5em;
+    width: 2.5em;
+    line-height: 2.5em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+    font-size: 12px;
+}
+
+  </style>
+</head>
+<body style="height: 2000px;">
+<div id="demon">
+<h2>CSS3案例集</h2>
+<ol class="rectangle-list">
+     <li class="Big"><a href="">css3手风琴</a></li>
+        <div id="demon">
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+
+							<textarea name="" rows="10" cols="100" id="text">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>css3手风琴</title>
+		<style type="text/css">
+		  *{
+		  	padding: 0px;
+		  	margin: 0px;
+		  }
+		  .box{
+		  	width: 200px;
+		  	background-color: #00FFFF;
+		  	text-align: center;
+		  	line-height: 50px;
+		  	overflow: hidden;
+		  	margin-top: 10px;	
+		  }
+		  .box1{
+		  	width: 200px;
+		  	height: 0px;
+		  	background-color: #FFC0CB;
+		  	transition: height 2s ease;
+		  	display: block;
+		  }
+		  .box:hover{
+		  	background-color: #4B0082;
+		  	color: #FF0000;
+		  }
+		  .box:hover .box1{
+		  	height: 150px;
+		  }
+		  
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h2>首页</h2>
+			<span class="box1">
+			</span>
+		</div>
+		<div class="box">
+			<h2>关于我们</h2>
+			<span class="box1">
+			</span>
+		</div>
+		<div class="box">
+			<h2>加入我们</h2>
+			<span class="box1">
+			</span>
+		</div>
+		<div class="box">
+			<h2>产品介绍</h2>
+			<span class="box1">
+			</span>
+		</div>
+		<div class="box">
+			<h2>联系我们</h2>
+			<span class="box1">
+			</span>
+		</div>
+	</body>
+</html>
+
+		</textarea><br/>
+							<button id="btn">run</button>
+							<script type="text/javascript">
+								var btn = document.getElementById('btn');
+
+								btn.onclick = function() {
+									var txt = document.getElementById('text').value;
+									var newTab = window.open('about:blank');
+									newTab.document.title = 'Hellow World';
+									newTab.document.write(txt);
+								}
+							</script>
+						</a>
+				</li>
+        </ol>
+        
+    
+    <li class="Big"><a href="">css3扑克牌展开动画</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text1">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>css3扑克牌展开动画</title>
+		<style type="text/css">
+		  *{
+		  	padding: 0px;
+		  	margin: 0px;
+		  }
+		 .box{
+		 	width: 105px;
+		 	height: 150px;
+		 	position: relative;
+		 	
+		 	left: 300px;
+            top: 100px;
+		 }
+		 .box img{
+		 	position: absolute;
+		 	-webkit-transform-origin: center bottom;
+		 	-webkit-transition: all 2s ease;
+		 }
+		  .box:hover img:nth-child(1){
+		  	-webkit-transform: rotate(-42deg);
+		  }
+		 .box:hover img:nth-child(2){
+		  	-webkit-transform: rotate(-36deg);
+		  }
+		  .box:hover img:nth-child(3){
+		  	-webkit-transform: rotate(-30deg);
+		  }
+		  .box:hover img:nth-child(4){
+		  	-webkit-transform: rotate(-24deg);
+		  }
+		  .box:hover img:nth-child(5){
+		  	-webkit-transform: rotate(-18deg);
+		  }
+		  .box:hover img:nth-child(6){
+		  	-webkit-transform: rotate(-12deg);
+		  }
+		  .box:hover img:nth-child(7){
+		  	-webkit-transform: rotate(-6deg);
+		  }
+		  .box:hover img:nth-child(8){
+		  	-webkit-transform: rotate(0deg);
+		  }
+		  .box:hover img:nth-child(9){
+		  	-webkit-transform: rotate(8deg);
+		  }
+		  .box:hover img:nth-child(10){
+		  	-webkit-transform: rotate(16deg);
+		  }
+		  .box:hover img:nth-child(11){
+		  	-webkit-transform: rotate(24deg);
+		  }
+		  .box:hover img:nth-child(12){
+		  	-webkit-transform: rotate(32deg);
+		  }
+		  .box:hover img:nth-child(13){
+		  	-webkit-transform: rotate(40deg);
+		  }
+		  .box:hover img:nth-child(14){
+		  	-webkit-transform: rotate(48deg);
+		  }
+		  
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="images/pukepai/1.jpg" />
+			<img src="images/pukepai/2.jpg" />
+			<img src="images/pukepai/3.jpg" />
+			<img src="images/pukepai/4.jpg" />
+			<img src="images/pukepai/5.jpg" />
+			<img src="images/pukepai/6.jpg" />
+			<img src="images/pukepai/7.jpg" />
+			<img src="images/pukepai/8.jpg" />
+			<img src="images/pukepai/9.jpg" />
+			<img src="images/pukepai/10.jpg" />
+			<img src="images/pukepai/11.jpg" />
+			<img src="images/pukepai/12.jpg" />
+			<img src="images/pukepai/13.jpg" />
+			<img src="images/pukepai/14.jpg" />	
+		</div>
+	</body>
+</html>
+    	</textarea><br/>
+		<button  id="btn1">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn1');
+			btn.onclick=function(){
+				var txt=document.getElementById('text1').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol>  
+   
+     <li class="Big"><a href="">css3 3D立体盒子</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text2">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.rect-wrap {
+			    position: relative;
+			    perspective: 1600px;
+			}
+			.container {
+			    width: 800px;
+			    height: 800px;
+			    transform-style: preserve-3d;
+			    transform-origin: 50% 50% 200px; 
+			    /*//设置3d空间的原点在平面中心再向Z轴移动200px的位置*/
+		    }
+		    .slide {
+			    width: 400px;
+			    height: 400px;
+			    position: absolute;  
+			    /*//定位*/
+			}
+			.top {
+			    left: 200px;
+			    top: -200px;
+			    transform: rotateX(-90deg);
+			    transform-origin: bottom;
+			    background-color: #00008B;
+            }
+			.bottom {
+			    left: 200px;
+			    bottom: -200px;
+			    transform: rotateX(90deg);
+			    transform-origin: top;
+			    background-color: #FFFF00;
+			}
+			.left {
+			    left: -200px;
+			    top: 200px;
+			    transform: rotateY(90deg);
+			    transform-origin: right;
+			    background-color: #FFC0CB;
+			}
+			.right {
+			    left: 600px;
+			    top: 200px;
+			    transform: rotateY(-90deg);
+			    transform-origin: left;
+			    background-color: #FF00FF;
+			}
+			.front {
+			    left: 200px;
+			    top: 200px;
+			    transform: translateZ(400px);  
+			    /*//立方体前面正对着屏幕，所以不用旋转，只需向Z轴前移动距离*/
+			   background-color: #FF0000;
+			}
+			.back {
+			    left: 200px;
+			    top: 200px;
+			    transform: translateZ(0);   
+			    /*//立方体后面正对着屏幕，所以不用旋转，只需向Z轴后移动距离*/
+			   background-color: #CCCCCC;
+			}
+			@keyframes rotate-frame {
+			    0% {
+			        transform: rotateX(0deg) rotateY(0deg);
+			    }
+			    10% {
+			        transform: rotateX(0deg) rotateY(180deg);
+			    }
+			    20% {
+			        transform: rotateX(-180deg) rotateY(180deg);
+			    }
+			    30% {
+			        transform: rotateX(-360deg) rotateY(180deg);
+			    }
+			    40% {
+			        transform: rotateX(-360deg) rotateY(360deg);
+			    }
+			    50% {
+			        transform: rotateX(-180deg) rotateY(360deg);
+			    }
+			    60% {
+			        transform: rotateX(90deg) rotateY(180deg);
+			    }
+			    70% {
+			        transform: rotateX(0) rotateY(180deg);
+			    }
+			    80% {
+			        transform: rotateX(90deg) rotateY(90deg);
+			    }
+			    90% {
+			        transform: rotateX(90deg) rotateY(0);
+			    }
+			    100% {
+			        transform: rotateX(0) rotateY(0);
+			    }
+			}
+			.container{
+    animation: rotate-frame 30s linear infinite;
+}
+		</style>
+	</head>
+	<body>
+		<div class="rect-wrap">   
+			<!--//舞台元素，设置perspective，让其子元素获得透视效果。-->
+        <div class="container">    
+        	<!--//容器，设置transform-style: preserve-3d，让其子元素在3D空间呈现-->
+        <div class="top slide"></div>  
+         <!--//立方体的六个面-->
+        <div class="bottom slide"></div>
+        <div class="left slide"></div>
+        <div class="right slide"></div>
+        <div class="front slide"></div>
+        <div class="back slide"></div>
+    </div>
+</div>
+	</body>
+</html>
+    	</textarea><br/>
+		<button  id="btn2">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn2');
+			btn.onclick=function(){
+				var txt=document.getElementById('text2').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol>    
+   
+    <li class="Big"><a href="">css3镜面效果</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text3">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>css3镜面效果</title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				/*background-color: tomato;*/
+				border-radius: 50%;
+				background-image: url(img/2.jpg);
+				transition: all 2s ease;
+			}
+			
+			#box::before{
+				content: "";
+				width: 200px;
+				height: 200px;
+				display: block;
+				background: url(img/2.jpg) no-repeat;
+				border-radius: 50%;
+				border: 3px solid tomato;
+			}
+			#box:hover {
+				transform: rotateY(180deg);
+				-webkit-transform: rotateY(180deg);
+				-ms-transform: rotateY(180deg);
+				-moz-transform: rotateY(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>
+
+    	</textarea><br/>
+		<button  id="btn3">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn3');
+			btn.onclick=function(){
+				var txt=document.getElementById('text5').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol>    
+   
+       <li class="Big"><a href="">css3怦然心动</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text5">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>心动</title>
+		<style type="text/css">
+		 body{
+		 	background: rgba(0,0,0,.2);
+		 	opacity: 0.5;
+		 	
+		 }
+		 #div{
+		 	position: relative;
+		 	margin: 0 auto;
+		 	width: 300px;
+		 	-webkit-animation:animations 1s ease-out infinite;
+		    -moz-animation:animations 1s ease-out infinite;
+		    animation:animations 1s ease-out infinite;
+		    height: auto;
+		 }
+		 .box{
+		 	width: 100px;
+		 	height: 100px;
+		 	background-color: blueviolet;
+		 	border-radius: 50%;
+		 	position: absolute;
+		 	
+		 }
+		 .box1{
+		 	width: 100px;
+		 	height: 100px;
+		 	background-color: blueviolet;
+		 	border-radius: 50%;
+		 	position: absolute;
+		 	left: 92px;
+		 	/*z-index: 1;*/
+		 }
+		 .box2{
+		 	width: 96px;
+		 	height: 96px;
+		 	background-color: blueviolet;
+		 	position: absolute;
+		 	top: 46px;
+		 	left: 49px;
+		 	/*z-index: -1;*/
+		 	-webkit-transform: rotate(45deg);
+		 }
+		 @-webkit-keyframes animations{
+	    0%{-webkit-transform:scale(1,1);}
+	    100%{-webkit-transform:scale(1.2,1.2);}
+    }
+		</style>
+	</head>
+	<body>
+		<div id="div">
+			<div class="box"></div>
+			<div class="box1"></div>
+			<div class="box2"></div>
+		</div>
+	</body>
+</html>
+
+    	</textarea><br/>
+		<button  id="btn5">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn5');
+			btn.onclick=function(){
+				var txt=document.getElementById('text5').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol> 
+    <li class="Big"><a href="">css3图片无缝滚动</a></li>
+    <ol class="rounded-list">
+    	<li><a href="javascript:;">
+    	<textarea name="" rows="10" cols="100" id="text6">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>css3图片无缝滚动</title>
+		<style type="text/css">
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			.box{
+				width: 600px;
+				border: 1px solid tomato;
+				position: relative;
+				overflow: hidden;
+				height: 130px;
+				margin: 100px auto;
+			}
+			#div{
+				width: 700px;
+				position: absolute;
+				overflow: hidden;
+				height: 160px;
+				margin: 0px auto;
+				float: left;
+				 -webkit-animation: moving 10s infinite;
+				-moz-animation: moving 10s infinite;
+				-ms-animation: moving 10s infinite;
+			}
+			#div2{
+				width: 700px;
+				position: absolute;
+				height: 160px;
+				left: 650px;
+				float: left;
+				 -webkit-animation: moving 10s infinite;
+				-moz-animation: moving 10s infinite;
+				-ms-animation: moving 10s infinite;
+			}
+			
+			  .box:hover #div,.box:hover #div2{
+				-webkit-animation-play-state: paused;
+				-moz-animation-play-state: paused;
+				-ms-animation-play-state: paused;
+			}
+			 li{
+				list-style: none;
+				float: left;
+				width: 130px;
+			    
+			}
+			@-webkit-keyframes moving{
+				
+				100%{-webkit-transform: translatex(-700px);
+					-moz-transform: translatex(-700px);
+					-ms-transform: translatex(-700px);
+				}
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<div id="div">
+			<ul>
+				<li><a href="#"><img src="images/share2.png"/></a></li>
+				<li><a href="#"><img src="images/share3.png"/></a></li>
+				<li><a href="#"><img src="images/share9.png"/></a></li>
+				<li><a href="#"><img src="images/share10.png"/></a></li>
+				<li><a href="#"><img src="images/share11.png"/></a></li>
+			</ul>
+			</div>
+			<div id="div2">
+			<ul>
+				<li><a href="#"><img src="images/share2.png"/></a></li>
+				<li><a href="#"><img src="images/share3.png"/></a></li>
+				<li><a href="#"><img src="images/share9.png"/></a></li>
+				<li><a href="#"><img src="images/share10.png"/></a></li>
+				<li><a href="#"><img src="images/share11.png"/></a></li>
+			</ul>
+			</div>
+		</div>
+	</body>
+</html>
+
+    	</textarea><br/>
+		<button  id="btn6">run</button>
+		<script type="text/javascript">
+			var btn =document.getElementById('btn6');
+			btn.onclick=function(){
+				var txt=document.getElementById('text6').value;
+				var newTab=window.open('about:blank');
+				newTab.document.title='Hellow World';
+				newTab.document.write(txt);
+			}
+		</script>
+    	</a></li>
+   </ol>  
+</ol>
+
+</div>
+
+</body>
+</html>

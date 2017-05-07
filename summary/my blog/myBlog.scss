@@ -1,0 +1,91 @@
+$W:100%;
+$W1:1px;
+$W10:10px;
+$W100:100px;
+$bodyW:0px !default;
+$linkColor:#FFFFFF #FF0000 #333 chocolate!default;
+$display:flex;
+@mixin text-align($text-align:left){
+    text-align: $text-align;
+}
+@mixin Flex ($display:flex,$flexDirection:column){
+    display: $display;
+    flex-direction: $flexDirection;
+}
+body {
+    padding: $bodyW;
+    margin: $bodyW;
+}
+header{
+    width: $W;
+    @include Flex;
+    
+}
+.navList {
+    background-color: nth($linkColor,3);
+    @include Flex;
+    flex-direction: row;
+    li {
+    list-style: none;
+    width: $W100;
+    line-height: $W100/2;
+        a {
+        font-size: $W100/5;       
+        text-decoration: none;
+        color: nth($linkColor,1);
+        &:hover{
+            color: nth($linkColor,2);
+        }
+       } 
+    }
+}
+p {
+  text-indent: $W10*3 + 2;
+}
+section {
+    width: $W;
+    display: $display;
+    justify-content: space-between;
+    margin-bottom: $W100/5;
+    #ariticles {
+    line-height: $W10*3;
+    width: $W100*9;
+    border: 5px solid #4B0082;
+    padding: $W100/5;
+    @include Flex;
+    }
+    aside {
+        width: $W100*4;
+        border: 5px solid aqua;
+        @include text-align(center);
+        padding: 20px 20px 0px 20px;
+        h2 {
+          @include text-align;
+        }
+        li {
+        list-style: none;
+        }
+        nav{
+        @include Flex;
+        }
+        a {
+        font-size: $W10*2;
+        color: nth($linkColor,3);
+        text-decoration: none;
+            &:hover {
+            color: nth($linkColor,4);
+            }
+        }
+    }
+}
+footer {
+        width: $W;
+        height: $W10*4 + 8;
+        line-height: $W1*6;
+        font-size: $W10 + 2;
+        background-color: nth($linkColor,3);
+        color: nth($linkColor,1);
+        @include text-align(center);
+        padding-top: $W1*3;
+        @include Flex;
+    }

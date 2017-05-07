@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>总结</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body {
+				width: 1000px;
+				margin: 0px auto;
+				background-image: url(images/12.jpg);
+			}
+			
+			h1 {
+				color: tomato;
+			}
+			
+			h2,
+			h3 {
+				color: blue;
+			}
+			
+			p {
+				font-size: 16px;
+				color: #9932CC;
+				margin-left: 60px;
+				text-indent: 30px;
+				font-weight: 1000;		
+			}
+			
+			strong,
+			b {
+				color: chocolate;
+				font-style: italic;
+				font-weight: bold;
+			}
+			
+			.Big a {
+				font-size: 20px;
+				color: #9932CC;
+			}
+			
+			img {
+				width: 550px;
+				height: 100px;
+				margin: 10px 0px 10px 20px;
+			}
+			
+			ol {
+				counter-reset: li;
+				/* 创建一个计数器 */
+				list-style: none;
+				/* 清除列表默认的编码*/
+				*list-style: decimal;
+				/* 让IE6/7具有默认的编码 */
+				font: 15px 'trebuchet MS', 'lucida sans', '微软雅黑', sans-serif;
+				padding: 10px 0px 10px 10px;
+				margin-bottom: 4em;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+			}
+			
+			ol ol {
+				margin: 0 0 0 2em;
+				/* 给二级列表增加一定的左边距*/
+				counter-reset: list;
+			}
+			
+			ol ol ol {
+				margin: 0 0 0 2em;
+				/* 给三级列表增加一定的左边距*/
+				counter-reset: listt;
+			}
+			
+			.rectangle-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em .8em;
+				*padding: .4em;
+				margin: .5em 0 .5em 2.5em;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover {
+				background: #eee;
+			}
+			
+			.rectangle-list a:before {
+				content: counter(li);
+				counter-increment: li;
+				position: absolute;
+				left: -2.5em;
+				top: 50%;
+				margin-top: -1em;
+				background: #fa8072;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				text-align: center;
+				font-weight: bold;
+			}
+			
+			.rectangle-list a:after {
+				position: absolute;
+				content: '';
+				border: .5em solid transparent;
+				left: -1em;
+				top: 50%;
+				margin-top: -.5em;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover:after {
+				left: -.5em;
+				border-left-color: #fa8072;
+			}
+			
+			.rounded-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em 2em;
+				*padding: .4em;
+				margin: .5em 0;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				border-radius: .3em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list a:hover {
+				background: #eee;
+			}
+			
+			.rounded-list a:hover:before {
+				transform: rotate(360deg);
+			}
+			
+			.rounded-list a:before {
+				content: counter(li)"."counter(list);
+				counter-increment: list;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list1 a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list1 a:before {
+				content: counter(li)"."counter(list)"."counter(listt);
+				counter-increment: listt;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2.5em;
+				width: 2.5em;
+				line-height: 2.5em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="demon">
+			<h2>CSS3 动画(Animation)、弹性盒子(flex)和媒体查询(@media)</h2>
+			<ol class="rectangle-list">
+				<li class="Big">
+					<a href="javascript:;">CSS3 动画(Animation)</a>
+				</li>
+				<p>我们可以用css3创建动画，它可以取代许多网页动画图像，Flash动画，和JAVAScripts。</p>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">CSS3 @keyframes 规则</a>
+						<ol class="rounded-list1">
+							<li>
+								<a href="javascript:;">要创建CSS3动画，你将不得不了解@keyframes规则。@keyframes规则是创建动画。 @keyframes规则内指定一个CSS样式和动画将逐步从目前的样式更改为新的样式。</a>
+							</li>
+							<li>
+								<a href="javascript:;"><b>考虑到浏览器兼容问题：我们要加前缀<br/>
+									firefox:-moz-; chrome:-webkit-; safari:-webkit-; opera:-o-; ie:-ms-;详情见下图：<br />
+									<img src="images/170507184022.png" />
+								</b></a>
+							</li>
+							<li>
+								<a href="javascript:;">当在 @keyframes 创建动画，把它绑定到一个选择器，否则动画不会有任何效果。指定至少这两个CSS3的动画属性绑定向一个选择器：  规定动画的名称和规定动画的时长
+								<br/>
+								<img src="images/170507184701.png"/><br/>
+								<b>注意: 必须定义动画的名称和动画的持续时间。如果省略的持续时间，动画将无法运行，因为默认值是0。</b></a>
+							</li>
+							<li>
+								<a href="javascript:;">用百分比来规定变化发生的时间，或用关键词 "from" 和 "to"，等同于 0% 和 100%。0% 是动画的开始，100% 是动画的完成。<br/>
+									<img src="images/170507184959.png" style="height: 250px;"/>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">CSS3的动画属性  见下表：<br/>
+									<table border="1" cellspacing="0">
+										<thead >
+											<tr>
+												<th>属性</th>
+												<th>描述</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>@keyframes</td>
+												<td>规定动画。</td>
+											</tr>
+											<tr>
+												<td>animation</td>
+												<td>所有动画属性的简写属性，除了 animation-play-state 属性。</td>
+											</tr>
+											<tr>
+												<td>animation-name</td>
+												<td>规定 @keyframes 动画的名称。</td>
+											</tr>
+											<tr>
+												<td>animation-duration</td>
+												<td>规定动画完成一个周期所花费的秒或毫秒。默认是 0。</td>
+											</tr>
+											<tr>
+												<td>animation-timing-function</td>
+												<td> 	规定动画的速度曲线。默认是 "ease"。</td>
+											</tr>
+											<tr>
+												<td>animation-delay</td>
+												<td>规定动画何时开始。默认是 0。</td>
+											</tr>
+											<tr>
+												<td>animation-iteration-count</td>
+												<td>规定动画被播放的次数。默认是 1。</td>
+											</tr>
+											<tr>
+												<td>animation-direction</td>
+												<td>规定动画是否在下一周期逆向地播放。默认是 "normal"。</td>
+											</tr>
+											<tr>
+												<td>animation-play-state</td>
+												<td>规定动画是否正在运行或暂停。默认是 "running"。</td>
+											</tr>
+										</tbody>
+									</table>
+								</a>
+							</li>
+						</ol>
+					</li>
+				</ol>
+
+				<li class="Big">
+					<a href="javascript:;">CSS3 弹性盒子(Flex Box)</a>
+				</li>
+				<p>弹性盒子是 CSS3 的一种新的布局模式。CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间。</p>
+				<ol class="rounded-list">
+						<li>
+					       <a href="javascript:;">CSS3 弹性盒子属性<br/>
+					       		<table border="1" cellspacing="0">
+										<thead >
+											<tr>
+												<th>属性</th>
+												<th>描述</th>
+												<th>值</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>display</td>
+												<td>指定 HTML 元素盒子类型。</td>
+												<td>flex</td>
+											</tr>
+											<tr>
+												<td>flex-direction</td>
+												<td>指定了弹性容器中子元素的排列方式</td>
+												<td>
+												    row：横向从左到右排列（左对齐），默认的排列方式。<br/>
+												    row-reverse：反转横向排列（右对齐，从后往前排，最后一项排在最前面。<br/>
+												    column：纵向排列。<br/>
+												    column-reverse：反转纵向排列，从后往前排，最后一项排在最上面。
+												</td>
+											</tr>
+											<tr>
+												<td>justify-content</td>
+												<td>设置弹性盒子元素在主轴（横轴）方向上的对齐方式。</td>
+												<td>
+												    flex-start：<br/>
+												    弹性项目向行头紧挨着填充。这个是默认值。第一个弹性项的main-start外边距边线被放置在该行的main-start边线，而后续弹性项依次平齐摆放。<br/>
+												    flex-end：<br/>
+												    弹性项目向行尾紧挨着填充。第一个弹性项的main-end外边距边线被放置在该行的main-end边线，而后续弹性项依次平齐摆放。<br/>
+												    center：<br/>
+												    弹性项目居中紧挨着填充。（如果剩余的自由空间是负的，则弹性项目将在两个方向上同时溢出）。<br/>
+												    space-between：<br/>
+												    弹性项目平均分布在该行上。如果剩余空间为负或者只有一个弹性项，则该值等同于flex-start。否则，第1个弹性项的外边距和行的main-start边线对齐，而最后1个弹性项的外边距和行的main-end边线对齐，然后剩余的弹性项分布在该行上，相邻项目的间隔相等。<br/>
+												    space-around：<br/>
+												    弹性项目平均分布在该行上，两边留有一半的间隔空间。如果剩余空间为负或者只有一个弹性项，则该值等同于center。否则，弹性项目沿该行分布，且彼此间隔相等（比如是20px），同时首尾两边和弹性容器之间留有一半的间隔（1/2*20px=10px）。
+												</td>
+											</tr>
+											<tr>
+												<td>align-items</td>
+												<td>设置弹性盒子元素在侧轴（纵轴）方向上的对齐方式。</td>
+												<td>
+												    flex-start：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。<br/>
+												    flex-end：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。<br/>
+												    center：弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。<br/>
+												    baseline：如弹性盒子元素的行内轴与侧轴为同一条，则该值与'flex-start'等效。其它情况下，该值将参与基线对齐。<br/>
+												    stretch：如果指定侧轴大小的属性值为'auto'，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照'min/max-width/height'属性的限制。
+												</td>
+											</tr>
+											<tr>
+												<td>flex-wrap</td>
+												<td>设置弹性盒子的子元素超出父容器时是否换行。</td>
+												<td>
+												    nowrap - 默认， 弹性容器为单行。该情况下弹性子项可能会溢出容器。<br/>
+												    wrap - 弹性容器为多行。该情况下弹性子项溢出的部分会被放置到新行，子项内部会发生断行<br/>
+												    wrap-reverse -反转 wrap 排列。
+												</td>
+											</tr>
+											<tr>
+												<td>align-content</td>
+												<td>修改 flex-wrap 属性的行为，类似 align-items, 但不是设置子元素对齐，而是设置行对齐</td>
+												<td>
+												    stretch - 默认。各行将会伸展以占用剩余的空间。<br/>
+												    flex-start - 各行向弹性盒容器的起始位置堆叠。<br/>
+												    flex-end - 各行向弹性盒容器的结束位置堆叠。<br/>
+												    center -各行向弹性盒容器的中间位置堆叠。<br/>
+												    space-between -各行在弹性盒容器中平均分布。<br/>
+												    space-around - 各行在弹性盒容器中平均分布，两端保留子元素与子元素之间间距大小的一半。
+												</td>
+											</tr>
+											<tr>
+												<td>flex-flow</td>
+												<td>flex-direction 和 flex-wrap 的简写</td>
+												<td>对齐<br/>
+                                                                                                  设置"margin"值为"auto"值，自动获取弹性容器中剩余的空间。所以设置垂直方向margin值为"auto"，可以使弹性子元素在弹性容器的两上轴方向都完全集中。</td>
+											</tr>
+											<tr>
+												<td>order</td>
+												<td>设置弹性盒子的子元素排列顺序。</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>align-self</td>
+												<td>在弹性子元素上使用。覆盖容器的 align-items 属性。</td>
+												<td>
+												    auto：如果'align-self'的值为'auto'，则其计算值为元素的父元素的'align-items'值，如果其没有父元素，则计算值为'stretch'。<br/>
+												    flex-start：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。<br/>
+												    flex-end：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。<br/>
+												    center：弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。<br/>
+												    baseline：如弹性盒子元素的行内轴与侧轴为同一条，则该值与'flex-start'等效。其它情况下，该值将参与基线对齐。<br/>
+												    stretch：如果指定侧轴大小的属性值为'auto'，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照'min/max-width/height'属性的限制。
+												</td>
+											</tr>
+											<tr>
+												<td>flex</td>
+												<td>设置弹性盒子的子元素如何分配空间。</td>
+												<td>语法：flex: auto | initial | none | inherit |  [ flex-grow ] || [ flex-shrink ] || [ flex-basis ]<br/>													
+												    auto: 计算值为 1 1 auto<br/>
+												    initial: 计算值为 0 1 auto<br/>
+												    none：计算值为 0 0 auto<br/>
+												    inherit：从父元素继承<br/>
+												    [ flex-grow ]：定义弹性盒子元素的扩展比率。<br/>
+												    [ flex-shrink ]：定义弹性盒子元素的收缩比率。<br/>
+												    [ flex-basis ]：定义弹性盒子元素的默认基准值。
+												</td>
+											</tr>
+										</tbody>
+										<tfoot >
+											<tr >
+												<td colspan="3"><b>注意： 弹性容器外及弹性子元素内是正常渲染的。弹性盒子只定义了弹性子元素如何在弹性容器内布局。弹性子元素通常在弹性盒子内一行显示。默认情况每个容器只有一行</b></td>
+											</tr>
+										</tfoot>
+									</table>
+					       </a>					       
+				        </li>		
+				</ol>
+				<li class="Big">
+					<a href="javascript:;">CSS3 多媒体查询</a>
+					<p>媒体查询可用于检测很多事情，例如：<br/>
+					  viewport(视窗) 的宽度与高度<br/>
+					    设备的宽度与高度<br/>
+					    朝向 (智能手机横屏，竖屏) 。<br/>
+					    分辨率	<br/>				
+					目前很多针对苹果手机，Android 手机，平板等设备都会使用到多媒体查询。</p>
+				</li>
+				<ol class="rounded-list">
+						<li>
+					       <a href="javascript:;">@media语法<br/>
+					       	<img src="images/170507195105.png" />
+					       </a>
+				        </li>
+				        <li>
+					       <a href="javascript:;">媒体类型和媒体功能</a>
+					       <ol class="rounded-list1">
+					       	 <li><a href="javascript:;">
+					       	 	<table border="1" cellspacing="0">
+					       	 		<caption>媒体类型</caption>
+										<thead >
+											<tr>
+												<th>值</th>
+												<th>描述</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>all</td>
+												<td>用于所有设备</td>
+											</tr>
+											<tr>
+												<td>print</td>
+												<td>用于打印机和打印预览</td>
+											</tr>
+											<tr>
+												<td>screen</td>
+												<td>用于电脑屏幕，平板电脑，智能手机等。</td>
+											</tr>
+											<tr>
+												<td>speech</td>
+												<td>应用于屏幕阅读器等发声设备</td>
+											</tr>
+										</tbody>
+									</table>
+					       	  </a>					       
+				          </li>
+				          <li><a href="javascript:;">
+					       	 	<table border="1" cellspacing="0">
+					       	 		<caption>媒体功能</caption>
+										<thead >
+											<tr>
+												<th>值</th>
+												<th>描述</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>all</td>
+												<td>定义输出设备中的页面可见区域宽度与高度的比率</td>
+											</tr>
+											<tr>
+												<td>color</td>
+												<td>定义输出设备每一组彩色原件的个数。如果不是彩色设备，则值等于0</td>
+											</tr>
+											<tr>
+												<td>screen</td>
+												<td>定义在输出设备的彩色查询表中的条目数。如果没有使用彩色查询表，则值等于0</td>
+											</tr>
+											<tr>
+												<td>device-aspect-ratio</td>
+												<td>定义输出设备的屏幕可见宽度与高度的比率。</td>
+											</tr>
+											<tr>
+												<td>device-height</td>
+												<td>定义输出设备的屏幕可见高度。</td>
+											</tr>
+											<tr>
+												<td>device-width</td>
+												<td>定义输出设备的屏幕可见宽度。</td>
+											</tr>
+											<tr>
+												<td>max-device-height</td>
+												<td>定义输出设备的屏幕可见的最大高度。</td>
+											</tr>
+											<tr>
+												<td>max-device-width</td>
+												<td>定义输出设备的屏幕最大可见宽度。</td>
+											</tr>
+											<tr>
+												<td>max-resolution</td>
+												<td>定义设备的最大分辨率。</td>
+											</tr>
+											<tr>
+												<td>max-width</td>
+												<td>定义输出设备中的页面最大可见区域宽度。</td>
+											</tr>
+											<tr>
+												<td>min-device-width</td>
+												<td>定义输出设备的屏幕最小可见宽度。</td>
+											</tr>
+											<tr>
+												<td>min-device-height</td>
+												<td> 	定义输出设备的屏幕的最小可见高度。</td>
+											</tr>
+											<tr>
+												<td>min-resolution</td>
+												<td>定义设备的最小分辨率。</td>
+											</tr>
+											<tr>
+												<td>orientation</td>
+												<td>定义输出设备中的页面可见区域高度是否大于或等于宽度。</td>
+											</tr>
+											<tr>
+												<td>resolution</td>
+												<td>定义设备的分辨率。如：96dpi, 300dpi, 118dpcm</td>
+											</tr>
+											<tr>
+												<td>width</td>
+												<td>定义输出设备中的页面可见区域宽度。</td>
+											</tr>
+										</tbody>
+									</table>
+					       	  </a>					       
+				          </li>
+				       </ol>
+				    <li/>  
+				</ol>
+
+			</ol>
+
+		</div>
+
+	</body>
+
+</html>
