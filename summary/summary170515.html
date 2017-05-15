@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>总结</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body {
+				width: 1000px;
+				margin: 0px auto;
+				background-image: url(images/12.jpg);
+			}
+			
+			h1 {
+				color: tomato;
+			}
+			
+			h2,
+			h3 {
+				color: blue;
+			}
+			
+			p {
+				font-size: 14px;
+				color: #9932CC;
+				margin-left: 60px;
+				text-indent: 30px;
+				font-weight: 1000;		
+			}
+			
+			strong{
+				color: #5F9EA0;
+				
+				font-weight: bold;
+			}
+			b {
+				color: chocolate;
+				font-style: italic;
+				font-weight: bold;
+			}
+			
+			.Big a {
+				font-size: 20px;
+				color: #9932CC;
+			}
+			
+			img {
+				width: 350px;
+				height: 100px;
+				margin: 10px 0px 10px 20px;
+			}
+			
+			ol {
+				counter-reset: li;
+				/* 创建一个计数器 */
+				list-style: none;
+				/* 清除列表默认的编码*/
+				*list-style: decimal;
+				/* 让IE6/7具有默认的编码 */
+				font: 15px 'trebuchet MS', 'lucida sans', '微软雅黑', sans-serif;
+				padding: 10px 0px 10px 10px;
+				margin-bottom: 4em;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+			}
+			
+			ol ol {
+				margin: 0 0 0 2em;
+				/* 给二级列表增加一定的左边距*/
+				counter-reset: list;
+			}
+			
+			ol ol ol {
+				margin: 0 0 0 2em;
+				/* 给三级列表增加一定的左边距*/
+				counter-reset: listt;
+			}
+			
+			.rectangle-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em .8em;
+				*padding: .4em;
+				margin: .5em 0 .5em 2.5em;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover {
+				background: #eee;
+			}
+			
+			.rectangle-list a:before {
+				content: counter(li);
+				counter-increment: li;
+				position: absolute;
+				left: -2.5em;
+				top: 50%;
+				margin-top: -1em;
+				background: #fa8072;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				text-align: center;
+				font-weight: bold;
+			}
+			
+			.rectangle-list a:after {
+				position: absolute;
+				content: '';
+				border: .5em solid transparent;
+				left: -1em;
+				top: 50%;
+				margin-top: -.5em;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover:after {
+				left: -.5em;
+				border-left-color: #fa8072;
+			}
+			
+			.rounded-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em 2em;
+				*padding: .4em;
+				margin: .5em 0;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				border-radius: .3em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list a:hover {
+				background: #eee;
+			}
+			
+			.rounded-list a:hover:before {
+				transform: rotate(360deg);
+			}
+			
+			.rounded-list a:before {
+				content: counter(li)"."counter(list);
+				counter-increment: list;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list1 a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list1 a:before {
+				content: counter(li)"."counter(list)"."counter(listt);
+				counter-increment: listt;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2.5em;
+				width: 2.5em;
+				line-height: 2.5em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="demon">
+			<h2>JS复习(一)</h2>
+			<ol class="rectangle-list">
+				<li class="Big">
+					<a href="javascript:;">javascript简介</a>
+				</li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							Javascript诞生于1995年，最初的目的是处理以前由服务器端语言负责的一些输入验证操作。Javascript是一门弱类型语言。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							一个完整的Javascript实现由下列三个不同的部分组成：<br/>
+							1.核心(<b>ECMAscript</b>)<br/>
+							2.文档对象模型(<b>DOM</b>)<br/>
+							3.浏览器对象模型(<b>BOM</b>)<br/>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							ECMAscript规定了这门语言的“语法”，“类型”，“语句”，“关键字”，“保留字”，“操作符”，“对象”。等组成部分，并对实现该标准规定的各个方面内容的语言的描述。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							文档对象模型DOM，是针对XML但经过扩展用于HTML的应用程序编程接口(API).DOM把整个页面映射为一个多层节点结构。HTML或XML页面中的每个组成部分都是某种类型的节点。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							浏览器对象模型BOM，提供与浏览器交互的方法和接口。
+						</a>
+					</li>
+				</ol>
+
+				<li class="Big">
+					<a href="javascript:;">在HTML中使用Javascript</a>
+				</li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							在HTML页面中插入Javscript的主要方法，就是使用“script”元素。
+						</a>
+						<ol class="rounded-list1">
+							<li>
+								<a href="javascript:;">
+								内部嵌入：<br/>\<\script type="text/javascript"\><br/>
+									         function sayHi(){<br/>
+									         	alert("Hi");<br/>
+									         }<br/>
+								         <\/script\>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+								外部引入：<br/>\<\script type="text/javascript" src="xxx.js"\><\/script><br/>     
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+								按照传统做法\<\script>\元素都应该放到head元素中，这种做法目的是要把所有外部文件的引用都放在相同的地方，但是如果需要的外部引用文件太多的话，就会导致浏览器呈现页面时出现延迟，所以，为了避免这个问题，现代web应用程序一般会把全部Javascript引用放到body元素中页面的后面。   
+								</a>
+							</li>
+						</ol>
+					</li>
+					
+				</ol>
+				<li class="Big">
+					<a href="javascript:;">基本概念</a>
+				</li>
+				
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							<b>语法</b><br/>
+							ECMAscript中一切（函数名、变量、操作符）都区分大小写；<br/>
+							标识符：就是指变量、函数、属性的名字。规则：<br/>
+							(1).第一个字符必须是一个字母、下划线(<b>_</b>)、或一个美元符号（<b>$</b>）<br/>
+							(2).其他字符可以是字母、下划线(<b>_</b>)、数字或一个美元符号
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							注释："//"双斜杠表示单行注释，"/**/"表示多行注释。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>语句：</b>var sum=a+b; 以“<b>;</b>”分号结尾，虽然省略分号也是有效的语句，但是我们不推荐使用，因为加上分号会让我们避免很多错误。	
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>关键字：</b>用于表示控制语句的开始或结束，<strong>注意:关键字不可当标识符！</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>变量：</b>用<b>var</b>操作符，后面跟变量名来定义.例:var a=0;<strong>注意:用var操作符定义的变量将成为定义该变量的作用域中的局部变量。即在函数中用var定义了一个变量，这个变量在函数退出后就会被销毁</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>数据类型：</b>5种简单数据类型(基本数据类型):<b>Undefined</b>、<b>String</b>、<b>Number</b>、<b>Boolen</b>、<b>Null</b>。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>操作符：</b><strong>，-，*，/,+=,-=,*=,%=,/=,!=,>,<,>,>=,<=</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>语句：</b><strong>条件语句:if,if...else</strong><br />
+							<strong>循环语句:for,do...while,while语句</strong><br />
+							<b>不过多赘述，请看前面总结</b>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>函数：</b><strong>function</strong>关键字来声明，后跟一组<strong>参数</strong>以及<strong>函数体</strong>.例：<br />function functionName(ag1,arg2,...,argN){//<strong>小括号内为参数</strong><br />
+								statements//<strong>花括号内为函数体</strong><br />
+							}
+						</a>
+					</li>
+					<b>注意：以上内容均有详细总结，请查找楼楼之前的总结，请访问fastfan.space。</b>
+				</ol>
+				<li class="Big">
+					<a href="javascript:;">变量、作用域(<b>注意：总结以实例为主，下面直接上例子</b>)</a>
+				</li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							
+						1.基本类型和引用类型的值<br />
+						栈类型放基本类型的值，堆类型放引用类型的值（保存的是指向对象的指针）<br />
+						基本类型按值访问，引用类型按引用访问<br />
+						动态属性<br />
+						var box = new Object();//引用类型<br />
+						box.name = 'bao';//添加属性<br />
+						alert(box.name);//bao<br />
+						
+						var box = 'bao';//基本数据类型<br />
+						box.age = 18;//添加属性很怪异<br />
+						alert(box.age);//undefined<br />
+						
+						复制变量的值<br />
+						var box = 'bao';//<br />
+						var box2 = box;//<br />
+						alert(box2);//bao<br />
+						var box2 = 'kkk';//基本类型保持独立，box2的修改不会影响box的值<br />
+						alert(box2);//kkk<br />
+						alert(box);//bao<br />
+						
+						var box = new Object();<br />
+						box.name='bao';<br />
+						var box2=box;<br />
+						alert(box2.name);<br />
+						alert(box.name);<br />
+						box2.name='lee';//因为他们指向的同一个Object，同一个name，不管修改谁，大家都会被修改。<br />
+						alert(box2.name);//lee<br />
+						alert(box.name);//lee<br />
+						
+						传递参数  所有的值是案值传递<br />
+						function box(num){//案值传递<br />
+							num+=10;<br />
+							return num;<br />
+						}<br />
+						var num=50;<br />
+						alert(box(num));//60<br />
+						alert(num);//50<br />
+						
+						function box(obj){//这里将要传递一个引用类型的参数，但是不是按引用传递，是案值传递<br />
+							obj.name='lee';<br />
+							var obj = new Object();<br />
+							obj.name='kkk';//所以js没有按引用传参的功能，切记，不能把传递引用参数当成按引用传参<br />
+						}<br />
+						var obj = new Object();<br />
+						box(obj);<br />
+						alert(obj.name);//lee<br />
+						typeof检测基本类型 检测引用类型的话会分不清到底是数组还是对象还是正则  instanceof可以更准确的检测引用类型，但是不可检测基本类型<br />
+						
+						
+						
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>执行环境和作用域</b><br />
+						全局变量最外围属于window，全局函数最外围属于window；<br />
+						var box = 'lee';<br />
+						function setBox(box){<br />
+							alert(box);//通过传参，也是局部变量，作用域在setBox()范围下<br />
+						}<br />
+						setBox('red');//red<br />
+						alert(box);<br />
+						
+						var box = 'lee';<br />
+						function setBox(box){<br />
+							function setColor(){<br />
+								return 123;<br />
+							}<br />
+						}<br />
+						alert(setColor());//setColor is not defined setColor()作用域在setBox()范围下，所以这里访问不到  <br />
+						var box = 'lee';<br />
+						function setBox(){<br />
+							function setColor(){<br />
+								return 123;<br />
+							}
+							return setColor();<br />
+						}<br />
+						alert(setBox());//123<br />
+						<b></b>if 语句花括号没有作用域的问题<br />
+
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>语句：</b><strong>条件语句:if,if...else</strong><br />
+							<strong>循环语句:for,do...while,while语句</strong><br />
+							<b>不过多赘述，请看前面总结</b>
+						</a>
+					</li>
+				</ol>
+				
+				<li class="Big">
+					<a href="javascript:;">基本包装类型(<b>注意：总结以实例为主，下面直接上例子</b>)</a>
+				</li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+						 var box = 'Bao';<br />
+						alert(box.concat('is','Teacher','!'));// bao is Teacher ！ 字符串拼接<br />
+						alert(box.slice(1,2)); // a 截取字符串<br />
+						alert(box.toLowerCase());//转化为小写   toUpperCase();转化为大写<br />
+						split();将字符分割成数组<br />
+						函数就是方法，只不过单独使用就是函数，用在面向对象时叫做方法<br />
+						
+						alert(Math.ceil(25.9));//26向上舍入<br />
+						alert(Math.ceil(25.5));//26向上舍入<br />
+						alert(Math.ceil(25.1));//26向上舍入<br />
+						
+						alert(Math.floor(25.9));//25向下舍入<br />
+						alert(Math.floor(25.5));//25向下舍入<br />
+						alert(Math.floor(25.1));//25向下舍入<br />
+						
+						alert(Math.round(25.9));//26标准舍入<br />
+						alert(Math.round(25.5));//26标准舍入<br />
+						alert(Math.round(25.1));//25标准舍入<br />
+						
+						随机数<br />
+						for (var i = 0; i<10;i++){<br />
+							document.write(Math.floor(Math.random()*10+1));//1-10之间随机数<br />
+							document.write('<br/>');<br />
+						}
+						
+						function select(start,end){<br />
+							var total=end-start+1;<br />
+							return Math.floor(Math.random()*total+start);<br />
+						}
+						for (var i = 0; i<10;i++){<br />
+							document.write(select(5,10));//5-10之间随机数<br />
+							document.write('');<br />
+						}
+	
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>面向对象及原型</b><br />
+						工厂模式   解决代码冗余问题，但是分辨不清对象<br />
+						function creatObject(name,age){<br />
+							var obj= new Object();//创建对象<br />
+							obj.name=name;//添加属性<br />
+							obj.age=age;<br />
+							obj.run=function(){//添加方法<br />
+								return 'bao';<br />
+							}<br />
+						return obj;//返回对象引用<br />
+						}<br />
+						var box = creatObject('lee',28);//创建第一个对象<br />
+					     var box2 = creatObject('fan',20);<br />
+						alert(box.run());//打印第一个对象的run方法<br />
+						alert(box2.run());<br />
+						
+						构造函数创建  解决了冗余问题，也识别了对象<br />
+						1.<b>构造函数没有new Object，但他后台会自动var obj= new Object；</b><br />
+						2.<b>this 相当于obj</b><br />
+						3.<b>构造函数不需要返回对象引用，后台自动返回</b><br />
+						4.<b>构造函数也是函数，但首字母需大写</b><br />
+						5.<b>必须new构造函数名()，new Box();而这个Box第一个字母也必须大写</b><br />
+						6.<b>必须用new运算符</b><br />
+						function Box(name,age){<br />
+							this.name=name;<br />
+							this.age=age;<br />
+							this.run=function(){<br />
+								return this.name+this.age+'bao';<br />
+							};<br />
+						};<br />
+						function Box2(name,age){<br />
+							this.name=name;<br />
+							this.age=age;<br />
+							this.run=function(){<br />
+								return this.name+this.age+'bao';//this.run= new Function('return this.name+this.age+"bao"');<br />
+							};<br />
+						};<br />
+						var box1=new Box('lee',28);<br />
+						var box2=new Box('fan',20);<br />
+						var box3= new Box2('kkk',24);<br />
+						alert(box1.run());<br />
+						alert(box2.run());<br />
+						alert(box1 instanceof Box);//true<br />
+						alert(box2 instanceof Box);//true<br />
+						alert(box3 instanceof Box);//false<br />
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>原型的执行流程</b><br />
+						1.<b>就近原则  先会查找实例里的方法和属性，若果有立即返回   实例属性不会共享，原型属性是共享的</b><br />
+						2.<b>delete 删除属性</b><br />
+						
+						function Box(name,age){  //保持独立的用构造函数<br />
+							this.name=name;<br />
+							this.age=age;<br />
+							this.family=['bao','bal','ban']<br />
+						}<br />
+						Box.prototype={   //保持共享的用原型<br />
+							constructor:Box,<br />
+							run: function(){<br />
+								return this.name+this.age+"yunxingzhong";<br />
+							}<br />
+						};<br />
+						var box1=new Box('lee',100);<br />
+						alert(box1.run());<br />
+						alert(box1.family);<br />
+						box1.family.push('baw');<br />
+						alert(box1.family);<br />
+						var box2 = new Box('jack',200);<br />
+						alert(box2.run());<br />
+						alert(box2.family); //baw引用类型没有引用<br />
+						
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>继承   通过原型链实现</b><br />
+						function Box(){<br />
+							this.name = 'lee';//被继承的函数叫做超类型（父类，基类）<br />
+						}<br />
+						function Desk(){  //继承的函数叫做子类型（子类、派生类）<br />
+							this.price=100;<br />
+						}<br />
+						<b>通过原型链继承、超类型实例化后的对象实例，复制给予类型的原型属性</b><br />
+						Desk.prototype = new Box();//new Box（）会将Box里的信息和原型里的信息都交给Desk<br />
+						
+						var desk = new Desk();<br />
+						alert(desk.name);//undefined;<br />
+						
+						</a>
+					</li>
+				</ol>
+				
+				<li class="Big">
+					<a href="javascript:;">匿名函数  和闭包(<b>注意：总结以实例为主，下面直接上例子</b>)</a>
+				</li>
+				<p>闭包就是能够读取其他函数内部变量的函数。由于在javascript中，只有函数内部的子函数才能读取局部变量，所以说，闭包以简单理解成“定义在一个函数内部的函数“。
+所以，在本质上，闭包是将函数内部和函数外部连接起来的桥梁。</p>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+					
+							function box(){<br />
+								return 'lee';//普通函数<br />
+							}<br />
+							alert(box());//lee<br />
+							
+							function (){<br />
+								return 'lee';//单独匿名函数不可运行，就算能运行也无法调用，因为没有名称<br />
+							}<br />
+							<b>把匿名函数赋值给变量就可运行</b><br />
+							   var box=function (){<br />
+								return 'lee';<br />
+							};<br />
+							alert(box()); <br />
+							
+							<b>通过自我执行来执行匿名函数</b><br />
+							(function (){<br />
+								alert('lee');//匿名函数（）（）；第一个括号放匿名函数，第二个圆括号执行<br />
+							})();<br />
+							
+							<b>自我执行的匿名函数的传参</b><br />
+							<strong>(function(age){<br />
+								alert(age);//100<br />
+							})(100);</strong><br />
+							
+							<b>函数里放匿名函数</b><br />
+							<strong>function box(){<br />
+								return function(){<br />
+									return 'lee';<br />
+								}<br />
+							}</strong><br />
+							alert(box()());//lee<br />
+							
+							<b>通过闭包返回局部变量</b><br />
+							<strong>function box(){<br />
+								var age=100;<br />
+								return function(){<br />
+									return age;<br />
+								}<br />
+							}</strong><br />
+							alert(box()());//100<br />
+							
+							<b>使用全局变量进行累加</b><br />
+							<strong>var age = 100;<br />
+							function box(){<br />
+								age++;<br />
+							}<br />
+							alert(age);<br />
+							box();<br />
+							alert(age);</strong><br />
+							
+							<b>使用局部变量进行累加</b><br />
+							<strong>function box(){<br />
+								var age=100;<br />
+								age++;<br />
+								return age;<br />
+							}</strong><br />
+							alert(box());//101<br />
+							alert(box());//102<br />
+							alert(box());//103<br />
+							
+							<b>使用匿名函数实现局部变量驻留内存中从而累加</b><br />
+							<strong>function box(){<br />
+								var age=100;<br />
+								return function(){<br />
+									age++;<br />
+									return age;<br />
+								};<br />
+							}</strong><br />
+							var b = box();<br />
+							alert(b());//101<br />
+							alert(b());//102<br />
+							alert(b());//103<br />
+							b=null//解除引用，等待垃圾回收<br />
+							alert(b());//object is not a function"<br />
+							
+							
+							
+													
+													
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>循环里的匿名函数取值问题</b><br />
+							function box(){<br />
+								var arr=[];<br />
+								for (var i=0;i<5;i++){<br />
+									arr[i]=function(){<br />
+										return i;<br />
+									};<br />
+								}<br />
+								return arr;<br />
+							}<br />
+							alert(box()[0]);<br />
+							var b= box();<br />
+							for (var i = 0;i<5;i++){<br />
+								alert(b[i]());//5 5 5 5 5<br />
+							}<br />
+							
+							alert(b.length);//5<br />
+							
+							改0<br />
+							function box(){<br />
+								var arr=[];<br />
+								for (var i=0;i<5;i++){<br />
+									arr[i]=i;<br />
+								}<br />
+								return arr;<br />
+							}<br />
+							alert(box());//0,1,2,3,4<br />
+							alert(box()[0]);//0<br />
+							var b= box();<br />
+							for (var i = 0;i<5;i++){<br />
+								alert(b[i]);//0 1 2 3 4<br />
+							}<br />
+							
+							
+							改1<br />
+							function box(){<br />
+								var arr=[];<br />
+								for (var i=0;i<5;i++){<br />
+									arr[i]=(function (num){<br />
+										return num;//通过自我及时执行匿名函数<br />
+									})(i);<br />
+								}<br />
+								return arr;<br />
+							}<br />
+							
+							var b= box();<br />
+							for (var i = 0;i<5;i++){<br />
+								alert(b[i]);//0 1 2 3 4<br />
+							}<br />
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							
+							<b>关于this对象  闭包在执行时属于window</b><br />
+							<strong>var box= {<br />
+								getThis:function(){<br />
+								return function(){<br />
+										return this;<br />
+									}<br />
+								}<br />
+							}</strong><br />
+							alert(box.getThis()());//[object window]<br />
+							
+							<b>块级作用域  js没有块级作用域 if（） for（）</b><br />
+							<b>模仿块级作用域</b><br />
+							<strong>function box(){<br />
+								(function(){       //包含自我执行的匿名函数就可以块级作用域<br />
+									for (var i = 0;i<5;i++){<br />
+										alert(i);//0 1 2 3 4<br />
+									}//除了块级作用域立即被销毁<br />
+								})();</strong><br />
+								alert(i);// i is not defined"  <br /> 
+							}<br />
+							box();<br />
+						</a>
+					</li>
+				</ol>
+				
+				
+					
+				
+			</ol>
+
+		</div>
+
+	</body>
+
+</html>
