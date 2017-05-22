@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>总结</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body {
+				width: 1000px;
+				margin: 0px auto;
+				background-image: url(images/12.jpg);
+			}
+			
+			h1 {
+				color: tomato;
+			}
+			
+			h2,
+			h3 {
+				color: blue;
+			}
+			
+			p {
+				font-size: 14px;
+				color: #9932CC;
+				margin-left: 60px;
+				text-indent: 30px;
+				font-weight: 1000;		
+			}
+			
+			strong{
+				color: #5F9EA0;
+				
+				font-weight: bold;
+			}
+			b {
+				color: chocolate;
+				font-style: italic;
+				font-weight: bold;
+			}
+			
+			.Big a {
+				font-size: 20px;
+				color: #9932CC;
+			}
+			
+			img {
+				width: 850px;
+				height: 300px;
+				margin: 10px 0px 10px 20px;
+			}
+			
+			ol {
+				counter-reset: li;
+				/* 创建一个计数器 */
+				list-style: none;
+				/* 清除列表默认的编码*/
+				*list-style: decimal;
+				/* 让IE6/7具有默认的编码 */
+				font: 15px 'trebuchet MS', 'lucida sans', '微软雅黑', sans-serif;
+				padding: 10px 0px 10px 10px;
+				margin-bottom: 4em;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+			}
+			
+			ol ol {
+				margin: 0 0 0 2em;
+				/* 给二级列表增加一定的左边距*/
+				counter-reset: list;
+			}
+			
+			ol ol ol {
+				margin: 0 0 0 2em;
+				/* 给三级列表增加一定的左边距*/
+				counter-reset: listt;
+			}
+			
+			.rectangle-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em .8em;
+				*padding: .4em;
+				margin: .5em 0 .5em 2.5em;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover {
+				background: #eee;
+			}
+			
+			.rectangle-list a:before {
+				content: counter(li);
+				counter-increment: li;
+				position: absolute;
+				left: -2.5em;
+				top: 50%;
+				margin-top: -1em;
+				background: #fa8072;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				text-align: center;
+				font-weight: bold;
+			}
+			
+			.rectangle-list a:after {
+				position: absolute;
+				content: '';
+				border: .5em solid transparent;
+				left: -1em;
+				top: 50%;
+				margin-top: -.5em;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover:after {
+				left: -.5em;
+				border-left-color: #fa8072;
+			}
+			
+			.rounded-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em 2em;
+				*padding: .4em;
+				margin: .5em 0;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				border-radius: .3em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list a:hover {
+				background: #eee;
+			}
+			
+			.rounded-list a:hover:before {
+				transform: rotate(360deg);
+			}
+			
+			.rounded-list a:before {
+				content: counter(li)"."counter(list);
+				counter-increment: list;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list1 a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list1 a:before {
+				content: counter(li)"."counter(list)"."counter(listt);
+				counter-increment: listt;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2.5em;
+				width: 2.5em;
+				line-height: 2.5em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="demon">
+			<h2>Bootstrap知识点整理(一)</h2>
+			<ol class="rectangle-list">
+				<li class="Big">
+					<a href="javascript:;">Bootstrap简介</a>
+				</li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>移动设备优先</b>：自 Bootstrap 3 起，框架包含了贯穿于整个库的移动设备优先的样式。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>响应式设计</b>：Bootstrap 的响应式 CSS 能够自适应于台式机、平板电脑和手机。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							为了让 Bootstrap 开发的网站对移动设备友好，确保适当的绘制和触屏缩放，需要在网页的 head 之中添加 viewport meta 标签，如下所示：
+							<strong>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</strong><br />
+							width 属性控制设备的宽度。假设你的网站将被带有不同屏幕分辨率的设备浏览，那么将它设置为 device-width 可以确保它能正确呈现在不同设备上。<br />
+							initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。<br />
+							在移动设备浏览器上，通过为 viewport meta 标签添加 user-scalable=no 可以禁用其缩放（zooming）功能。<br />
+							通常情况下，maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>避免跨浏览器的不一致</b>：Bootstrap 使用 <strong>Normalize</strong> 来建立跨浏览器的一致性。Normalize.css 是一个很小的 CSS 文件，在 HTML 元素的默认样式中提供了更好的跨浏览器一致性。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+						      <b>容器（Container）:</b>Bootstrap 3 的 container class 用于包裹页面上的内容。<br />
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;div class="container"&gt;<br />
+                               	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;....<br />
+                               	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</strong>
+						</a>
+					</li>
+				</ol>
+
+				<li class="Big">
+					<a href="javascript:;">栅格系统</a>
+				</li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+					Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。
+				          栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。		
+						</a>
+						<ol class="rounded-list1">
+							<li>
+								<a href="javascript:;"><strong></strong><b></b>
+								<b>行（row）</b>必须包含在 <strong>.container （固定宽度）</strong>或<strong> .container-fluid （100% 宽度）</strong>中，以便为其赋予合适的排列（aligment）和内补（padding）。
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+								通过<strong>“行（row）”</strong>在水平方向创建一组<b>“列（column）”</b>。
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+								你的内容应当放置于<strong>“列（column）”</strong>内，并且，只有<strong>“列（column）”</strong>可以作为行（row）”的直接子元素。
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+								如果一<strong>“行（row）”</strong>中包含了的<strong>“列（column）”</strong>大于<strong>12</strong> ，多余的<strong>“列（column）”</strong>所在的元素将被作为一个整体另起一行排列。
+								</a>
+							</li>
+						</ol>
+					</li>
+					<li>
+								<a href="javascript:;"> 
+								    <table border="1" cellspacing="0" style="text-align: center;">
+								    	<caption>栅格参数</caption>
+								    	<thead>
+									    	<tr>
+		                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>	
+		                                         <th>超小屏幕 手机 (<768px) 	</th>
+		                                         <th>小屏幕 平板 (≥768px)</th>
+		                                         <th>中等屏幕 桌面显示器 (≥992px)</th>
+		                                         <th>大屏幕 大桌面显示器 (≥1200px)</th>
+									    	</tr>
+								    	</thead>
+								    	<tbody>
+								    		<tr>
+								    			<td>栅格系统行为</td>
+								    			<td>总是水平排列</td>
+								    			<td>以折叠开始，断点以上是水平的</td>
+								    			<td>以折叠开始，断点以上是水平的</td>
+								    			<td>以折叠开始，断点以上是水平的</td>
+								    		</tr>
+								    		<tr>
+								    			<td><strong>.container</strong> 最大宽度</td>
+								    			<td> None （自动）</td>
+								    			<td>750px</td>
+								    			<td>970px</td>
+								    			<td>1170px</td>
+								    		</tr>
+								    		<tr>
+								    			<td>类前缀</td>
+								    			<td><b>.col-xs-</b></td>
+								    			<td><b>.col-sm-</b></td>
+								    			<td><b>.col-md-</b></td>
+								    			<td><b>.col-lg-</b></td>
+								    		</tr>
+								    		<tr>
+								    			<td>列数量和</td>
+								    			<td> 	总是水平排列</td>
+								    			<td>以折叠开始，断点以上是水平的</td>
+								    			<td>以折叠开始，断点以上是水平的</td>
+								    			<td>以折叠开始，断点以上是水平的</td>
+								    		</tr>
+								    		<tr>
+								    			<td>栅格系统行为</td>
+								    			<td>12</td>
+								    			<td>12</td>
+								    			<td>12</td>
+								    			<td>12</td>
+								    		</tr>
+								    		<tr>
+								    			<td>最大列宽</td>
+								    			<td>Auto</td>
+								    			<td>60px</td>
+								    			<td>78px</td>
+								    			<td>95px</td>
+								    		</tr>
+								    		<tr>
+								    			<td>间隙宽度</td>
+								    			<td>30px（一个列的每边分别 15px）</td>
+								    			<td>30px（一个列的每边分别 15px）</td>
+								    			<td>30px（一个列的每边分别 15px）</td>
+								    			<td>30px（一个列的每边分别 15px）</td>
+								    		</tr>
+								    		<tr>
+								    			<td>可嵌套</td>
+								    			<td>Yes</td>
+								    			<td>Yes</td>
+								    			<td>Yes</td>
+								    			<td>Yes</td>
+								    		</tr>
+								    		<tr>
+								    			<td>偏移量</td>
+								    			<td>Yes</td>
+								    			<td>Yes</td>
+								    			<td>Yes</td>
+								    			<td>Yes</td>
+								    		</tr>
+								    		<tr>
+								    			<td>列排序</td>
+								    			<td>Yes</td>
+								    			<td>Yes</td>
+								    			<td>Yes</td>
+								    			<td>Yes</td>
+								    		</tr>
+								    	</tbody>
+								    </table>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+								<b>列偏移</b>:<br/>
+							          使用 <b>.col-md-offset-*</b> 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素增加了左侧的边距（margin）。例如:<br/>
+							    <strong>
+							    	&lt;div class="row"&gt;<br/>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div class="col-md-4 col-md-offset-4"&gt;&lt;/div&gt;<br/>
+									&lt;/div&gt;<br/>
+							    </strong>
+							    <b>上面这串代码表示.col-md-offset-4 类将 .col-md-4 元素向右侧偏移了4个列（column）的宽度。</b>
+								</a>
+							</li>
+				</ol>
+				<li class="Big">
+					<a href="javascript:;">排版</a>
+				</li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							<b>标题</b>:<br/>
+							HTML 中的所有标题标签，&lt;h1&gt;到 &lt;h6&gt; 均可使用。另外，还提供了 .h1 到 .h6 类，为的是给内联（inline）属性的文本赋予标题的样式。<br/>
+							在标题内还可以包含<b> &lt;small&gt;</b> 标签或赋予 .small 类的元素，可以用来标记副标题。<br >
+							<strong>
+							    	&lt;h1 class="row"&gt;<br/>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h1. Bootstrap heading &lt;small&gt;Secondary text&lt;/small&gt;<br/>
+									&lt;/h1&gt;<br/>
+							    </strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>中心内容</b>:<br/>
+							通过添加<b> .lead</b> 类可以让段落突出显示。<br >
+							<strong>
+							    	&lt;p class="lead"&gt;...&lt;/p&gt;<br/>
+							    </strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>内联文本元素</b>:<br/>
+							若要在上下文中突出相关文本的运行，请使用<b>&lt;mark&gt;</b>标记。 <br >
+							<strong>
+								example:<br >
+							    	You can use the mark tag to &lt;mark&gt;highlight&lt;/mark&gt; text.<br/>					
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>被删除的文本</b>:<br/>
+							额外插入的文本使用 <b>&lt;ins&gt; </b>标签。<br >
+							<strong>
+								example:<br >
+							    	&lt;ins&gt;This line of text is meant to be treated as an addition to the document.&lt;/ins&gt;<br/> 
+							    </strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>对齐</b>:<br/>
+							通过文本对齐类，可以简单方便的将文字重新对齐。通过文本对齐类，可以简单方便的将文字重新对齐。 <br >
+							<strong>
+								example:<br >
+							    	&lt;p class="text-left"&gt;Left aligned text.&lt;/p&gt;<br/>
+							    	&lt;p class="text-center"&gt;Center aligned text.&lt;/p&gt;<br/>
+							    	&lt;p class="text-right"&gt;Right aligned text;/p&gt;<br/>
+							    	&lt;p class="text-justify""&gt;Justified(两端对齐的) text;/p&gt;<br/>
+							    	&lt;p class="text-nowrap"&gt;No wrap(不换行;) text text;/p&gt;<br/>
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>改变大小写</b>:<br/>
+							通过这几个类可以改变文本的大小写。 <br >
+							<strong>
+								example:<br >
+							    	example:<br >
+							    	&lt;class="text-lowercase"&gt;Lowercased text.&lt;/p&gt;<br/>
+							    	&lt;p class="text-uppercase"&gt;Uppercased text.&lt;/p&gt;<br/>
+							    	&lt;p class="text-capitalize"&gt;Capitalized(首字母大写) text;/p&gt;<br/>					
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>引用</b>:<br/>
+							在你的文档中引用其他来源的内容。<br/>	
+							<strong>
+								example:<br >						    	
+							    	&lt;blockquote&gt;<br/>
+							    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;<br/>
+							    	&lt;/blockquote&gt;<br/>					
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>内联列表</b>:<br/>
+							通过设置 <b>display: inline-block</b>; 并添加少量的内补（padding），将所有元素放置于同一行。<br/>	
+							<strong>
+								example:<br >						    	
+							    	&lt;ul class="list-inline"&gt;<br >
+											  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;...&lt;/li&gt;<br/>
+											&lt;/ul&gt;<br/>			
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>水平排列的描述</b>:<br/>
+							<b>.dl-horizontal</b> 可以让<b> &lt;dl&gt;</b> 内的短语及其描述排在一行。开始是像<b> &lt;dl&gt;</b> 的默认样式堆叠在一起，随着导航条逐渐展开而排列在一行。<br/>	
+							<strong>
+								example:<br >						    	
+							    	&lt;dl class="dl-horizontal"&gt;<br/>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;...&lt;/dt&gt;<br/>
+									 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dd&gt;...&lt;/dd&gt;<br/>
+									&lt;/dl&gt;			
+							</strong>
+						</a>
+					</li>
+	          </ol>
+	          <li class="Big">
+					<a href="javascript:;">表格</a>
+			  </li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							为任意 <b>&lt;table&gt;</b>标签添加 <b>.table</b> 类可以为其赋予基本的样式 — 少量的内补（padding）和水平方向的分隔线。
+						</a>			
+					</li>
+					<li>
+						<a href="javascript:;">
+							通过 添加<b>.table-striped</b> 类可以给  <b>&lt;tbody&gt;</b>之内的每一行增加斑马条纹样式。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							通过添加 <b>.table-bordered</b>类为表格和其中的每个单元格增加边框。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							通过添加 <b>.table-hover</b>类可以让 <b>&lt;tbody&gt;</b> 中的每一行对鼠标悬停状态作出响应。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							通过添加 <b>.table-condensed</b> 类可以让表格更加紧凑，单元格中的内补（padding）均会减半。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<table border="1" cellspacing="0" style="text-align: center;" width="800">
+								    	<caption>状态类</caption>
+								    	<thead>
+									    	<tr>
+		                                         <th>Class</th>	
+		                                         <th>描述  	</th>  
+									    	</tr>
+								    	</thead>
+								    	<tbody>
+								    		<tr>
+								    			<td><strong>.active</strong></td>
+								    			<td>鼠标悬停在行或单元格上时所设置的颜色</td>								    			
+								    		</tr>
+								    		<tr>
+								    			<td><strong>.success</strong> </td>
+								    			<td>标识成功或积极的动作</td>
+								    		</tr>
+								    		<tr>
+								    			<td><strong>.info</strong></td>
+								    			<td>标识普通的提示信息或动作</td>
+								    		</tr>							
+								    		<tr>
+								    			<td><strong>.warning</strong></td>
+								    			<td>标识警告或需要用户注意/td>
+								    		</tr>
+								    		<tr>
+								    			<td><strong>.danger</strong></td>
+								    			<td>标识危险或潜在的带来负面影响的动作</td>
+								    		</tr>
+								    		
+								    	</tbody>
+								    </table>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							为任意 <b>&lt;table&gt;</b>标签添加 <b>.table</b> 类可以为其赋予基本的样式 — 少量的内补（padding）和水平方向的分隔线。
+						</a>			
+					</li>
+					<li>
+						<a href="javascript:;">
+							将任何 <b>.table </b>元素包裹在  <b>.table-responsive </b>元素内，即可创建响应式表格，其会在小屏幕设备上（小于768px）水平滚动。当屏幕大于 768px 宽度时，水平滚动条消失。
+						</a>			
+					</li>
+				</ol>
+				<li class="Big">
+					<a href="javascript:;">表单</a>
+			  </li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							单独的表单控件会被自动赋予一些全局样式。所有设置了 <b>.form-control</b> 类的 <b>&lt;input&gt;</b>,<b>&lt;textarea&gt;</b> 和<b>&lt;select&gt;</b> 元素都将被默认设置宽度属性为 width: 100%;。 将<b> label</b> 元素和前面提到的控件包裹在 <b>.form-group</b> 中可以获得最好的排列。<br />
+							<strong>
+								examples:<br/>
+								&lt;form&gt;
+								  &lt;div class="form-group"&gt;<br/>
+								    &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="exampleInputEmail1"&gt;Email address&lt;/label&gt;<br/>
+								    &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"&gt;<br/>
+								  &lt;/div&gt;<br/>
+								&lt;/form&gt;
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>内联表单:</b><br/>
+							为<b> &lt;form&gt; </b>元素添加 <b>.form-inline</b> 类可使其内容左对齐并且表现为 inline-block 级别的控件。只适用于视口（viewport）至少在 768px 宽度时（视口宽度再小的话就会使表单折叠）。<br />
+							<strong>
+								example:<br />
+									&lt;label class="checkbox-inline"&gt;<br />
+									 &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="checkbox" id="inlineCheckbox1" value="option1"&gt;1<br />
+									&lt;/label&gt;<br />
+									&lt;label class="radio-inline"&gt;<br />
+									 &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"&gt; 1<br />
+									&lt;/label&gt;
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>内联单选和多选框:</b><br/>
+							通过将<b> .checkbox-inline</b> 或 <b>.radio-inline</b> 类应用到一系列的多选框（checkbox）或单选框（radio）控件上，可以使这些控件排列在一行。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>禁用状态:</b><br />
+							为输入框设置 <b>disabled</b> 属性可以禁止其与用户有任何交互（焦点、输入等）。被禁用的输入框颜色更浅，并且还添加了 not-allowed 鼠标状态。<br />
+							<strong>
+								example:<br />
+							&lt;input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled&gt;<br />
+							</strong>
+						</a>
+					</li>
+				</ol>
+			  <li class="Big">
+					<a href="javascript:;">按钮</a>
+			  </li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							为<b> &lt;a&gt;</b>、<b> &lt;button&gt;</b> 或 <b> &lt;input&gt;</b> 元素添加按钮类（button class）即可使用 Bootstrap 提供的样式。
+							<strong>
+								examples:<br/>
+								  &lt;a class="btn btn-default" href="#" role="button"&gt;Link&lt;/a&gt;<br/>
+								    &lt;button class="btn btn-default" type="submit"&gt;Button&lt;/button&gt;<br/>
+									&lt;input class="btn btn-default" type="button" value="Input"&gt;<br/>
+									&lt;input class="btn btn-default" type="submit" value="Submit"&gt;
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>尺寸:</b><br/>
+							需要让按钮具有不同尺寸吗？使用<b> &lt; .btn-lg&gt; </b>、<b> &lt;.btn-sm&gt; </b> 或 <b> &lt;.btn-xs &gt; </b>就可以获得不同尺寸的按钮。<br/>
+							<strong>
+								example:<br />
+									&lt; p&gt;<br />
+									  &nbsp;&nbsp;&nbsp;&nbsp;&lt; button type="button" class="btn btn-primary btn-lg"&gt;（大按钮）Large button&lt; /button&gt;<br />
+									  &nbsp;&nbsp;&nbsp;&nbsp;&lt; button type="button" class="btn btn-default btn-lg"&gt;（大按钮）Large button&lt; /button&gt;<br />
+									&lt; /p&gt;<br />
+									&lt; p&gt;<br />
+									  &nbsp;&nbsp;&nbsp;&nbsp;&lt; button type="button" class="btn btn-primary"&gt;（默认尺寸）Default button&lt; /button&gt;<br />
+									  &nbsp;&nbsp;&nbsp;&nbsp;&lt; button type="button" class="btn btn-default"&gt;（默认尺寸）Default button&lt; /button&gt;<br />
+									&lt; /p&gt;<br />
+									&lt; p&gt;<br />
+									 &nbsp;&nbsp;&nbsp;&nbsp; &lt; button type="button" class="btn btn-primary btn-sm"&gt;（小按钮）Small button&lt; /button&gt;<br />
+									  &nbsp;&nbsp;&nbsp;&nbsp;&lt; button type="button" class="btn btn-default btn-sm"&gt;（小按钮）Small button&lt; /button&gt;<br />
+									&lt;/p&gt;
+									&lt; p&gt;<br />
+									 &nbsp;&nbsp;&nbsp;&nbsp; &lt; button type="button" class="btn btn-primary btn-xs"&gt;（超小尺寸）Extra small button&lt; /button&gt;<br />
+									  &nbsp;&nbsp;&nbsp;&nbsp;&lt; button type="button" class="btn btn-default btn-xs"&gt;（超小尺寸）Extra small button&lt; /button&gt;<br />
+									&lt; /p&gt;<br />
+							</strong>
+						</a>
+					</li>
+					
+				</ol>
+				<li class="Big">
+					<a href="javascript:;">图片形状</a>
+			  </li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							通过为 <b>&lt;img&gt;"</b> 元素添加以下相应的类，可以让图片呈现不同的形状。<br/>
+							<strong>
+								examples:<br/>
+								 &lt;img src="..." alt="..." class="img-rounded"&gt;<br/>
+								 &lt;img src="..." alt="..." class="img-circle"&gt;<br/>
+								 &lt;img src="..." alt="..." class="img-thumbnail"&gt;<br/>
+							</strong>
+							效果如下图：<br />
+							<img src="images/QQ截图20170522222351.png" />
+						</a>
+					</li>
+				</ol>
+			</ol>
+
+		</div>
+
+	</body>
+
+</html>
