@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>总结</title>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title></title>
+		<!-- 最新編譯和最佳化的 CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!-- 選擇性佈景主題 -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		<script src="libs/jquery-3.2.1.min.js"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+		<style type="text/css">
+			body {
+				width: 1000px;
+				margin: 0px auto;
+				background-image: url(images/12.jpg);
+			}
+			
+			h1 {
+				color: tomato;
+			}
+			
+			h2,
+			h3 {
+				color: blue;
+			}
+			
+			p {
+				font-size: 14px;
+				color: #9932CC;
+				margin-left: 60px;
+				text-indent: 30px;
+				font-weight: 1000;		
+			}
+			
+			strong{
+				color: #5F9EA0;
+				
+				font-weight: bold;
+			}
+			b {
+				color: chocolate;
+				font-style: italic;
+				font-weight: bold;
+			}
+			
+			.Big a {
+				font-size: 20px;
+				color: #9932CC;
+			}
+			
+			img {
+				width: 550px;
+				height: 100px;
+				margin: 10px 0px 10px 20px;
+			}
+			
+			ol {
+				counter-reset: li;
+				/* 创建一个计数器 */
+				list-style: none;
+				/* 清除列表默认的编码*/
+				*list-style: decimal;
+				/* 让IE6/7具有默认的编码 */
+				font: 15px 'trebuchet MS', 'lucida sans', '微软雅黑', sans-serif;
+				padding: 10px 10px 10px 10px;
+				margin-bottom: 4em;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+			}
+			
+			ol>ol {
+				margin: 0 0 0 2em;
+				/* 给二级列表增加一定的左边距*/
+				counter-reset: list;
+			}
+			
+			ol>ol>ol {
+				margin: 0 0 0 2em;
+				/* 给三级列表增加一定的左边距*/
+				counter-reset: listt;
+			}
+			
+			.rectangle-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em .8em;
+				*padding: .4em;
+				margin: .5em 0 .5em 2.5em;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover {
+				background: #eee;
+			}
+			
+			.rectangle-list a:before {
+				content: counter(li);
+				counter-increment: li;
+				position: absolute;
+				left: -2.5em;
+				top: 50%;
+				margin-top: -1em;
+				background: #fa8072;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				text-align: center;
+				font-weight: bold;
+			}
+			
+			.rectangle-list a:after {
+				position: absolute;
+				content: '';
+				border: .8em solid transparent;
+				left: -1em;
+				top: 50%;
+				margin-top: -.8em;
+				transition: all .3s ease-out;
+			}
+			
+			.rectangle-list a:hover:after {
+				left: -.8em;
+				border-left-color: #fa8072;
+			}
+			
+			.rounded-list a {
+				position: relative;
+				display: block;
+				padding: .4em .4em .4em 2em;
+				*padding: .4em;
+				margin: .5em 0;
+				background: #ddd;
+				color: #444;
+				text-decoration: none;
+				border-radius: .2em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list a:hover {
+				background: #eee;
+			}
+			
+			.rounded-list a:hover:before {
+				transform: rotate(360deg);
+			}
+			
+			.rounded-list a:before {
+				content: counter(li)"."counter(list);
+				counter-increment: list;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2.5em;
+				width: 2.5em;
+				line-height: 2em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+			}
+			
+			.rounded-list1 a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list a:hover:after {
+				left: -1.5em;
+				border-left-color: #fff;
+			}
+			
+			.rounded-list1 a:before {
+				content: counter(li)"."counter(list)"."counter(listt);
+				counter-increment: listt;
+				position: absolute;
+				left: -1.3em;
+				top: 50%;
+				margin-top: -1.3em;
+				background: #87ceeb;
+				height: 2.5em;
+				width: 2.5em;
+				line-height: 2.5em;
+				border: .3em solid #fff;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 2em;
+				transition: all .3s ease-out;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="demon">
+			<h2>Bootstrap知识点整理(二)</h2>
+			<ol class="rectangle-list">
+				<li class="Big">
+					<a href="javascript:;">Bootstrap组件</a>
+				</li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							<b>Glyphicons</b> 字体图标<br/>
+							可以把它们应用到按钮、工具条中的按钮组、导航或输入框等地方。<br/>
+							<strong>
+								example:<br/>
+								&lt;button type="button" class="btn btn-default" aria-label="Left Align"&gt;<br/>
+								  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="glyphicon glyphicon-align-left" aria-hidden="true"&gt;&lt;/span&gt;<br/>
+								&lt;/button&gt;<br/>
+								效果：<button type="button" class="btn btn-default" aria-label="Left Align">
+								  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+								</button><br/>
+								&lt;button type="button" class="btn btn-default btn-lg"&gt;<br/>
+								  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="glyphicon glyphicon-star" aria-hidden="true"&gt;&lt;/span&gt; Star<br/>
+								&lt;/button&gt;<br/>
+								效果：<button type="button" class="btn btn-default btn-lg">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+								</button>
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>下拉菜单</b>：用于显示链接列表的可切换、有上下文的菜单。<br/>将下拉菜单触发器和下拉菜单都包裹在 <b>.dropdown</b> 里，或者另一个声明了 position: relative; 的元素。然后加入组成菜单的 HTML 代码。<br/>
+							<strong>
+								example:<br/>
+								&lt;div class="dropdown"&gt;<br/>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aria-haspopup="true" aria-expanded="true"&gt;<br/>
+									    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dropdown<br/>
+									    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="caret"&gt;&lt;/span&gt;<br/>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br/>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="dropdown-menu" aria-labelledby="dropdownMenu1"&gt;<br/>
+									   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;<br/>
+									    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;<br/>
+									    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;<br/>
+									    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li role="separator" class="divider"&gt;&lt;/li&gt;<br/>
+									    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;<br/>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br/>
+								&lt;/div&gt;
+								
+							</strong>
+						</a>
+						<div class="dropup" style="position:relative;z-index: 100;">
+								  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								    Dropdown
+								    <span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								    <li><a href="#">Action</a></li>
+								    <li><a href="#">Another action</a></li>
+								    <li><a href="#">Something else here</a></li>
+								    <li role="separator" class="divider"></li>
+								    <li><a href="#">Separated link</a></li>
+								  </ul>
+								</div>
+					</li>
+				</ol>
+
+				<li class="Big">
+					<a href="javascript:;">按钮组</a>
+				</li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+					通过按钮组容器把一组按钮放在同一行里。通过与按钮插件联合使用，可以设置为单选框或多选框的样式和行为。<br />					
+					1.按钮组中的工具提示和弹出框需要特别的设置
+					当为<b> .btn-group</b> 中的元素应用工具提示或弹出框时，必须指定 container: 'body' 选项，这样可以避免不必要的副作用（例如工具提示或弹出框触发时，会让页面元素变宽和/或失去圆角）。<br />
+					2.确保设置正确的 role 属性并提供一个 label 标签为了向使用辅助技术 - 如屏幕阅读器 - 的用户正确传达一正确的按钮分组，需要提供一个合适的 role 属性。对于按钮组合，应该是 role="group"，对于toolbar（工具栏）应该是 role="toolbar"。<br />
+					<blockquote>
+						<pre>
+< div class="btn-group" role="group" aria-label="...">
+  < button type="button" class="btn btn-default">Left< /button>
+  < button type="button" class="btn btn-default">Middle< /button>
+  < button type="button" class="btn btn-default">Right< /button>
+< /div>
+						</pre>
+					</blockquote>
+					<strong>效果图</strong>：<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Left</button>
+  <button type="button" class="btn btn-default">Middle</button>
+  <button type="button" class="btn btn-default">Right</button>
+</div>
+						</a>
+					</li>
+							<li>
+								<a href="javascript:;"><strong></strong><b></b>
+								<b>按钮工具栏</b>把一组<b> &lt;div class="btn-group"&gt;</b>组合进一个<b> &lt;div class="btn-toolbar"&gt;</b>组合进一个中就可以做成更复杂的组件。<br />
+								<blockquote>
+									<pre>
+										<code>
+< div class="btn-toolbar" role="toolbar" aria-label="...">
+  < div class="btn-group" role="group" aria-label="...">...< /div>
+  < div class="btn-group" role="group" aria-label="...">...< /div>
+  < div class="btn-group" role="group" aria-label="...">...< /div>
+< /div>
+										</code>
+									</pre>
+								</blockquote>
+								<strong>效果图</strong>：<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group" role="group" > <button type="button" class="btn btn-default">1</button>
+  	<button type="button" class="btn btn-default">2</button>
+  	<button type="button" class="btn btn-default">3</button>
+  </div>
+  <div class="btn-group" role="group" > <button type="button" class="btn btn-default">4</button>
+  	<button type="button" class="btn btn-default">5</button>
+  	<button type="button" class="btn btn-default">6</button></div>
+  <div class="btn-group" role="group" > <button type="button" class="btn btn-default">7</button>
+  	<button type="button" class="btn btn-default">8</button>
+  	<button type="button" class="btn btn-default">9</button></div>
+</div>
+								</a>
+							</li>
+
+					<li>
+								<a href="javascript:;"> 
+								   <b>嵌套</b>:想要把下拉菜单混合到一系列按钮中，只须把 <b>.btn-group</b> 放入另一个 <b>.btn-group </b>中。<br />
+								   <blockquote>
+								   	<pre>
+								   		<code>
+< div class="btn-group" role="group" aria-label="...">
+  < button type="button" class="btn btn-default">1< /button>
+  < button type="button" class="btn btn-default">2< /button>
+  < div class="btn-group" role="group">
+    < button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown
+      < span class="caret">< /span>
+    < /button>
+    < ul class="dropdown-menu">
+      < li>< a href="#">Dropdown link< /a>< /li>
+      < li>< a href="#">Dropdown link< /a>< /li>
+    < /ul>
+  < /div>
+< /div>
+								   		</code>
+								   	</pre>
+								   </blockquote></a>
+								  <strong> 效果图</strong>：<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">1</button>
+  <button type="button" class="btn btn-default">2</button>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Dropdown link</a></li>
+      <li><a href="#">Dropdown link</a></li>
+    </ul>
+  </div>
+</div>
+								
+							</li>
+							
+				</ol>
+				<li class="Big">
+					<a href="javascript:;">按钮式下拉菜单</a>
+				</li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							<b>单按钮下拉菜单</b>:<br/>
+							把任意一个按钮放入 <b>.btn-group</b> 中，然后加入适当的菜单标签，就可以让按钮作为菜单的触发器了。
+							<blockquote>
+								<pre>
+									<code>
+< div class="btn-group">
+  < button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action < span class="caret">< /span>
+  < /button>
+  < ul class="dropdown-menu">
+    < li>< a href="#">Action< /a></ li>
+    < li>< a href="#">Another action< /a>< /li>
+    < li>< a href="#">Something else here< /a>< /li>
+    < li role="separator" class="divider">< /li>
+    < li>< a href="#">Separated link< /a>< /li>
+  < /ul>
+< /div>
+									</code>
+								</pre>
+							</blockquote>
+						</a>
+						<strong>
+							效果图：<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+						</strong>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>分裂式按钮下拉菜单</b>:<br/>
+							<blockquote>
+								<pre>
+									<code>
+< div class="btn-group">
+  < button type="button" class="btn btn-danger">Action</button>
+  < button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    < span class="caret">< /span>
+    < span class="sr-only">Toggle Dropdown< /span>
+  < /button>
+  < ul class="dropdown-menu">
+    < li>< a href="#">Action< /a>< /li>
+    < li>< a href="#">Another action< /a>< /li>
+    < li>< a href="#">Something else here< /a>< /li>
+    < li role="separator" class="divider">< /li>
+    < li>< a href="#">Separated link< /a>< /li>
+  < /ul>
+< /div>
+									</code>
+								</pre>
+							</blockquote>
+						</a>
+						<strong>
+							效果图：<div class="btn-group">
+  <button type="button" class="btn btn-danger">Action</button>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+						</strong>
+					</li>
+					
+	          </ol>
+	          <li class="Big">
+					<a href="javascript:;">输入框组</a>
+			  </li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							通过在文本输入框 &lt;input&gt;" 前面、后面或是两边加上文字或按钮，可以实现对表单控件的扩展。为 <b>.input-group</b> 赋予 <b>.input-group-addon</b> 或 <b>.input-group-btn</b> 类，可以给 <b>.form-control</b> 的前面或后面添加额外的元素。
+						</a>			
+					</li>
+					<li>
+						<a href="javascript:;">
+							<blockquote>
+								<pre>
+									<code>
+1.< div class="input-group">
+  < span class="input-group-addon" id="basic-addon1">@< /span>
+  < input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+< /div><br />
+<strong>效果图：</strong><div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+</div>
+2.< div class="input-group">
+  < input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+  < span class="input-group-addon" id="basic-addon2">@example.com< /span>
+< /div><br />
+<strong>效果图：</strong><div class="input-group">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+  <span class="input-group-addon" id="basic-addon2">@example.com</span>
+</div>
+3.< div class="input-group">
+  < span class="input-group-addon">$< /span>
+  < input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  < span class="input-group-addon">.00< /span>
+< /div><br />
+<strong>效果图：</strong><div class="input-group">
+  <span class="input-group-addon">$</span>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-addon">.00</span>
+</div>
+4.< label for="basic-url">Your vanity URL< /label>
+< div class="input-group">
+  < span class="input-group-addon" id="basic-addon3">https://example.com/users/< /span>
+  < input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+< /div><br />
+<strong>效果图：</strong><label for="basic-url">Your vanity URL</label>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+</div>
+									</code>
+								</pre>
+							</blockquote>
+						</a>
+	
+					</li>
+					<li>
+						<a href="javascript:;">
+							作为额外元素的多选框和单选框<br />
+							<blockquote>
+								<pre>
+									<code>
+< div class="row">
+  < div class="col-lg-6">
+    < div class="input-group">
+      < span class="input-group-addon">
+        < input type="checkbox" aria-label="...">
+      < /span>
+      < input type="text" class="form-control" aria-label="...">
+    < /div><!-- /input-group -->
+  < /div><!-- /.col-lg-6 --><br />
+  <strong>效果图： </strong>
+  <div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" aria-label="...">
+      </span>
+      <input type="text" class="form-control" aria-label="...">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 --><br />
+  < div class="col-lg-6">
+    < div class="input-group">
+      < span class="input-group-addon">
+        < input type="radio" aria-label="...">
+      < /span>
+      < input type="text" class="form-control" aria-label="...">
+    < /div><!-- /input-group -->
+  < /div><!-- /.col-lg-6 -->
+< /div><!-- /.row --><br />
+<strong>效果图：</strong>
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="radio" aria-label="...">
+      </span>
+      <input type="text" class="form-control" aria-label="...">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+									</code>
+								</pre>
+							</blockquote>
+						</a>
+					</li>
+					
+				</ol>
+				<li class="Big">
+					<a href="javascript:;">导航</a>
+			  </li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							Bootstrap 中的导航组件都依赖同一个 .nav 类，状态类也是共用的。改变修饰类可以改变样式。
+							<blockquote>
+								<pre>
+									<code>
+< ul class="nav nav-pills">
+  < li role="presentation" class="active">< a href="#">Home< /a>< /li>
+  < li role="presentation">< a href="#">Profile< /a>< /li>
+  < li role="presentation">< a href="#">Messages< /a>< /li>
+< /ul>
+									</code>
+								</pre>
+							</blockquote></a>
+							<strong>效果图：</strong>
+                            <img src="images/170523212920.png" />
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>品牌图标:</b><br/>
+							将导航条内放置品牌标志的地方替换为<b> &lt;img&gt;</b> 元素即可展示自己的品牌图标。由于<b> .navbar-brand</b> 已经被设置了内补（padding）和高度（height），你需要根据自己的情况添加一些 CSS 代码从而覆盖默认设置。<br />
+							<strong>
+								example:<br />
+									&lt;nav class="navbar navbar-default"&gt;<br/>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="container-fluid"&gt;<br/>
+									   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="navbar-header"&gt;<br/>
+									     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="navbar-brand" href="#"&gt;<br/>
+									        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img alt="Brand" src="..."&gt;<br/>
+									      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br/>
+									   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br/>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+									&lt;/nav&gt;<br/>
+							</strong>
+						</a>
+						<strong>效果图:</strong><nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="javascrit:;">
+        <img alt="Brand" src="images/share11.png" style="width: 25px; height: 25px;">
+      </a>
+    </div>
+  </div>
+</nav>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>分页</b><br/>
+							<blockquote>
+								<pre>
+									<code>
+< nav aria-label="Page navigation">
+  < ul class="pagination">
+    < li>
+      < a href="#" aria-label="Previous">
+        < span aria-hidden="true">&laquo;< /span>
+      < /a>
+    < /li>
+    < li>< a href="#">1< /a>< /li>
+    < li>< a href="#">2< /a>< /li>
+    < li>< a href="#">3< /a>< /li>
+    < li>< a href="#">4< /a>< /li>
+    < li>< a href="#">5< /a>< /li>
+    < li>
+      < a href="#" aria-label="Next">
+        < span aria-hidden="true">&raquo;< /span>
+      < /a>
+    < /li>
+  < /ul>
+< /nav>
+									</code>
+								</pre>
+							</blockquote>
+						</a>
+						<strong>效果图：<img src="images/170523214947.png"/></strong>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<b>徽章:</b><br />
+							给链接、导航等元素嵌套 <b>&lt;" class="badge"&gt;"</b> 元素，可以很醒目的展示新的或未读的信息条目。<br />
+							<blockquote>
+								<pre>
+									<code>
+< a href="#">Inbox < span class="badge">42< /span>< /a>
+< button class="btn btn-primary" type="button">
+  Messages < span class="badge">4< /span>
+< /button>
+									</code>
+								</pre>
+							</blockquote>
+						</a>
+						<strong>效果图：</strong>
+						<button class="btn btn-primary" type="button">
+						  Messages <span class="badge">4</span>
+						</button>
+					</li>
+				</ol>
+			  <li class="Big">
+					<a href="javascript:;">巨幕</a>
+			  </li>
+				<ol class="rounded-list">
+					<li>
+						<a href="javascript:;">
+							这是一个轻量、灵活的组件，它能延伸至整个浏览器视口来展示网站上的关键内容。<br/>
+							<blockquote>
+								<pre>
+									<code>
+< div class="jumbotron">
+  < h1>Hello, world!< /h1>
+  < p>...< /p>
+  < p>< a class="btn btn-primary btn-lg" href="#" role="button">Learn more< /a>< /p>
+< /div>
+									</code>
+								</pre>
+							</blockquote>
+
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<blockquote>
+								<pre>
+									<code>
+< div class="progress">
+  < div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    60% Complete
+  < /div>
+< /div>									
+									</code>
+								</pre>
+						</blockquote>
+						<strong>效果图：<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    60% Complete
+  </div>
+</div></strong>
+						</a>
+						
+					</li>
+					<li>
+						<a href="javascript:;">
+							<blockquote>
+								<pre>
+									<code>
+< div class="progress">
+  < div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    < span >40% Complete (success)< /span>
+  < /div>
+< /div>
+< div class="progress">
+  < div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+    < span >20% Complete< /span>
+  < /div>
+< /div>
+< div class="progress">
+  < div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+    < span class="sr-only">60% Complete (warning)< /span>
+  < /div>
+< /div>
+< div class="progress">
+  < div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    < span class="sr-only">80% Complete (danger) /span>
+  < /div>
+< /div>							
+									</code>
+								</pre>
+						</blockquote>
+
+						</a>
+<strong>效果图：<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    <span >40% Complete (success)</span>
+  </div>
+</div></strong>
+<strong>效果图：
+<div class="progress">
+  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+    <span >20% Complete</span>
+  </div>
+</div></strong>
+<strong>效果图：
+<div class="progress">
+  <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+    <span class="sr-only">60% Complete (warning)</span>
+  </div>
+</div></strong>
+<strong>效果图：
+<div class="progress">
+  <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    <span class="sr-only">80% Complete (danger)</span>
+  </div>
+</div></strong>
+					</li>
+					
+			</ol>
+			</ol>
+
+		</div>
+
+	</body>
+
+</html>
