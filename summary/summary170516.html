@@ -193,190 +193,185 @@
 
 	<body>
 		<div id="demon">
-			<h2>ECMAScript6、NODE.JS</h2>
+			<h2>JS复习(二)</h2>
 			<ol class="rectangle-list">
 				<li class="Big">
-					<a href="javascript:;">ECMAScript6</a><br />
+					<a href="javascript:;">HTML5(这里只做简单概述，详情请查询我之前做的详细总结)</a>
 				</li>
-				<p>ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
+				<p>万维网的核心语言、标准通用标记语言下的一个应用超文本标记语言（HTML）的第五次重大修改</p>
 				<ol class="rounded-list">
 					<li>
 						<a href="javascript:;">
-							<b>let命令</b><br/>
-							ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。
+							<b>HTML语义化(HTML特性之一)</b><br/>
+							1.根据内容的结构化(内容语义化)，选择合适的标签(代码语义化)便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。<br />
+							2.为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构<br />
+							3.方便其他设备解析(如屏幕阅读器、盲人阅读器、移动设备)以意义的方式来渲染网页;<br />
+							4.便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。
 						</a>
-							<ol class="rounded-list1">
-								<li>
-									<a href="javascript:;"> 
-									    <strong>
-									    	{<br/>
-											  let a = 10;<br/>
-											  var b = 1;<br/>
-											}<br/>
-											a // <b>ReferenceError: a is not defined.</b><br/>
-											b // <b>1</b><br/>
-									    </strong>
-									    <b>注意</b>:上面代码在代码块之中，分别用let和var声明了两个变量。然后在代码块之外调用这两个变量，<b>结果let声明的变量报错</b>，var声明的变量返回了正确的值。这表明，let声明的变量只在它所在的代码块有效。
-								    </a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									    <b>不存在变量提升</b><br/>
-									    ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。<br />
-									    <strong>
-									    	// var 的情况<br/>
-											console.log(foo); // 输出<b>undefined</b><br/>
-											var foo = 2;<br/>
-											// let 的情况<br/>
-											console.log(bar); // 报错<b>ReferenceError</b><br/>
-											let bar = 2;<br/>
-									    </strong>
-									    <b>注意</b>:var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined。这种现象多多少少是有些奇怪的，按照一般的逻辑，变量应该在声明语句之后才可以使用。
-为了纠正这种现象，let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。
-								    </a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									    <b>不允许重复声明</b><br/>
-									    ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。<br />
-									    <strong>
-									    	// 报错<br/>
-											function () {<br/>
-											  let a = 10;<br/>
-											  let a = 1;<br/>
-											}<br/>
-											// 报错<br/>
-											function () {<br/>
-											  let a = 10;<br/>
-											  var a = 1;<br/>
-											}<br/>
-											function func(arg) {<br/>
-											  let arg; //<b> 报错</b><br/>
-											}<br/>
-											function func(arg) {<br/>
-											  {<br/>
-											    let arg; // <b>不报错</b><br/>
-											  }<br/>
-											}<br/>
-									    </strong>
-									    <b>注意</b>:let不允许在相同作用域内，重复声明同一个变量。
-								    </a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									    <b>ES6 的块级作用域</b><br/>
-									    let实际上为 JavaScript 新增了块级作用域。<br />
-									    <strong>
-									    	function f1() {<br />
-											  let n = 5;<br />
-											  if (true) {<br />
-											    let n = 10;<br />
-											  }<br />
-											  console.log(n); // <b>5</b><br />
-											}<br />
-									    </strong>
-									    <b>注意</b>:上面的函数有两个代码块，都声明了变量n，运行后输出5。这表示外层代码块不受内层代码块的影响。如果使用var定义变量n，最后输出的值就是10。
-								    </a>
-								</li>
-							</ol>
 					</li>
 					<li>
 						<a href="javascript:;">
-							<b>const 命令 </b><br/>
-							const声明一个只读的常量。一旦声明，常量的值就不能改变。
+							<b>HTML5新增的语义标签</b><br/>
+							1.区块标签(<b>arctical、header、section、footer、aside、nav</b>)<br/>
+							2.内容分组标签(<b>figure、figcaption、main</b>)<br/>
+							3.文本级别标签(<b>time</b>)<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>标签header</b>:<br/>
+　　一般被放置在页面的顶部，或者页面中某个区块元素的顶部，包含整个页面或某个区块的标题、简介等信息。<br/>
+　　一个文档中可以包含多于一个的header标签;header标签不一定非要显示在页面的上方，它的内容决定这里需要使用header标签，位置并不重要;可以为body,article,section和aside增加header元素。<br/>
+　　&nbsp;<b>标签footer</b>:<br/>
+　一般被放置在页面的底部，或者页面中某个区块元素的底部。<br/>
+　　<b>标签nav</b>:<br/>
+　　表示页面的导航,可以通过导航连接到网站的其他页面，或当前页面的其他部分。<br/>
+　　搜索引擎或屏幕阅读器会根据nav标签确定网站内容，不是任何一组超链接都适合放在nav标签中。<br/>
+　　<b>标签aside</b>:<br/>
+　　包含的内容不是页面的主要内容，具有独立性，是对页面内容的补充。<br/>
+　　一些使用aside的例子：页面侧边栏;广告;友情链接;文章引语(内容摘要)。<br/>
+　　<b>标签section</b>:<br/>
+　　一个主题性的内容分组，通常包含一个头部(header)，可能还会有一个尾部(footer)。<br/>
+　　<b>标签div和section的比较</b>：标签div应用更广泛，只要你想为一个区域定义一个样式，就可以使用div标签;标签section包含的内容是一个明确的主题，通常有标题区域。<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>标签main</b>:<br/>
+　　显示页面的主体内容;每个页面只能包含一个main标签;main标签中不包含网站标题、logo、主导航、版权声明等信息。<br/>
+　　<b>标签figure</b>:<br/>
+　　定义媒介内容的分组，以及它们的标题。<br/>
+　　<b>标签figcaption</b>:<br/>
+　　定义figure元素的标题。<br/>
+　　<b>标签time</b>:<br/>
+　　HTML5的新标签。表示一个日期，或者一个时间，或者同时表示一个日期和时间值。<br/>
 						</a>
-						<ol class="rounded-list1">
-							<li>
+					</li>
+					<li>
+						<a href="javascript:;">
+							HTML5的设计目的是为了在移动设备上支持多媒体。新的语法特征被引进以支持这一点，如video、audio和canvas 标记。HTML5还引进了新的功能，可以真正改变用户与文档的交互方式
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							HTML5 DOM 为<b>audio和 video </b>元素提供了方法、属性和事件。
+这些方法、属性和事件允许您使用 JavaScript 来操作<b> audio 和 video</b> 元素。
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							HTML5 <b>canvas</b> 标签用于绘制图像（通过脚本，通常是 JavaScript）。
+
+不过，<b>canvas</b> 元素本身并没有绘制能力（它仅仅是图形的容器） - 您必须使用脚本来完成实际的绘图任务。
+
+getContext() 方法可返回一个对象，该对象提供了用于在画布上绘图的方法和属性。
+						</a>
+					</li>
+					<li>
 								<a href="javascript:;">
-									    <strong><b></b>
-									    	const PI = 3.1415;<br/>
-											PI //<b>3.1415</b> <br/>
-											PI = 3;<br/>
-											// <b>TypeError: Assignment to constant variable.</b><br/>
-									    </strong>
-									    <b>注意</b>:上面代码表明改变常量的值会报错.<b>const</b>声明的变量不得改变值，这意味着，<b>const</b>一旦声明变量，就必须立即初始化，不能留到以后赋值。
-							    </a>
-							</li>
-							<li>
-								<a href="javascript:;">
-									<b>const本质</b><br/>
-									    const实际上保证的，并不是变量的值不得改动，而是<b>变量指向的那个内存地址不得改动。</b>对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，<b>const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。</b>因此，将一个对象声明为常量必须非常小心。<br />
-									    <strong>
-									    	const foo = {};<br/>
-											// 为 foo 添加一个属性，可以成功<br/>
-											foo.prop = 123;<br/>
-											foo.prop // <b>123</b><br/>
-											// 将 foo 指向另一个对象，就会报错<br/>
-											foo = {}; // <b>TypeError: "foo" is read-only</b><br/>
-									    </strong>
-									    <b>注意</b>:上面代码中，常量foo储存的是一个地址，这个地址指向一个对象。不可变的只是这个地址，即不能把foo指向另一个地址，但对象本身是可变的，所以依然可以为其添加新属性。
-							    </a>
-							</li>
-						</ol>
-						<li>
-								<a href="javascript:;">
-									<b>箭头函数</b><br/><strong></strong>
-									   1.ES6允许使用“箭头”<b>（=>）</b>定义函数。<br />
-									   &nbsp;&nbsp;&nbsp;&nbsp;<strong>var f = v => v;</strong><b>等同于</b><strong>var f = function(v) {return v;};</strong><br />
-									   2.如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。<br />	
-                                          &nbsp;&nbsp;&nbsp;&nbsp;<strong>var f = () => 5; </strong><b>等同于</b><strong>var f = function () { return 5 };</strong><br />	
-									      &nbsp;&nbsp;&nbsp;&nbsp;<strong>var sum = (num1, num2) => num1 + num2; </strong><b>等同于</b><strong>var sum = function(num1, num2) { return num1 + num2;};</strong><br />	
-							           3.如果箭头函数的代码块部分多于一条语句，就要使用大括号将它们括起来，并且使用return语句返回。<br />
-							             &nbsp;&nbsp;&nbsp;&nbsp;<strong>var sum = (num1, num2) => { return num1 + num2; }</strong><br />
-							           4.由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号。 <br />	
-							             &nbsp;&nbsp;&nbsp;&nbsp;<strong>var getTempItem = id => ({ id: id, name: "Temp" });</strong><br />
-                                       5.<b>注意事项</b>:<br />
-                                                                        （1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。this对象的指向是可变的，但是在箭头函数中，它是固定的。<br />
-                                                                        （2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。<br />
-										（3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用Rest参数代替。<br />
-										（4）不可以使用yield命令，因此箭头函数不能用作Generator函数。<br />
-										<strong>
-											example:<br />
-											&nbsp;&nbsp;&nbsp;&nbsp;function foo() {<br />
-											  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() => {<br />
-											    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('id:', this.id);<br />
-											 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }, 100);<br />
-											&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-											&nbsp;&nbsp;&nbsp;&nbsp;var id = 21;<br />
-											&nbsp;&nbsp;&nbsp;&nbsp;foo.call({ id: 42 });<br />
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//<b> id: 42</b><br />
-										</strong>
-										<b>解析</b>:上面代码中，setTimeout的参数是一个箭头函数，这个箭头函数的定义生效是在foo函数生成时，而它的真正执行要等到100毫秒后。如果是普通函数，执行时this应该指向全局对象window，这时应该输出21。但是，箭头函数导致this总是指向函数定义生效时所在的对象（本例是{id: 42}），所以输出的是42。
+								HTML5 提供了两种在客户端存储数据的新方法：<br/>
+    <b>localStorage</b> - 没有时间限制的数据存储<br/>
+   <b> sessionStorage</b> - 针对一个 session 的数据存储<br/>
+
+之前，这些都是由 cookie 完成的。但是 cookie 不适合大量数据的存储，因为它们由每个对服务器的请求来传递，这使得 cookie 速度很慢而且效率也不高。<br/>
+
+在 HTML5 中，数据不是由每个服务器请求传递的，而是只有在请求时使用数据。它使在不影响网站性能的情况下存储大量数据成为可能。<br/>
+
+对于不同的网站，数据存储于不同的区域，并且一个网站只能访问其自身的数据。<br/>
+
+HTML5 使用 JavaScript 来存储和访问数据。   <br/>
 								</a>
-							    
 							</li>
 				</ol>
 
 				<li class="Big">
-					<a href="javascript:;">Node.js</a>
+					<a href="javascript:;">CSS3(这里只做简单概述，详情请查询我之前做的详细总结)</a>
 				</li>
-				<p>Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p>
 				<ol class="rounded-list">
 					<li>
 						<a href="javascript:;">
-					Node.js 创建第一个应用：<br/>
-	                     1.引入 required 模块<br/>
-	                     我们使用 <b>require</b> 指令来载入 <b>http 模块</b>，并将实例化的 HTTP 赋值给变量 http，实例如下: <br/>
-	                     &nbsp;&nbsp;&nbsp;&nbsp;<strong>var http = require("http");</strong><br/>
-	                     2.创建服务器<br/>
-	                     接下来我们使用  <b>http.createServer() </b>方法创建服务器，并使用  <b>listen</b> 方法绑定 8888 端口。 函数通过  <b>request</b>,  <b>response</b> 参数来接收和响应数据。<br/>
-	                     <strong>var http = require('http');<br/>
-								http.createServer(function (request, response) {<br/></strong>
-									// 发送 HTTP 头部 <br/>
-									// HTTP 状态值: 200 : OK<br/>
-									// 内容类型: text/plain<br/>
-									<strong>response.writeHead(200, {'Content-Type': 'text/plain'});</strong><br/>
-									// 发送响应数据 "Hello World"<br/>
-									<strong>response.end('Hello World\n');<br/>
-								}).listen(8888);</strong><br/>
-								// 终端打印如下信息<br/>
-								<strong>console.log('Server running at http://127.0.0.1:8888/');</strong><br/>
-						  3.使用 <b> 命令执行以上的代码</b>：<br/>
-						    <strong>node server.js<br/>
-							Server running at http://127.0.0.1:8888/</strong>
-							</a>
-						</li>
-						
+					CSS 用于控制网页的样式和布局,CSS3 是最新的 CSS 标准。CSS3被拆分为"模块"。旧规范已拆分成小块，还增加了新的。
+					
+					一些最重要CSS3模块如下：<br/>
+					
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择器<br/>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 盒模型<br/>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 背景和边框<br/>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文字特效<br/>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2D/3D转换<br/>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;动画<br/>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 多列布局<br/>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户界面<br/>
+
+						</a>
+						<ol class="rounded-list1">
+							<li>
+								<a href="javascript:;">
+								用 CSS3，你可以创建圆角边框，添加阴影框，并作为边界的形象而不使用设计程序
+   <b>border-radius 、box-shadow、 border-image</b> 
+
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+								CSS3 渐变（<b>gradients</b>）可以让你在两个或多个指定的颜色之间显示平稳的过渡。<br/>
+    <b>线性渐变（Linear Gradients）</b>- 向下/向上/向左/向右/对角方向<br/>
+   <b> 径向渐变（Radial Gradients）</b>- 由它们的中心定义<br/>
+
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;"><b></b>
+								CSS3 文本效果:<br/>
+							    <b>text-shadow</b>:文本阴影<br/>
+							    <b>box-shadow</b>:盒子阴影<br/>
+							    <b>text-overflow</b>:CSS3文本溢出属性指定应向用户如何显示溢出内容<br/>
+							    <b>word-wrap</b>:自动换行属性允许您强制文本换行 - 即使这意味着分裂它中间的一个字<br/>
+							    <b>word-break</b>:规定非中日韩文本的换行规则<br/>
+
+								</a>
+							</li>
+							
+						</ol>
+					</li>
+					<li>
+								<a href="javascript:;"><b></b>
+								<b>2D 转换</b>:<br/>
+							    <b>translate()</b>:translate()方法，根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动。<br/>
+							    <b>rotate()</b>:rotate()方法，在一个给定度数顺时针旋转的元素。负值是允许的，这样是元素逆时针旋转。<br/>
+							    <b>scale()</b>:scale()方法，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数<br/>
+							    <b>skew()</b>:包含两个参数值，分别表示X轴和Y轴倾斜的角度，如果第二个参数为空，则默认为0，参数为负表示向相反方向倾斜。<br/>
+							    <b>matrix()</b>:matrix 方法有六个参数，包含旋转，缩放，移动（平移）和倾斜功能。<br/>
+
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;"><b></b>
+								<b>CSS3 过渡</b>:<br/>
+							    CSS3 过渡是元素从一种样式逐渐改变为另一种的效果。<br/>
+
+								要实现这一点，必须规定两项内容：<br/>
+								
+								   1. 指定要添加效果的CSS属性<br/>
+								   2.指定效果的持续时间。<br/>
+                                  <b> transition</b>:简写属性，用于在一个属性中设置四个过渡属性。<br/>
+                                    
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;"><b></b>
+								<b>CSS3 动画</b>:<br/>
+							   CSS3，我们可以创建动画，它可以取代许多网页动画图像<br/>
+
+								<b>@keyframes</b>规则是创建动画。 @keyframes规则内指定一个CSS样式和动画将逐步从目前的样式更改为新的样式。<br/>
+								当在 @keyframes 创建动画，把它绑定到一个选择器，否则动画不会有任何效果。指定至少这两个CSS3的动画属性绑定向一个选择器：<br/>
+								   1.   规定动画的名称<br/>
+								   2.规定动画的时长<br/>
+								   动画是使元素从一种样式逐渐变化为另一种样式的效果。
+
+可以改变任意多的样式任意多的次数。<br/>
+
+请用百分比来规定变化发生的时间，或用关键词 "from" 和 "to"，等同于 0% 和 100%。<br/>
+
+0% 是动画的开始，100% 是动画的完成。
+
+为了得到最佳的浏览器支持，我们应该始终定义 0% 和 100% 选择器。<br/>
+                                  <b> animation</b>:所有动画属性的简写属性性。<br/>
+                                    
+								</a>
+							</li>
 				</ol>
 			</ol>
 
