@@ -5,6 +5,7 @@ body{
     background: #226039 url(../img/bg.jpg)  no-repeat;
     color: #5d5d5d;
     font-family:Arial,Helvetica,sans-serif;font-size:100%;
+	background-size:contain;
 }
 ul li a:link{
 	color:chocolate;
@@ -64,11 +65,11 @@ ul li a:hover{
 }
 .quotes p{
 	text-shadow: #246640 1px 1px 1px;
-	color: #fff;
 	width: 330px;
 	line-height: 26px;
-	color: chocolate;
+	color: tomato;
 	font-size: 18px;
+	font-weight:bold;
 }
 .text{
 	float: left;
@@ -106,7 +107,7 @@ ul li a:hover{
 	width: 1200px;
 	position: absolute;
     bottom: -20px;
-    left: 732px;
+    left: 610px;
 }
 .main{
 	width: 1200px;
